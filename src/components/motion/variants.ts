@@ -1,0 +1,72 @@
+import type { Transition, Variants } from "framer-motion";
+
+export const motionTimings = {
+  fast: 0.22,
+  base: 0.32,
+  slow: 0.42,
+  stagger: 0.08
+} as const;
+
+export const motionEase: Transition["ease"] = [0.22, 1, 0.36, 1];
+
+export const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 12, scale: 0.985 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: motionTimings.base, ease: motionEase }
+  }
+};
+
+export const scaleIn: Variants = {
+  hidden: { opacity: 0, scale: 0.98 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: motionTimings.fast, ease: motionEase }
+  }
+};
+
+export const staggerContainer = (
+  staggerChildren: number = motionTimings.stagger,
+  delayChildren: number = 0
+): Variants => ({
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren,
+      delayChildren
+    }
+  }
+});
+
+export const pageFadeRise: Variants = {
+  initial: { opacity: 0, y: 10 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: motionTimings.base, ease: motionEase }
+  },
+  exit: {
+    opacity: 0,
+    y: 6,
+    transition: { duration: motionTimings.fast, ease: motionEase }
+  }
+};
+
+export const toastMotion: Variants = {
+  initial: { opacity: 0, y: 12, scale: 0.98 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: motionTimings.fast, ease: motionEase }
+  },
+  exit: {
+    opacity: 0,
+    y: 8,
+    scale: 0.99,
+    transition: { duration: 0.18, ease: motionEase }
+  }
+};

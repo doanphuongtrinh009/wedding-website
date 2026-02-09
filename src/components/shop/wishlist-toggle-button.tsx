@@ -1,0 +1,90 @@
+"use client";
+
+import { Heart } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
+import { useState, useTransition } from "react";
+
+import { toggleWishlistAction } from "@/actions/shop-actions";
+import { Button } from "@/components/ui/button";
+import { useToast } from "@/components/ui/toast-system";
+import { cn } from "@/lib/utils";
+
+type WishlistToggleButtonProps = {
+  productId: string;
+  initialWishlisted: boolean;
+  className?: string;
+};
+
+export function WishlistToggleButton({
+  productId,
+  initialWishlisted,
+  className
+}: WishlistToggleButtonProps) {
+  const router = useRouter();
+  const pathname = usePathname();
+  const [isPending, startTransition] = useTransition();
+  const [isWishlisted, setIsWishlisted] = useState(initialWishlisted);
+  const { toast } = useToast();
+
+  const buttonLabel = isWishlisted ? "Remove from wishlist" : "Add to wishlist";
+
+  function onToggle() {
+    startTransition(async () => {
+      try {
+        const result = await toggleWishlistAction({
+          productId,
+          isWishlisted,
+          returnTo: pathname
+        });
+
+        if (result.status === "signed_out") {
+          router.push(`/sign-in?redirect_url=${encodeURIComponent(pathname)}`);
+          return;
+        }
+
+        if (result.status === "error") {
+          toast({
+            title: "Unable to update wishlist",
+            description: result.message,
+            tone: "destructive"
+          });
+          return;
+        }
+
+        if (result.status === "ok") {
+          setIsWishlisted(result.wishlisted);
+          router.refresh();
+        }
+      } catch {
+        toast({
+          title: "Wishlist action failed",
+          description: "Please try again in a moment.",
+          tone: "destructive"
+        });
+      }
+    });
+  }
+
+  return (
+    <Button
+      type="button"
+      variant="ghost"
+      size="icon"
+      aria-label={buttonLabel}
+      aria-pressed={isWishlisted}
+      disabled={isPending}
+      onClick={onToggle}
+      className={cn(
+        "h-10 w-10 rounded-full border border-border/80 bg-background/80 p-0 normal-case tracking-normal",
+        className
+      )}
+    >
+      <Heart
+        className={cn(
+          "size-4",
+          isWishlisted ? "fill-primary text-primary" : "text-muted-foreground"
+        )}
+      />
+    </Button>
+  );
+}

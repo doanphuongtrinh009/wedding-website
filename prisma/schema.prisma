@@ -1,0 +1,168 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  CUSTOMER
+  ADMIN
+}
+
+enum ProductStatus {
+  DRAFT
+  ACTIVE
+  ARCHIVED
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  COMPLETED
+  CANCELED
+  NO_SHOW
+}
+
+enum OrderStatus {
+  PENDING
+  CONFIRMED
+  PAID
+  FULFILLED
+  CANCELED
+  REFUNDED
+}
+
+enum PaymentStatus {
+  UNPAID
+  PARTIALLY_PAID
+  PAID
+  REFUNDED
+}
+
+model UserProfile {
+  id            String         @id @default(cuid())
+  clerkUserId   String         @unique
+  email         String         @unique
+  firstName     String?
+  lastName      String?
+  phone         String?
+  role          UserRole       @default(CUSTOMER)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  bookings      Booking[]
+  wishlistItems WishlistItem[]
+  orders        Order[]
+
+  @@index([role])
+}
+
+model Product {
+  id            String         @id @default(cuid())
+  slug          String         @unique
+  name          String
+  description   String
+  priceInCents  Int
+  currency      String         @default("USD")
+  status        ProductStatus  @default(DRAFT)
+  isFeatured    Boolean        @default(false)
+  availableFrom DateTime?
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  images        ProductImage[]
+  bookings      Booking[]
+  wishlistItems WishlistItem[]
+  orderItems    OrderItem[]
+
+  @@index([status, isFeatured])
+  @@index([createdAt])
+}
+
+model ProductImage {
+  id                 String   @id @default(cuid())
+  productId          String
+  cloudinaryPublicId String
+  secureUrl          String
+  altText            String?
+  position           Int      @default(0)
+  createdAt          DateTime @default(now())
+  product            Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@unique([productId, position])
+  @@index([productId])
+}
+
+model Booking {
+  id                  String        @id @default(cuid())
+  bookingNumber       String        @unique @default(cuid())
+  customerId          String
+  productId           String?
+  status              BookingStatus @default(PENDING)
+  appointmentAt       DateTime
+  appointmentEndAt    DateTime
+  appointmentTimeZone String        @default("UTC")
+  durationInMinutes   Int           @default(90)
+  eventDate           DateTime?
+  notes               String?
+  internalNotes       String?
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
+  customer            UserProfile   @relation(fields: [customerId], references: [id], onDelete: Restrict)
+  product             Product?      @relation(fields: [productId], references: [id], onDelete: SetNull)
+
+  @@index([customerId, status])
+  @@index([status, appointmentAt])
+  @@index([appointmentAt, appointmentEndAt])
+  @@index([productId])
+}
+
+model WishlistItem {
+  id        String      @id @default(cuid())
+  userId    String
+  productId String
+  createdAt DateTime    @default(now())
+  user      UserProfile @relation(fields: [userId], references: [id], onDelete: Cascade)
+  product   Product     @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, productId])
+  @@index([userId, createdAt])
+  @@index([productId])
+}
+
+model Order {
+  id              String        @id @default(cuid())
+  orderNumber     String        @unique @default(cuid())
+  customerId      String
+  status          OrderStatus   @default(PENDING)
+  paymentStatus   PaymentStatus @default(UNPAID)
+  subtotalInCents Int
+  taxInCents      Int           @default(0)
+  totalInCents    Int
+  currency        String        @default("USD")
+  notes           String?
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  customer        UserProfile   @relation(fields: [customerId], references: [id], onDelete: Restrict)
+  items           OrderItem[]
+
+  @@index([customerId, status])
+  @@index([createdAt])
+  @@index([status, paymentStatus])
+}
+
+model OrderItem {
+  id               String   @id @default(cuid())
+  orderId          String
+  productId        String?
+  productName      String
+  unitPriceInCents Int
+  quantity         Int      @default(1)
+  createdAt        DateTime @default(now())
+  order            Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product          Product? @relation(fields: [productId], references: [id], onDelete: SetNull)
+
+  @@index([orderId])
+  @@index([productId])
+}

@@ -4,6 +4,7 @@ import { getTranslations } from "next-intl/server";
 import { ProductCard } from "@/components/shop/product-card";
 import { HomeHero } from "@/components/sections/home-hero";
 import { HomeHighlights } from "@/components/sections/home-highlights";
+import { RealBrides } from "@/components/sections/real-brides";
 import { Testimonials } from "@/components/sections/testimonials";
 import { TrustBadges } from "@/components/sections/trust-badges";
 import { MotionStaggerGrid } from "@/components/motion/stagger-grid";
@@ -72,6 +73,7 @@ export default async function HomePage() {
           </MotionStaggerGrid>
         )}
       </section>
+      <RealBrides />
       <Testimonials />
     </>
   );

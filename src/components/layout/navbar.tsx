@@ -27,9 +27,11 @@ export function Navbar() {
 
           <Link
             href="/"
-            className="font-display text-[1.7rem] font-semibold leading-none tracking-[-0.02em] text-brand-cocoa sm:text-[1.9rem]"
+            className="flex items-center gap-2 font-display text-[1.7rem] font-semibold leading-none tracking-[-0.02em] text-brand-cocoa sm:text-[1.9rem]"
           >
-            {siteConfig.name}
+            <span className="font-display text-2xl font-bold uppercase tracking-widest text-foreground sm:text-3xl">
+              Quỳnh Trâm <span className="font-light text-muted-foreground">Bridal</span>
+            </span>
           </Link>
 
           <nav className="hidden items-center gap-7 md:flex">

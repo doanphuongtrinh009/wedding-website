@@ -1,15 +1,15 @@
 export default function ContactPage() {
   return (
     <section className="container py-16 md:py-24">
-      <h1 className="text-4xl leading-tight">Contact Maison Etoile</h1>
+      <h1 className="text-4xl leading-tight">Contact Quỳnh Trâm Bridal</h1>
       <p className="mt-4 max-w-2xl text-base text-muted-foreground">
         For appointments, order support, or styling questions, contact our team
         at
         <a
-          href="mailto:concierge@maisonetoile.com"
+          href="mailto:concierge@quynhtrambridal.com"
           className="ml-1 underline-offset-4 hover:underline"
         >
-          concierge@maisonetoile.com
+          concierge@quynhtrambridal.com
         </a>
         .
       </p>

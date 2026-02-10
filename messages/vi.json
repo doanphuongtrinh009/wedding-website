@@ -26,7 +26,7 @@
         "openMenu": "Mở menu"
     },
     "Hero": {
-        "badge": "Maison Etoile 2026",
+        "badge": "Quỳnh Trâm Bridal 2026",
         "kicker": "Trải nghiệm showroom riêng tư",
         "heading": "Trang phục cưới tinh tế được tạo nên với kỹ thuật couture và tinh thần hiện đại.",
         "description": "Nhà thời trang cưới cao cấp kết hợp gu thẩm mỹ editorial với dịch vụ cá nhân hóa. Khám phá các thiết kế tinh tế, buổi thử đồ riêng tư và quy trình chỉnh sửa tỉ mỉ theo timeline của bạn.",
@@ -280,5 +280,34 @@
         "CONFIRMED": "Đã xác nhận",
         "CANCELLED": "Đã hủy",
         "COMPLETED": "Hoàn thành"
+    },
+    "RealBrides": {
+        "label": "Cô Dâu Thực Tế",
+        "title": "Nàng Thơ Quỳnh Trâm",
+        "subtitle": "Khám phá vẻ đẹp tinh tế và câu chuyện hạnh phúc của các cô dâu.",
+        "cta": "Xem Bộ Sưu Tập"
+    },
+    "AboutPage": {
+        "kicker": "Di sản của chúng tôi",
+        "heroTitle1": "Thời trang cưới hiện đại,",
+        "heroTitle2": "dịch vụ tận tâm.",
+        "heroDesc1": "Quỳnh Trâm Bridal là atelier váy cưới tập trung vào phom dáng hiện đại, không gian thử đồ riêng tư và tư vấn phong cách cá nhân từ buổi hẹn đầu tiên đến lần chỉnh sửa cuối cùng.",
+        "heroDesc2": "Mỗi buổi tư vấn váy cưới được điều chỉnh theo timeline lễ cưới, bối cảnh địa điểm và sở thích thoải mái của bạn để đảm bảo sự tự tin và tinh tế trong ngày trọng đại.",
+        "processTitle": "Quy trình từ bản vẽ đến lễ đường",
+        "steps": {
+            "consult": {
+                "title": "Tư vấn phong cách",
+                "desc": "Gặp gỡ stylist để thảo luận về tầm nhìn và địa điểm."
+            },
+            "fitting": {
+                "title": "Thử đồ riêng tư",
+                "desc": "Các buổi hẹn 90 phút độc quyền tại atelier của chúng tôi."
+            },
+            "alteration": {
+                "title": "Chỉnh sửa tỉ mỉ",
+                "desc": "Điều chỉnh chính xác từng chi tiết cho phom dáng hoàn hảo."
+            }
+        },
+        "cta": "Đặt lịch hẹn"
     }
 }

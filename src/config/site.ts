@@ -4,7 +4,7 @@ const configuredPhoneDigits = (
 ).replace(/\D/g, "");
 
 export const siteConfig = {
-  name: "Maison Etoile Bridal",
+  name: "Quỳnh Trâm Bridal",
   description:
     "Luxury bridal styling, curated gowns, and private appointments for modern brides.",
   url: process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000",

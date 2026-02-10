@@ -6,6 +6,7 @@ import { useMemo, useState } from "react";
 
 import { motionEase, motionTimings } from "@/components/motion/variants";
 import { getOptimizedCloudinaryUrl } from "@/lib/image";
+import { Lightbox } from "@/components/ui/lightbox";
 import { cn } from "@/lib/utils";
 
 type GalleryImage = {
@@ -21,6 +22,7 @@ type ProductGalleryProps = {
 
 export function ProductGallery({ images, productName }: ProductGalleryProps) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
   const shouldReduceMotion = useReducedMotion();
 
   const activeImage = images[activeIndex];
@@ -38,11 +40,15 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
         <AnimatePresence initial={false} mode="wait">
           <m.div
             key={activeImage.id}
-            className="absolute inset-0"
+            className="absolute inset-0 z-10 cursor-zoom-in"
             initial={shouldReduceMotion ? false : { opacity: 0, scale: 1.02 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={shouldReduceMotion ? undefined : { opacity: 0, scale: 0.99 }}
             transition={{ duration: motionTimings.base, ease: motionEase }}
+            onClick={() => {
+              console.log("Main Image Clicked");
+              setLightboxOpen(true);
+            }}
           >
             <Image
               src={getOptimizedCloudinaryUrl(activeImage.secureUrl, {
@@ -59,6 +65,28 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
             />
           </m.div>
         </AnimatePresence>
+
+        {/* Zoom Indicator */}
+        <div className="absolute right-4 top-4 z-20 pointer-events-none rounded-full bg-black/40 p-2 text-white/90 backdrop-blur-sm transition-opacity hover:bg-black/60">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="lucide lucide-expand"
+          >
+            <path d="m21 21-6-6" />
+            <path d="M3 11v-4a4 4 0 0 1 4-4h4" />
+            <path d="M13 3h4a4 4 0 0 1 4 4v4" />
+            <path d="M11 13H7a4 4 0 0 0-4 4v4" />
+            <path d="M13 21h4a4 4 0 0 0 4-4v-4" />
+          </svg>
+        </div>
       </div>
 
       {galleryImages.length > 1 ? (
@@ -98,6 +126,13 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
           })}
         </div>
       ) : null}
+
+      <Lightbox
+        images={images}
+        initialIndex={activeIndex}
+        isOpen={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+      />
     </div>
   );
 }

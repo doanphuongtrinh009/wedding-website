@@ -16,7 +16,7 @@ export default function SignUpPage() {
     return (
       <section className="container flex min-h-[calc(100vh-16rem)] items-center justify-center py-12">
         <div className="max-w-xl rounded-[1.6rem] border border-border/70 bg-card/85 p-10 text-center shadow-luxury">
-          <p className="editorial-kicker mb-3">Join Maison Etoile</p>
+          <p className="editorial-kicker mb-3">Join Quỳnh Trâm Bridal</p>
           <h1 className="text-3xl font-display text-brand-cocoa">Create Account</h1>
           <p className="mt-4 text-muted-foreground leading-relaxed">
             Registration is currently in <span className="font-semibold text-foreground">configuration mode</span>.

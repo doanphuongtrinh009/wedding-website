@@ -1,9 +1,12 @@
 export function formatCurrency(valueInCents: number, currency: string) {
-  return new Intl.NumberFormat("en-US", {
+  const isVND = currency === "VND";
+  const value = isVND ? valueInCents : valueInCents / 100;
+
+  return new Intl.NumberFormat("vi-VN", {
     style: "currency",
     currency,
     maximumFractionDigits: 0
-  }).format(valueInCents / 100);
+  }).format(value);
 }
 
 export function formatDate(dateValue: Date | string) {

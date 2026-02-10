@@ -26,7 +26,7 @@
         "openMenu": "Open menu"
     },
     "Hero": {
-        "badge": "Maison Etoile 2026",
+        "badge": "Quỳnh Trâm Bridal 2026",
         "kicker": "Private showroom experience",
         "heading": "Bridal pieces shaped with couture precision and a quietly modern spirit.",
         "description": "A luxury bridal house blending editorial taste with intimate service. Discover refined silhouettes, private fittings, and meticulous alteration pathways designed around your timeline.",
@@ -280,5 +280,34 @@
         "CONFIRMED": "Confirmed",
         "CANCELLED": "Cancelled",
         "COMPLETED": "Completed"
+    },
+    "RealBrides": {
+        "label": "Real Brides",
+        "title": "Maison Etoile Muses",
+        "subtitle": "Discover the effortless elegance of our brides across the globe.",
+        "cta": "View Collections"
+    },
+    "AboutPage": {
+        "kicker": "Our Heritage",
+        "heroTitle1": "Modern couture,",
+        "heroTitle2": "intimate service.",
+        "heroDesc1": "Maison Etoile is a bridal atelier focused on modern silhouettes, private fittings, and personalized styling guidance from first appointment to final alteration.",
+        "heroDesc2": "Every gown consultation is tailored to your ceremony timeline, venue setting, and comfort preferences to ensure a confident and refined wedding-day fit.",
+        "processTitle": "From Sketch to Aisle",
+        "steps": {
+            "consult": {
+                "title": "Style Consultation",
+                "desc": "Meet your stylist to discuss vision and venue."
+            },
+            "fitting": {
+                "title": "Private Fittings",
+                "desc": "Exclusive 90-minute sessions in our atelier."
+            },
+            "alteration": {
+                "title": "Precise Alterations",
+                "desc": "Meticulous adjustments for the perfect fit."
+            }
+        },
+        "cta": "Book Appointment"
     }
 }

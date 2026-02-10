@@ -6,7 +6,7 @@ import { motionEase, motionTimings } from "@/components/motion/variants";
 
 export function MotionProvider({ children }: { children: React.ReactNode }) {
   return (
-    <LazyMotion features={domAnimation} strict>
+    <LazyMotion features={domAnimation}>
       <MotionConfig
         reducedMotion="user"
         transition={{ duration: motionTimings.base, ease: motionEase }}

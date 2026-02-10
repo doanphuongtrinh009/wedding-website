@@ -1,6 +1,7 @@
 "use client";
 
 import { m } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { CalendarDays, Gem, Scissors } from "lucide-react";
 
 import {
@@ -16,28 +17,24 @@ import {
   CardTitle
 } from "@/components/ui/card";
 
-const highlights = [
+const highlightItems = [
   {
-    title: "Couture curation",
-    description:
-      "Small-batch designer edits selected for balance, movement, and photography quality.",
+    key: "couture",
     icon: Gem
   },
   {
-    title: "Fitting discipline",
-    description:
-      "Milestone-based alterations with timeline checkpoints before the wedding week.",
+    key: "fitting",
     icon: Scissors
   },
   {
-    title: "Calendar planning",
-    description:
-      "Appointment timing mapped from engagement to ceremony day handoff.",
+    key: "calendar",
     icon: CalendarDays
   }
 ] as const;
 
 export function HomeHighlights() {
+  const t = useTranslations("HomeHighlights");
+
   return (
     <m.section
       className="section-shell grid gap-4 pt-0 md:grid-cols-3 md:gap-6"
@@ -46,8 +43,8 @@ export function HomeHighlights() {
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
     >
-      {highlights.map((item) => (
-        <m.div key={item.title} variants={fadeUp}>
+      {highlightItems.map((item) => (
+        <m.div key={item.key} variants={fadeUp}>
           <Card
             variant="editorial"
             className="group h-full bg-card/75 transition-colors hover:bg-card/95"
@@ -57,17 +54,14 @@ export function HomeHighlights() {
                 <item.icon className="size-4 text-primary" aria-hidden="true" />
               </div>
               <CardTitle className="pt-3 text-[1.9rem] md:text-[2.1rem]">
-                {item.title}
+                {t(`${item.key}Title`)}
               </CardTitle>
               <CardDescription className="max-w-prose">
-                {item.description}
+                {t(`${item.key}Desc`)}
               </CardDescription>
             </CardHeader>
             <CardContent className="pt-0">
-              <p className="text-sm text-muted-foreground">
-                Built for premium service consistency across styling, inventory,
-                and client communication.
-              </p>
+              <p className="text-sm text-muted-foreground">{t("footerText")}</p>
             </CardContent>
           </Card>
         </m.div>

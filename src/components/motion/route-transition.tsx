@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, m, useReducedMotion } from "framer-motion";
-import { usePathname } from "next/navigation";
+import { usePathname } from "@/i18n/routing";
 
 import { pageFadeRise } from "@/components/motion/variants";
 

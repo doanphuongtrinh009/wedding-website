@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
+import { getTranslations } from "next-intl/server";
 
 import { ProductCard } from "@/components/shop/product-card";
 import { HomeHero } from "@/components/sections/home-hero";
@@ -11,13 +11,22 @@ import { Button } from "@/components/ui/button";
 import { getCurrentUserProfile } from "@/lib/auth";
 import { getFeaturedProducts, getWishlistProductIds } from "@/lib/shop";
 
-export const metadata: Metadata = {
-  title: "Luxury Bridal Shop",
-  description:
-    "Shop bridal collections, save wishlist favorites, and book private try-on appointments."
-};
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Metadata" });
+
+  return {
+    title: t("homeTitle"),
+    description: t("homeDescription")
+  };
+}
 
 export default async function HomePage() {
+  const t = await getTranslations("FeaturedSection");
   const profile = await getCurrentUserProfile();
   const featuredProducts = await getFeaturedProducts(4);
   const wishlistIds = profile
@@ -32,21 +41,21 @@ export default async function HomePage() {
       <section className="section-shell pt-space-md md:pt-space-lg">
         <div className="mb-space-md flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div className="space-y-4">
-            <p className="editorial-kicker">Featured Collection</p>
+            <p className="editorial-kicker">{t("kicker")}</p>
             <h2 className="max-w-2xl">
-              Best-loved gowns for private try-on this season.
+              {t("heading")}
             </h2>
           </div>
           <Button asChild variant="outline" className="w-full sm:w-auto">
-            <Link href="/collections">View full catalog</Link>
+            <Link href="/collections">{t("viewCatalog")}</Link>
           </Button>
         </div>
 
         {featuredProducts.length === 0 ? (
           <div className="rounded-2xl border border-border/70 bg-card/85 p-10 text-center">
-            <p className="font-display text-3xl">Featured styles coming soon</p>
+            <p className="font-display text-3xl">{t("comingSoon")}</p>
             <p className="mt-2 text-muted-foreground">
-              Product merchandising can be updated from the admin panel.
+              {t("comingSoonNote")}
             </p>
           </div>
         ) : (

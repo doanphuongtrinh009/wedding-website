@@ -1,8 +1,8 @@
 "use client";
 
 import { CalendarCheck2, MessageCircle, PhoneCall } from "lucide-react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
+import { Link, usePathname } from "@/i18n/routing";
 
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
@@ -11,6 +11,7 @@ const hiddenRoutePrefixes = ["/admin", "/sign-in", "/sign-up"];
 
 export function FloatingConversionCta() {
   const pathname = usePathname();
+  const t = useTranslations("FloatingCta");
   const isBookingPage = pathname.startsWith("/book");
 
   if (hiddenRoutePrefixes.some((prefix) => pathname.startsWith(prefix))) {
@@ -25,7 +26,7 @@ export function FloatingConversionCta() {
             <Button asChild className="h-11 flex-1 px-4 text-[0.68rem]">
               <Link href="/book">
                 <CalendarCheck2 className="size-4" aria-hidden="true" />
-                Book fitting
+                {t("bookFitting")}
               </Link>
             </Button>
           ) : null}
@@ -57,7 +58,7 @@ export function FloatingConversionCta() {
           <Button asChild className="h-11 w-full text-[0.68rem]">
             <Link href="/book">
               <CalendarCheck2 className="size-4" aria-hidden="true" />
-              Reserve private fitting
+              {t("reserveFitting")}
             </Link>
           </Button>
         ) : null}

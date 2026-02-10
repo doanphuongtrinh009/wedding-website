@@ -1,5 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 
 import { WishlistToggleButton } from "@/components/shop/wishlist-toggle-button";
 import { Badge } from "@/components/ui/badge";
@@ -28,13 +29,14 @@ export function ProductCard({
   showWishlist = true,
   imagePriority = false
 }: ProductCardProps) {
+  const t = useTranslations("ProductCard");
   const primaryImage = product.images[0];
   const optimizedPrimaryImage = primaryImage
     ? getOptimizedCloudinaryUrl(primaryImage.secureUrl, {
-        width: 900,
-        quality: 80,
-        crop: "fill"
-      })
+      width: 900,
+      quality: 80,
+      crop: "fill"
+    })
     : null;
 
   return (
@@ -67,7 +69,7 @@ export function ProductCard({
             variant="secondary"
             className="bg-background/88 absolute left-3 top-3 backdrop-blur"
           >
-            Featured
+            {t("featured")}
           </Badge>
         ) : null}
 
@@ -83,7 +85,7 @@ export function ProductCard({
 
       <CardHeader className="space-y-2 pb-2">
         <p className="text-[0.66rem] font-semibold uppercase tracking-[0.18em] text-brand-taupe">
-          Private try-on eligible
+          {t("tryOnEligible")}
         </p>
         <CardTitle className="text-[1.8rem] leading-tight md:text-[1.95rem]">
           <Link
@@ -106,10 +108,10 @@ export function ProductCard({
 
       <CardFooter className="grid grid-cols-1 gap-3 sm:grid-cols-2">
         <Button asChild variant="outline" className="w-full">
-          <Link href={`/collections/${product.slug}`}>View gown</Link>
+          <Link href={`/collections/${product.slug}`}>{t("viewGown")}</Link>
         </Button>
         <Button asChild className="w-full">
-          <Link href={`/book?productId=${product.id}`}>Book try-on</Link>
+          <Link href={`/book?productId=${product.id}`}>{t("bookTryOn")}</Link>
         </Button>
       </CardFooter>
     </Card>

@@ -1,0 +1,284 @@
+{
+    "LocaleSwitcher": {
+        "vi": "Tiếng Việt",
+        "en": "English"
+    },
+    "Metadata": {
+        "homeTitle": "Thời Trang Cưới Cao Cấp",
+        "homeDescription": "Khám phá bộ sưu tập cưới, lưu yêu thích và đặt lịch thử đồ riêng tư.",
+        "bookTitle": "Đặt Lịch Thử Đồ",
+        "bookDescription": "Đặt lịch hẹn thử đồ cưới riêng tư với mẫu váy yêu thích của bạn."
+    },
+    "Layout": {
+        "skipToContent": "Bỏ qua đến nội dung chính",
+        "footerTagline": "Đặt lịch cưới hiện đại và tạo mẫu thời trang cao cấp."
+    },
+    "Nav": {
+        "collections": "Bộ Sưu Tập",
+        "bookTryOn": "Đặt Lịch Thử",
+        "wishlist": "Yêu Thích",
+        "account": "Tài Khoản",
+        "reserveFitting": "Đặt lịch thử đồ",
+        "signIn": "Đăng nhập",
+        "contact": "Liên hệ",
+        "menu": "Menu",
+        "myAccount": "Tài khoản",
+        "openMenu": "Mở menu"
+    },
+    "Hero": {
+        "badge": "Maison Etoile 2026",
+        "kicker": "Trải nghiệm showroom riêng tư",
+        "heading": "Trang phục cưới tinh tế được tạo nên với kỹ thuật couture và tinh thần hiện đại.",
+        "description": "Nhà thời trang cưới cao cấp kết hợp gu thẩm mỹ editorial với dịch vụ cá nhân hóa. Khám phá các thiết kế tinh tế, buổi thử đồ riêng tư và quy trình chỉnh sửa tỉ mỉ theo timeline của bạn.",
+        "reserveFitting": "Đặt lịch thử riêng tư",
+        "browseCollections": "Xem bộ sưu tập",
+        "appointments": "Lịch hẹn",
+        "appointmentsValue": "1:1 với stylist",
+        "alterations": "Chỉnh sửa",
+        "alterationsValue": "Theo dõi milestone",
+        "leadTime": "Thời gian",
+        "leadTimeValue": "4-6 tháng",
+        "clientExperience": "Trải nghiệm khách hàng",
+        "clientHeading": "Một cô dâu, một stylist, toàn tâm phục vụ.",
+        "clientDescription": "Mỗi buổi hẹn được theo nhịp phù hợp với vóc dáng, kiến thức chất liệu, và sự tự tin về phong cách cho lễ cưới, tiệc và các khoảnh khắc sau lễ.",
+        "fittingLength": "Thời lượng thử đồ",
+        "fittingLengthValue": "90 phút",
+        "showroomCadence": "Lịch showroom",
+        "showroomCadenceValue": "Theo lịch hẹn"
+    },
+    "FeaturedSection": {
+        "kicker": "Bộ Sưu Tập Nổi Bật",
+        "heading": "Những mẫu váy được yêu thích nhất mùa này cho buổi thử đồ riêng tư.",
+        "viewCatalog": "Xem toàn bộ catalog",
+        "comingSoon": "Các mẫu nổi bật sắp ra mắt",
+        "comingSoonNote": "Danh mục sản phẩm có thể cập nhật từ trang quản trị."
+    },
+    "ProductCard": {
+        "tryOnEligible": "Có thể thử đồ riêng tư",
+        "featured": "Nổi bật",
+        "viewGown": "Xem váy cưới",
+        "bookTryOn": "Đặt lịch thử"
+    },
+    "ProductDetail": {
+        "kicker": "Chi Tiết Sản Phẩm",
+        "featured": "Thiết kế nổi bật",
+        "bookTryOn": "Đặt lịch thử",
+        "backToCatalog": "Quay lại catalog",
+        "confirmationNote": "Xác nhận lịch hẹn trong vòng một ngày làm việc.",
+        "alterationNote": "Bao gồm timeline chỉnh sửa và các mốc thử đồ.",
+        "chatWhatsApp": "Chat trên WhatsApp",
+        "chatZalo": "Chat trên Zalo",
+        "saveToWishlist": "Lưu váy này vào danh sách yêu thích để theo dõi.",
+        "signInToSave": "Đăng nhập",
+        "signInToSaveNote": "để lưu sản phẩm này vào yêu thích."
+    },
+    "Wishlist": {
+        "kicker": "Sản Phẩm Đã Lưu",
+        "heading": "Danh sách yêu thích",
+        "description": "Giữ những mẫu váy yêu thích tại một nơi và đặt lịch thử khi sẵn sàng.",
+        "empty": "Chưa có sản phẩm nào",
+        "emptyNote": "Bắt đầu khám phá catalog và thêm sản phẩm vào danh sách.",
+        "explore": "Khám phá bộ sưu tập",
+        "addToWishlist": "Thêm vào yêu thích",
+        "removeFromWishlist": "Xóa khỏi yêu thích",
+        "actionFailed": "Không thể cập nhật",
+        "tryAgain": "Vui lòng thử lại."
+    },
+    "Account": {
+        "kicker": "Tài Khoản Khách Hàng",
+        "heading": "Chào mừng quay lại",
+        "description": "Quản lý lịch hẹn thử đồ, danh sách yêu thích và thông tin cá nhân tại đây.",
+        "bookingCreated": "Yêu cầu đặt lịch đã được gửi thành công. Chúng tôi sẽ liên hệ sớm.",
+        "profile": "Hồ sơ",
+        "email": "Email",
+        "name": "Tên",
+        "phone": "Số điện thoại",
+        "upcomingBookings": "Lịch hẹn sắp tới",
+        "wishlistItems": "Sản phẩm yêu thích",
+        "bookTryOn": "Đặt lịch thử",
+        "openWishlist": "Mở yêu thích",
+        "recentBookings": "Lịch hẹn gần đây",
+        "noBookings": "Chưa có lịch hẹn",
+        "noBookingsNote": "Đặt buổi thử đồ riêng tư đầu tiên của bạn.",
+        "bookNow": "Đặt ngay",
+        "appointment": "Lịch hẹn",
+        "product": "Sản phẩm",
+        "weddingDate": "Ngày cưới"
+    },
+    "Booking": {
+        "kicker": "Đặt Lịch Thử Đồ",
+        "title": "Đặt lịch hẹn thử đồ cưới riêng tư.",
+        "description": "Chọn ngày, chia sẻ timeline sự kiện, và chúng tôi sẽ xác nhận lịch hẹn cùng ghi chú chuẩn bị từ stylist.",
+        "formTitle": "Biểu mẫu đặt lịch",
+        "timelineTitle": "Timeline dịch vụ",
+        "confirmationNote": "Chúng tôi gửi xác nhận cùng hướng dẫn chuẩn bị từ stylist sau khi xem xét ngày và ghi chú.",
+        "signInPrompt": "Để theo dõi tài khoản và đồng bộ danh sách yêu thích, vui lòng",
+        "signInLink": "đăng nhập",
+        "supportButtons": {
+            "whatsapp": "Hỗ trợ WhatsApp",
+            "zalo": "Hỗ trợ Zalo"
+        },
+        "form": {
+            "submitting": "Đang gửi...",
+            "submitButton": "Gửi yêu cầu đặt lịch",
+            "appointmentDetails": "Chi tiết lịch hẹn",
+            "preferredGown": "Váy cưới ưa thích",
+            "noPreference": "Chưa chọn",
+            "appointmentDate": "Ngày hẹn",
+            "appointmentTime": "Giờ hẹn",
+            "weddingDate": "Ngày cưới (tùy chọn)",
+            "stylingContext": "Bối cảnh phong cách",
+            "styleNotes": "Ghi chú phong cách",
+            "styleNotesPlaceholder": "Chia sẻ chi tiết về địa điểm, sở thích váy cưới và ràng buộc thời gian.",
+            "browseCollections": "Xem bộ sưu tập",
+            "validation": {
+                "reviewField": "Vui lòng xem lại trường này.",
+                "weddingDateError": "Ngày cưới phải từ ngày hẹn trở đi.",
+                "generalError": "Vui lòng kiểm tra lại các trường được đánh dấu."
+            }
+        },
+        "steps": {
+            "stylistPrep": {
+                "title": "Chuẩn bị stylist",
+                "detail": "Ghi chú phong cách của bạn được xem trước khi hẹn tại showroom."
+            },
+            "privateFitting": {
+                "title": "Thử đồ riêng tư",
+                "detail": "Buổi thử được thiết kế theo vóc dáng, kích thước và timeline lễ cưới."
+            },
+            "aftercare": {
+                "title": "Kế hoạch chăm sóc sau",
+                "detail": "Xác nhận các mốc chỉnh sửa và timeline nhận đồ."
+            }
+        },
+        "errors": {
+            "invalidForm": "Vui lòng hoàn thành tất cả các trường bắt buộc.",
+            "invalidDatetime": "Chọn ngày và giờ hẹn trong tương lai.",
+            "invalidProduct": "Sản phẩm đã chọn không khả dụng. Vui lòng chọn váy khác.",
+            "serviceUnavailable": "Dịch vụ đặt lịch tạm thời không khả dụng. Vui lòng thử lại sau.",
+            "slotUnavailable": "Khung giờ đã được đặt. Vui lòng chọn giờ hẹn khác."
+        }
+    },
+    "FloatingCta": {
+        "bookFitting": "Đặt lịch thử",
+        "reserveFitting": "Đặt lịch thử riêng tư"
+    },
+    "Collections": {
+        "kicker": "Bộ Sưu Tập",
+        "heading": "Các mẫu thiết kế đặc trưng, dành cho buổi hẹn riêng tư.",
+        "viewAll": "Xem tất cả"
+    },
+    "NotFound": {
+        "kicker": "Sản phẩm",
+        "heading": "Không tìm thấy váy cưới",
+        "description": "Sản phẩm này có thể đã được lưu trữ hoặc đổi tên. Xem các bộ sưu tập có sẵn để tìm sản phẩm hiện tại.",
+        "backToCatalog": "Quay lại catalog"
+    },
+    "HomeHighlights": {
+        "coutureTitle": "Tuyển chọn Couture",
+        "coutureDesc": "Các mẫu thiết kế giới hạn được chọn lọc dựa trên sự cân bằng, chuyển động và chất lượng hình ảnh.",
+        "fittingTitle": "Kỷ luật thử đồ",
+        "fittingDesc": "Chỉnh sửa theo cột mốc với các điểm kiểm tra timeline trước tuần lễ cưới.",
+        "calendarTitle": "Kế hoạch lịch trình",
+        "calendarDesc": "Thời gian hẹn được sắp xếp từ ngày đính hôn đến ngày bàn giao lễ cưới.",
+        "footerText": "Được xây dựng để đảm bảo sự nhất quán dịch vụ cao cấp qua phong cách, kho hàng và giao tiếp khách hàng."
+    },
+    "CollectionsGrid": {
+        "kicker": "Bộ Sưu Tập",
+        "heading": "Các mẫu thiết kế đặc trưng, dành cho buổi hẹn riêng tư.",
+        "viewAll": "Xem tất cả váy cưới",
+        "savePreview": "Lưu xem trước",
+        "products": {
+            "aurora": {
+                "name": "Aurora Silk A-Line",
+                "silhouette": "Dáng chữ A",
+                "note": "Thân áo xếp nếp thủ công với đuôi váy dài"
+            },
+            "celeste": {
+                "name": "Celeste Crepe Column",
+                "silhouette": "Dáng suông",
+                "note": "Eo được điêu khắc và lưng đính nút ngọc trai"
+            },
+            "elysian": {
+                "name": "Elysian Lace Corset",
+                "silhouette": "Váy xòe",
+                "note": "Lớp phủ ren Pháp và tay áo tháo rời"
+            },
+            "seraphina": {
+                "name": "Seraphina Satin Wrap",
+                "silhouette": "Váy đuôi cá",
+                "note": "Đường may định hình với nếp gấp trễ vai mềm mại"
+            }
+        }
+    },
+    "CollectionsPage": {
+        "kicker": "Danh mục sản phẩm",
+        "title": "Bộ sưu tập váy cưới",
+        "description": "Khám phá các thiết kế được tuyển chọn, so sánh giá cả, và đặt lịch thử váy tại cửa hàng trực tiếp từ trang sản phẩm.",
+        "count": "{count} mẫu váy có sẵn",
+        "noResultsTitle": "Không tìm thấy sản phẩm",
+        "noResultsDesc": "Thử từ khóa khác hoặc xóa bộ lọc."
+    },
+    "CatalogToolbar": {
+        "searchLabel": "Tìm kiếm danh mục",
+        "searchPlaceholder": "Tìm kiếm váy, chất liệu, kiểu dáng...",
+        "sortLabel": "Sắp xếp danh mục",
+        "applyFilters": "Áp dụng bộ lọc"
+    },
+    "CatalogSort": {
+        "featured": "Nổi bật",
+        "newest": "Mới nhất",
+        "price_asc": "Giá: Thấp đến cao",
+        "price_desc": "Giá: Cao đến thấp"
+    },
+    "CatalogPagination": {
+        "previous": "Trước",
+        "next": "Tiếp",
+        "pageOf": "Trang {page} trên {totalPages}"
+    },
+    "TrustBadges": {
+        "kicker": "Tại sao chọn chúng tôi",
+        "items": {
+            "verified": {
+                "title": "Atelier xác thực",
+                "detail": "Tư vấn bởi stylist áo cưới chuyên nghiệp."
+            },
+            "rating": {
+                "title": "Đánh giá 4.9/5",
+                "detail": "Dịch vụ thử đồ riêng tư được khen ngợi."
+            },
+            "timeline": {
+                "title": "Timeline tin cậy",
+                "detail": "Cột mốc thử đồ và chỉnh sửa rõ ràng."
+            },
+            "finish": {
+                "title": "Hoàn thiện Couture",
+                "detail": "Kiểm tra chất lượng trước khi nhận váy."
+            }
+        }
+    },
+    "Testimonials": {
+        "kicker": "Đánh giá từ khách hàng",
+        "heading": "Đặt lịch tự tin, yêu thích ngay lần thử đầu tiên.",
+        "reviews": {
+            "linh": {
+                "quote": "Stylist hiểu ngay ý tưởng buổi lễ của mình. Quy trình đặt lịch rõ ràng, nhịp độ thử đồ rất vừa phải.",
+                "event": "Lễ cưới sân vườn"
+            },
+            "emily": {
+                "quote": "Mình đã chọn váy online, đặt lịch nhanh gọn và tìm được váy ưng ý ngay buổi đầu. Dịch vụ rất riêng tư.",
+                "event": "Tiệc cưới thành phố"
+            },
+            "gia": {
+                "quote": "Từ tin nhắn đầu tiên đến lần chỉnh sửa cuối cùng, giao tiếp rất nhanh và chuyên nghiệp.",
+                "event": "Đám cưới phương xa"
+            }
+        }
+    },
+    "Status": {
+        "PENDING": "Đang chờ",
+        "CONFIRMED": "Đã xác nhận",
+        "CANCELLED": "Đã hủy",
+        "COMPLETED": "Hoàn thành"
+    }
+}

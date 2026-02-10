@@ -1,0 +1,284 @@
+{
+    "LocaleSwitcher": {
+        "vi": "Tiếng Việt",
+        "en": "English"
+    },
+    "Metadata": {
+        "homeTitle": "Luxury Bridal Shop",
+        "homeDescription": "Shop bridal collections, save wishlist favorites, and book private try-on appointments.",
+        "bookTitle": "Book Try-On Appointment",
+        "bookDescription": "Request a private bridal try-on appointment with your preferred gown."
+    },
+    "Layout": {
+        "skipToContent": "Skip to main content",
+        "footerTagline": "Modern bridal appointments and couture styling."
+    },
+    "Nav": {
+        "collections": "Collections",
+        "bookTryOn": "Book Try-On",
+        "wishlist": "Wishlist",
+        "account": "Account",
+        "reserveFitting": "Reserve fitting",
+        "signIn": "Sign in",
+        "contact": "Contact",
+        "menu": "Menu",
+        "myAccount": "My Account",
+        "openMenu": "Open menu"
+    },
+    "Hero": {
+        "badge": "Maison Etoile 2026",
+        "kicker": "Private showroom experience",
+        "heading": "Bridal pieces shaped with couture precision and a quietly modern spirit.",
+        "description": "A luxury bridal house blending editorial taste with intimate service. Discover refined silhouettes, private fittings, and meticulous alteration pathways designed around your timeline.",
+        "reserveFitting": "Reserve private fitting",
+        "browseCollections": "Browse collections",
+        "appointments": "Appointments",
+        "appointmentsValue": "1:1 stylist only",
+        "alterations": "Alterations",
+        "alterationsValue": "Milestone tracked",
+        "leadTime": "Lead time",
+        "leadTimeValue": "4-6 months",
+        "clientExperience": "Client experience",
+        "clientHeading": "One bride, one stylist, full focus.",
+        "clientDescription": "Every appointment is paced around body fit, textile education, and styling confidence for ceremony, reception, and post-ceremony moments.",
+        "fittingLength": "Fitting length",
+        "fittingLengthValue": "90 minutes",
+        "showroomCadence": "Showroom cadence",
+        "showroomCadenceValue": "By appointment"
+    },
+    "FeaturedSection": {
+        "kicker": "Featured Collection",
+        "heading": "Best-loved gowns for private try-on this season.",
+        "viewCatalog": "View full catalog",
+        "comingSoon": "Featured styles coming soon",
+        "comingSoonNote": "Product merchandising can be updated from the admin panel."
+    },
+    "ProductCard": {
+        "tryOnEligible": "Private try-on eligible",
+        "featured": "Featured",
+        "viewGown": "View gown",
+        "bookTryOn": "Book try-on"
+    },
+    "ProductDetail": {
+        "kicker": "Product Detail",
+        "featured": "Featured edit",
+        "bookTryOn": "Book try-on",
+        "backToCatalog": "Back to catalog",
+        "confirmationNote": "Secure appointment confirmation within one business day.",
+        "alterationNote": "Alteration timeline and fitting milestones included.",
+        "chatWhatsApp": "Chat on WhatsApp",
+        "chatZalo": "Chat on Zalo",
+        "saveToWishlist": "Save this gown to your wishlist for account follow-up.",
+        "signInToSave": "Sign in",
+        "signInToSaveNote": "to save this product to your wishlist."
+    },
+    "Wishlist": {
+        "kicker": "Saved Favorites",
+        "heading": "Your wishlist",
+        "description": "Keep your favorite gowns in one place and book try-on appointments when you are ready.",
+        "empty": "No saved products yet",
+        "emptyNote": "Start exploring the catalog and add products to shortlist.",
+        "explore": "Explore collections",
+        "addToWishlist": "Add to wishlist",
+        "removeFromWishlist": "Remove from wishlist",
+        "actionFailed": "Wishlist action failed",
+        "tryAgain": "Please try again in a moment."
+    },
+    "Account": {
+        "kicker": "Client Account",
+        "heading": "Welcome back",
+        "description": "Manage your try-on bookings, wishlist shortlist, and profile information in one place.",
+        "bookingCreated": "Booking request submitted successfully. We will follow up shortly.",
+        "profile": "Profile",
+        "email": "Email",
+        "name": "Name",
+        "phone": "Phone",
+        "upcomingBookings": "Upcoming bookings",
+        "wishlistItems": "Wishlist items",
+        "bookTryOn": "Book try-on",
+        "openWishlist": "Open wishlist",
+        "recentBookings": "Recent bookings",
+        "noBookings": "No bookings yet",
+        "noBookingsNote": "Schedule your first private try-on appointment.",
+        "bookNow": "Book now",
+        "appointment": "Appointment",
+        "product": "Product",
+        "weddingDate": "Wedding date"
+    },
+    "Booking": {
+        "kicker": "Try-On Booking",
+        "title": "Reserve your private bridal appointment.",
+        "description": "Choose a date, share your event timeline, and we will confirm your fitting request with stylist prep notes.",
+        "formTitle": "Appointment request form",
+        "timelineTitle": "Service timeline",
+        "confirmationNote": "We send confirmation details with stylist prep guidance after reviewing your preferred date and notes.",
+        "signInPrompt": "For account tracking and wishlist sync, please",
+        "signInLink": "sign in",
+        "supportButtons": {
+            "whatsapp": "WhatsApp support",
+            "zalo": "Zalo support"
+        },
+        "form": {
+            "submitting": "Submitting...",
+            "submitButton": "Submit booking request",
+            "appointmentDetails": "Appointment details",
+            "preferredGown": "Preferred gown",
+            "noPreference": "No preference yet",
+            "appointmentDate": "Appointment date",
+            "appointmentTime": "Appointment time",
+            "weddingDate": "Wedding date (optional)",
+            "stylingContext": "Styling context",
+            "styleNotes": "Style notes",
+            "styleNotesPlaceholder": "Share venue details, dress preferences, and timeline constraints.",
+            "browseCollections": "Browse collections",
+            "validation": {
+                "reviewField": "Please review this field.",
+                "weddingDateError": "Wedding date must be on or after appointment date.",
+                "generalError": "Please review the highlighted fields."
+            }
+        },
+        "steps": {
+            "stylistPrep": {
+                "title": "Stylist preparation",
+                "detail": "Your style notes are reviewed ahead of the showroom appointment."
+            },
+            "privateFitting": {
+                "title": "Private fitting",
+                "detail": "Try-on session tailored to silhouette, fit, and ceremony timeline."
+            },
+            "aftercare": {
+                "title": "Aftercare planning",
+                "detail": "Alteration milestones and pickup timeline are confirmed with you."
+            }
+        },
+        "errors": {
+            "invalidForm": "Please complete all required fields.",
+            "invalidDatetime": "Choose a future appointment date and time.",
+            "invalidProduct": "Selected product is unavailable. Please choose another gown.",
+            "serviceUnavailable": "Booking service is temporarily unavailable. Please try again shortly.",
+            "slotUnavailable": "That time slot has been reserved. Please choose a different appointment time."
+        }
+    },
+    "FloatingCta": {
+        "bookFitting": "Book fitting",
+        "reserveFitting": "Reserve private fitting"
+    },
+    "Collections": {
+        "kicker": "Collections",
+        "heading": "Signature silhouettes, curated for private appointments.",
+        "viewAll": "View all gowns"
+    },
+    "NotFound": {
+        "kicker": "Product",
+        "heading": "Gown not found",
+        "description": "This product may have been archived or renamed. Browse available collections for current inventory.",
+        "backToCatalog": "Back to catalog"
+    },
+    "HomeHighlights": {
+        "coutureTitle": "Couture curation",
+        "coutureDesc": "Small-batch designer edits selected for balance, movement, and photography quality.",
+        "fittingTitle": "Fitting discipline",
+        "fittingDesc": "Milestone-based alterations with timeline checkpoints before the wedding week.",
+        "calendarTitle": "Calendar planning",
+        "calendarDesc": "Appointment timing mapped from engagement to ceremony day handoff.",
+        "footerText": "Built for premium service consistency across styling, inventory, and client communication."
+    },
+    "CollectionsGrid": {
+        "kicker": "Collections",
+        "heading": "Signature silhouettes, curated for private appointments.",
+        "viewAll": "View all gowns",
+        "savePreview": "Save preview",
+        "products": {
+            "aurora": {
+                "name": "Aurora Silk A-Line",
+                "silhouette": "A-Line",
+                "note": "Hand draped bodice with cathedral train"
+            },
+            "celeste": {
+                "name": "Celeste Crepe Column",
+                "silhouette": "Column",
+                "note": "Sculpted waist and pearl button back"
+            },
+            "elysian": {
+                "name": "Elysian Lace Corset",
+                "silhouette": "Ball Gown",
+                "note": "French lace overlay and detachable sleeves"
+            },
+            "seraphina": {
+                "name": "Seraphina Satin Wrap",
+                "silhouette": "Fit & Flare",
+                "note": "Contoured seams with soft off-shoulder drape"
+            }
+        }
+    },
+    "CollectionsPage": {
+        "kicker": "Product Catalog",
+        "title": "Bridal collections",
+        "description": "Explore curated silhouettes, compare pricing, and schedule in-store try-on appointments directly from each product page.",
+        "count": "{count} gowns available",
+        "noResultsTitle": "No products found",
+        "noResultsDesc": "Try a different keyword or remove filters."
+    },
+    "CatalogToolbar": {
+        "searchLabel": "Search catalog",
+        "searchPlaceholder": "Search gowns, fabrics, silhouettes...",
+        "sortLabel": "Sort catalog",
+        "applyFilters": "Apply filters"
+    },
+    "CatalogSort": {
+        "featured": "Featured",
+        "newest": "Newest",
+        "price_asc": "Price: Low to high",
+        "price_desc": "Price: High to low"
+    },
+    "CatalogPagination": {
+        "previous": "Previous",
+        "next": "Next",
+        "pageOf": "Page {page} of {totalPages}"
+    },
+    "TrustBadges": {
+        "kicker": "Why brides book with us",
+        "items": {
+            "verified": {
+                "title": "Verified atelier",
+                "detail": "Consultations led by trained bridal stylists."
+            },
+            "rating": {
+                "title": "4.9 client rating",
+                "detail": "Consistently praised private fitting service."
+            },
+            "timeline": {
+                "title": "Timeline reliability",
+                "detail": "Clear fitting and alteration milestones."
+            },
+            "finish": {
+                "title": "Couture-level finish",
+                "detail": "Quality checks before every final pickup."
+            }
+        }
+    },
+    "Testimonials": {
+        "kicker": "Client testimonials",
+        "heading": "Booked with confidence, loved in person.",
+        "reviews": {
+            "linh": {
+                "quote": "The stylist understood my ceremony vision immediately. The booking process was clear, and every fitting was perfectly paced.",
+                "event": "Garden Ceremony"
+            },
+            "emily": {
+                "quote": "I shortlisted dresses online, booked in one click, and found my gown in the first appointment. The service felt truly private.",
+                "event": "City Wedding"
+            },
+            "gia": {
+                "quote": "From first message to final alteration, communication was fast and professional. I always knew exactly what was next.",
+                "event": "Destination Wedding"
+            }
+        }
+    },
+    "Status": {
+        "PENDING": "Pending",
+        "CONFIRMED": "Confirmed",
+        "CANCELLED": "Cancelled",
+        "COMPLETED": "Completed"
+    }
+}

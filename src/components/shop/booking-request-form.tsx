@@ -1,7 +1,8 @@
 "use client";
 
 import { m, useReducedMotion } from "framer-motion";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 import { type FormEvent, useEffect, useMemo, useState } from "react";
 import { useFormStatus } from "react-dom";
 
@@ -29,10 +30,11 @@ type BookingRequestFormProps = {
 
 function SubmitBookingButton() {
   const { pending } = useFormStatus();
+  const t = useTranslations("Booking.form");
 
   return (
     <Button type="submit" size="lg" disabled={pending}>
-      {pending ? "Submitting..." : "Submit booking request"}
+      {pending ? t("submitting") : t("submitButton")}
     </Button>
   );
 }
@@ -42,6 +44,7 @@ export function BookingRequestForm({
   products,
   selectedProductId
 }: BookingRequestFormProps) {
+  const t = useTranslations("Booking.form");
   const shouldReduceMotion = useReducedMotion();
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const [shouldShake, setShouldShake] = useState(false);
@@ -95,7 +98,7 @@ export function BookingRequestForm({
 
     setError(
       target.name,
-      target.validationMessage || "Please review this field."
+      target.validationMessage || t("validation.reviewField")
     );
     triggerShake();
   }
@@ -127,7 +130,7 @@ export function BookingRequestForm({
       event.preventDefault();
       setError(
         "eventDate",
-        "Wedding date must be on or after appointment date."
+        t("validation.weddingDateError")
       );
       triggerShake();
     }
@@ -159,11 +162,11 @@ export function BookingRequestForm({
           variants={fadeUp}
         >
           <p className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-brand-taupe">
-            Appointment details
+            {t("appointmentDetails")}
           </p>
 
           <div className="space-y-2">
-            <Label htmlFor="productId">Preferred gown</Label>
+            <Label htmlFor="productId">{t("preferredGown")}</Label>
             <div className="relative">
               <select
                 id="productId"
@@ -175,7 +178,7 @@ export function BookingRequestForm({
                   fieldErrors.productId ? "productId-error" : undefined
                 }
               >
-                <option value="">No preference yet</option>
+                <option value="">{t("noPreference")}</option>
                 {products.map((product) => (
                   <option key={product.id} value={product.id}>
                     {product.name}
@@ -196,7 +199,7 @@ export function BookingRequestForm({
 
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-2">
-              <Label htmlFor="appointmentDate">Appointment date</Label>
+              <Label htmlFor="appointmentDate">{t("appointmentDate")}</Label>
               <Input
                 id="appointmentDate"
                 name="appointmentDate"
@@ -222,7 +225,7 @@ export function BookingRequestForm({
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="appointmentTime">Appointment time</Label>
+              <Label htmlFor="appointmentTime">{t("appointmentTime")}</Label>
               <Input
                 id="appointmentTime"
                 name="appointmentTime"
@@ -248,7 +251,7 @@ export function BookingRequestForm({
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="eventDate">Wedding date (optional)</Label>
+            <Label htmlFor="eventDate">{t("weddingDate")}</Label>
             <Input
               id="eventDate"
               name="eventDate"
@@ -276,14 +279,14 @@ export function BookingRequestForm({
           variants={fadeUp}
         >
           <p className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-brand-taupe">
-            Styling context
+            {t("stylingContext")}
           </p>
           <div className="space-y-2">
-            <Label htmlFor="notes">Style notes</Label>
+            <Label htmlFor="notes">{t("styleNotes")}</Label>
             <Textarea
               id="notes"
               name="notes"
-              placeholder="Share venue details, dress preferences, and timeline constraints."
+              placeholder={t("styleNotesPlaceholder")}
               aria-invalid={Boolean(fieldErrors.notes)}
               aria-describedby={fieldErrors.notes ? "notes-error" : undefined}
             />
@@ -305,13 +308,13 @@ export function BookingRequestForm({
         >
           <SubmitBookingButton />
           <Button asChild variant="outline" size="lg">
-            <Link href="/collections">Browse collections</Link>
+            <Link href="/collections">{t("browseCollections")}</Link>
           </Button>
         </m.div>
 
         {Object.keys(fieldErrors).length > 0 ? (
           <p className="text-sm text-destructive" aria-live="polite">
-            Please review the highlighted fields.
+            {t("validation.generalError")}
           </p>
         ) : null}
       </m.form>

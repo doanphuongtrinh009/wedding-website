@@ -1,24 +1,27 @@
 import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
-import {
-  NextResponse,
-  type NextFetchEvent,
-  type NextRequest
-} from "next/server";
+import createMiddleware from "next-intl/middleware";
+import { NextRequest } from "next/server";
+
+import { routing } from "./i18n/routing";
+
+const intlMiddleware = createMiddleware(routing);
 
 const isProtectedRoute = createRouteMatcher([
+  "/:locale/admin(.*)",
+  "/:locale/bookings(.*)",
+  "/:locale/account(.*)",
+  "/:locale/wishlist(.*)",
   "/admin(.*)",
   "/bookings(.*)",
   "/account(.*)",
   "/wishlist(.*)"
 ]);
-const isClerkConfigured = Boolean(
-  process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY && process.env.CLERK_SECRET_KEY
-);
 
-export default clerkMiddleware(async (auth, req) => {
+export default clerkMiddleware(async (auth, req: NextRequest) => {
   if (isProtectedRoute(req)) {
-    await auth().protect();
+    await auth.protect();
   }
+  return intlMiddleware(req);
 });
 
 export const config = {

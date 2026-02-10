@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
+import { getTranslations } from "next-intl/server";
 import { CalendarClock, CheckCircle2, Scissors } from "lucide-react";
 
 import { createTryOnBookingAction } from "@/actions/shop-actions";
@@ -18,46 +19,43 @@ function getSingleSearchParam(value: string | string[] | undefined) {
   return Array.isArray(value) ? value[0] : value;
 }
 
-const errorCopy: Record<string, string> = {
-  "invalid-form": "Please complete all required fields.",
-  "invalid-datetime": "Choose a future appointment date and time.",
-  "invalid-product":
-    "Selected product is unavailable. Please choose another gown.",
-  "service-unavailable":
-    "Booking service is temporarily unavailable. Please try again shortly.",
-  "slot-unavailable":
-    "That time slot has been reserved. Please choose a different appointment time."
-};
-
-const experienceSteps = [
-  {
-    title: "Stylist preparation",
-    detail: "Your style notes are reviewed ahead of the showroom appointment.",
-    icon: Scissors
-  },
-  {
-    title: "Private fitting",
-    detail:
-      "Try-on session tailored to silhouette, fit, and ceremony timeline.",
-    icon: CalendarClock
-  },
-  {
-    title: "Aftercare planning",
-    detail: "Alteration milestones and pickup timeline are confirmed with you.",
-    icon: CheckCircle2
-  }
-] as const;
-
 export default async function BookingPage({
   searchParams
 }: {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
+  const t = await getTranslations("Booking");
   const params = await searchParams;
   const products = await getBookableProducts();
 
   const selectedProductId = getSingleSearchParam(params.productId) ?? "";
   const error = getSingleSearchParam(params.error);
+
+  const errorCopy: Record<string, string> = {
+    "invalid-form": t("errors.invalidForm"),
+    "invalid-datetime": t("errors.invalidDatetime"),
+    "invalid-product": t("errors.invalidProduct"),
+    "service-unavailable": t("errors.serviceUnavailable"),
+    "slot-unavailable": t("errors.slotUnavailable")
+  };
+
+  const experienceSteps = [
+    {
+      title: t("steps.stylistPrep.title"),
+      detail: t("steps.stylistPrep.detail"),
+      icon: Scissors
+    },
+    {
+      title: t("steps.privateFitting.title"),
+      detail: t("steps.privateFitting.detail"),
+      icon: CalendarClock
+    },
+    {
+      title: t("steps.aftercare.title"),
+      detail: t("steps.aftercare.detail"),
+      icon: CheckCircle2
+    }
+  ] as const;
 
   return (
     <section className="section-shell relative overflow-hidden">
@@ -67,12 +65,9 @@ export default async function BookingPage({
       />
 
       <div className="relative z-10 mb-space-lg max-w-2xl space-y-4">
-        <p className="editorial-kicker">Try-On Booking</p>
-        <h1>Reserve your private bridal appointment.</h1>
-        <p className="text-muted-foreground">
-          Choose a date, share your event timeline, and we will confirm your
-          fitting request with stylist prep notes.
-        </p>
+        <p className="editorial-kicker">{t("kicker")}</p>
+        <h1>{t("title")}</h1>
+        <p className="text-muted-foreground">{t("description")}</p>
       </div>
 
       {error && errorCopy[error] ? (
@@ -91,7 +86,7 @@ export default async function BookingPage({
           className="soft-frame bg-[linear-gradient(155deg,rgba(255,255,255,0.95)_0%,rgba(252,246,241,0.9)_100%)]"
         >
           <CardHeader>
-            <CardTitle>Appointment request form</CardTitle>
+            <CardTitle>{t("formTitle")}</CardTitle>
           </CardHeader>
           <CardContent>
             <BookingRequestForm
@@ -104,7 +99,7 @@ export default async function BookingPage({
 
         <Card variant="editorial" className="soft-frame bg-card/82">
           <CardHeader>
-            <CardTitle>Service timeline</CardTitle>
+            <CardTitle>{t("timelineTitle")}</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             {experienceSteps.map((step) => (
@@ -125,18 +120,17 @@ export default async function BookingPage({
 
             <div className="rounded-xl border border-border/70 bg-background/70 p-4">
               <p className="text-sm text-muted-foreground">
-                We send confirmation details with stylist prep guidance after
-                reviewing your preferred date and notes.
+                {t("confirmationNote")}
               </p>
             </div>
 
             <p className="text-sm text-muted-foreground">
-              For account tracking and wishlist sync, please{" "}
+              {t("signInPrompt")}{" "}
               <Link
                 href="/sign-in"
                 className="font-semibold text-foreground underline-offset-4 hover:underline"
               >
-                sign in
+                {t("signInLink")}
               </Link>
               .
             </p>
@@ -148,7 +142,7 @@ export default async function BookingPage({
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-full border border-border/80 bg-card/85 px-4 py-2 text-[0.66rem] font-semibold uppercase tracking-[0.13em] text-foreground transition hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background motion-safe:hover:-translate-y-0.5"
               >
-                WhatsApp support
+                {t("supportButtons.whatsapp")}
               </a>
               <a
                 href={siteConfig.support.zaloUrl}
@@ -156,7 +150,7 @@ export default async function BookingPage({
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-full border border-border/80 bg-card/85 px-4 py-2 text-[0.66rem] font-semibold uppercase tracking-[0.13em] text-foreground transition hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background motion-safe:hover:-translate-y-0.5"
               >
-                Zalo support
+                {t("supportButtons.zalo")}
               </a>
             </div>
           </CardContent>

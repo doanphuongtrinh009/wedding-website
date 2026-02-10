@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
+import { getTranslations } from "next-intl/server";
 
 import { MotionStaggerGrid } from "@/components/motion/stagger-grid";
 import { ProductCard } from "@/components/shop/product-card";
@@ -7,37 +8,41 @@ import { Button } from "@/components/ui/button";
 import { requireUserProfile } from "@/lib/auth";
 import { getWishlistProducts } from "@/lib/shop";
 
-export const metadata: Metadata = {
-  title: "Wishlist",
-  robots: {
-    index: false,
-    follow: false
-  }
-};
+export async function generateMetadata(props: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await props.params;
+  const t = await getTranslations({ locale, namespace: "Wishlist" });
+
+  return {
+    title: t("heading"),
+    description: t("description"),
+    robots: {
+      index: false,
+      follow: false
+    }
+  };
+}
 
 export default async function WishlistPage() {
+  const t = await getTranslations("Wishlist");
   const profile = await requireUserProfile();
   const wishlistItems = await getWishlistProducts(profile.id);
 
   return (
     <section className="section-shell">
       <div className="mb-space-lg space-y-4">
-        <p className="editorial-kicker">Saved Favorites</p>
-        <h1>Your wishlist</h1>
-        <p className="max-w-2xl text-muted-foreground">
-          Keep your favorite gowns in one place and book try-on appointments
-          when you are ready.
-        </p>
+        <p className="editorial-kicker">{t("kicker")}</p>
+        <h1>{t("heading")}</h1>
+        <p className="max-w-2xl text-muted-foreground">{t("description")}</p>
       </div>
 
       {wishlistItems.length === 0 ? (
         <div className="rounded-2xl border border-border/70 bg-card/85 p-10 text-center">
-          <p className="font-display text-3xl">No saved products yet</p>
-          <p className="mt-2 text-muted-foreground">
-            Start exploring the catalog and add products to shortlist.
-          </p>
+          <p className="font-display text-3xl">{t("empty")}</p>
+          <p className="mt-2 text-muted-foreground">{t("emptyNote")}</p>
           <Button asChild className="mt-5">
-            <Link href="/collections">Explore collections</Link>
+            <Link href="/collections">{t("explore")}</Link>
           </Button>
         </div>
       ) : (

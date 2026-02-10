@@ -1,4 +1,7 @@
-import Link from "next/link";
+"use client";
+
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 
 import { buttonVariants } from "@/components/ui/button";
 import type { CatalogSort } from "@/lib/shop";
@@ -36,6 +39,8 @@ export function CatalogPagination({
   query,
   sort
 }: CatalogPaginationProps) {
+  const t = useTranslations("CatalogPagination");
+
   if (totalPages <= 1) {
     return null;
   }
@@ -51,11 +56,11 @@ export function CatalogPagination({
           page <= 1 && "pointer-events-none opacity-50"
         )}
       >
-        Previous
+        {t("previous")}
       </Link>
 
       <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-        Page {page} of {totalPages}
+        {t("pageOf", { page, totalPages })}
       </p>
 
       <Link
@@ -67,7 +72,7 @@ export function CatalogPagination({
           page >= totalPages && "pointer-events-none opacity-50"
         )}
       >
-        Next
+        {t("next")}
       </Link>
     </div>
   );

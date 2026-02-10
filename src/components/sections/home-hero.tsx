@@ -1,8 +1,9 @@
 "use client";
 
 import { m, useReducedMotion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 
 import {
   fadeUp,
@@ -15,6 +16,7 @@ import { Button } from "@/components/ui/button";
 
 export function HomeHero() {
   const shouldReduceMotion = useReducedMotion();
+  const t = useTranslations("Hero");
 
   return (
     <m.section
@@ -58,21 +60,18 @@ export function HomeHero() {
         variants={staggerContainer(0.08)}
       >
         <m.div className="flex flex-wrap items-center gap-3" variants={fadeUp}>
-          <Badge variant="secondary">Maison Etoile 2026</Badge>
+          <Badge variant="secondary">{t("badge")}</Badge>
           <p className="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-brand-taupe">
-            Private showroom experience
+            {t("kicker")}
           </p>
         </m.div>
 
         <m.h1 className="max-w-3xl" variants={fadeUp}>
-          Bridal pieces shaped with couture precision and a quietly modern
-          spirit.
+          {t("heading")}
         </m.h1>
 
         <m.p className="max-w-2xl text-muted-foreground" variants={fadeUp}>
-          A luxury bridal house blending editorial taste with intimate service.
-          Discover refined silhouettes, private fittings, and meticulous
-          alteration pathways designed around your timeline.
+          {t("description")}
         </m.p>
 
         <m.div
@@ -80,10 +79,10 @@ export function HomeHero() {
           variants={fadeUp}
         >
           <Button asChild size="lg">
-            <Link href="/book">Reserve private fitting</Link>
+            <Link href="/book">{t("reserveFitting")}</Link>
           </Button>
           <Button asChild variant="outline" size="lg">
-            <Link href="/collections">Browse collections</Link>
+            <Link href="/collections">{t("browseCollections")}</Link>
           </Button>
         </m.div>
 
@@ -93,25 +92,25 @@ export function HomeHero() {
         >
           <div className="rounded-xl border border-border/70 bg-background/75 px-4 py-3">
             <dt className="text-[0.7rem] uppercase tracking-[0.18em] text-brand-taupe">
-              Appointments
+              {t("appointments")}
             </dt>
             <dd className="pt-1 font-medium text-foreground">
-              1:1 stylist only
+              {t("appointmentsValue")}
             </dd>
           </div>
           <div className="rounded-xl border border-border/70 bg-background/75 px-4 py-3">
             <dt className="text-[0.7rem] uppercase tracking-[0.18em] text-brand-taupe">
-              Alterations
+              {t("alterations")}
             </dt>
             <dd className="pt-1 font-medium text-foreground">
-              Milestone tracked
+              {t("alterationsValue")}
             </dd>
           </div>
           <div className="rounded-xl border border-border/70 bg-background/75 px-4 py-3">
             <dt className="text-[0.7rem] uppercase tracking-[0.18em] text-brand-taupe">
-              Lead time
+              {t("leadTime")}
             </dt>
-            <dd className="pt-1 font-medium text-foreground">4-6 months</dd>
+            <dd className="pt-1 font-medium text-foreground">{t("leadTimeValue")}</dd>
           </div>
         </m.dl>
       </m.div>
@@ -120,23 +119,22 @@ export function HomeHero() {
         className="relative z-10 space-y-4 rounded-[1.6rem] border border-border/75 bg-[linear-gradient(160deg,rgba(255,255,255,0.96)_0%,rgba(253,246,240,0.92)_100%)] p-6 shadow-luxury md:p-8"
         variants={fadeUp}
       >
-        <p className="editorial-kicker">Client experience</p>
+        <p className="editorial-kicker">{t("clientExperience")}</p>
         <h2 className="text-[2rem] md:text-[2.9rem]">
-          One bride, one stylist, full focus.
+          {t("clientHeading")}
         </h2>
         <p className="text-sm text-muted-foreground md:text-base">
-          Every appointment is paced around body fit, textile education, and
-          styling confidence for ceremony, reception, and post-ceremony moments.
+          {t("clientDescription")}
         </p>
 
         <dl className="grid grid-cols-2 gap-3 pt-2 text-sm">
           <div className="rounded-xl border border-border/70 bg-background/75 p-4">
-            <dt className="text-muted-foreground">Fitting length</dt>
-            <dd className="pt-1 font-medium">90 minutes</dd>
+            <dt className="text-muted-foreground">{t("fittingLength")}</dt>
+            <dd className="pt-1 font-medium">{t("fittingLengthValue")}</dd>
           </div>
           <div className="rounded-xl border border-border/70 bg-background/75 p-4">
-            <dt className="text-muted-foreground">Showroom cadence</dt>
-            <dd className="pt-1 font-medium">By appointment</dd>
+            <dt className="text-muted-foreground">{t("showroomCadence")}</dt>
+            <dd className="pt-1 font-medium">{t("showroomCadenceValue")}</dd>
           </div>
         </dl>
       </m.div>

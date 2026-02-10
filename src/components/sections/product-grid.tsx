@@ -1,4 +1,7 @@
-import Link from "next/link";
+"use client";
+
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -10,55 +13,34 @@ import {
   CardTitle
 } from "@/components/ui/card";
 
-const products = [
-  {
-    id: "aurora",
-    name: "Aurora Silk A-Line",
-    silhouette: "A-Line",
-    price: "$2,850",
-    note: "Hand draped bodice with cathedral train"
-  },
-  {
-    id: "celeste",
-    name: "Celeste Crepe Column",
-    silhouette: "Column",
-    price: "$3,120",
-    note: "Sculpted waist and pearl button back"
-  },
-  {
-    id: "elysian",
-    name: "Elysian Lace Corset",
-    silhouette: "Ball Gown",
-    price: "$4,250",
-    note: "French lace overlay and detachable sleeves"
-  },
-  {
-    id: "seraphina",
-    name: "Seraphina Satin Wrap",
-    silhouette: "Fit & Flare",
-    price: "$3,480",
-    note: "Contoured seams with soft off-shoulder drape"
-  }
-] as const;
+const productPrices = {
+  aurora: "$2,850",
+  celeste: "$3,120",
+  elysian: "$4,250",
+  seraphina: "$3,480"
+} as const;
+
+type ProductId = keyof typeof productPrices;
 
 export function ProductGrid() {
+  const t = useTranslations("CollectionsGrid");
+  const productIds = Object.keys(productPrices) as ProductId[];
+
   return (
     <section className="section-shell pt-0">
       <div className="mb-space-lg flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <div className="space-y-4">
-          <p className="editorial-kicker">Collections</p>
-          <h2 className="max-w-2xl">
-            Signature silhouettes, curated for private appointments.
-          </h2>
+          <p className="editorial-kicker">{t("kicker")}</p>
+          <h2 className="max-w-2xl">{t("heading")}</h2>
         </div>
         <Button asChild variant="secondary" className="w-fit">
-          <Link href="/collections">View all gowns</Link>
+          <Link href="/collections">{t("viewAll")}</Link>
         </Button>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-        {products.map((product, index) => (
-          <Card key={product.id} variant="product" className="overflow-hidden">
+        {productIds.map((id, index) => (
+          <Card key={id} variant="product" className="overflow-hidden">
             <div
               className="relative aspect-[4/5] border-b border-border/70"
               style={{
@@ -73,24 +55,26 @@ export function ProductGrid() {
                   variant="outline"
                   className="bg-background/70 backdrop-blur"
                 >
-                  {product.silhouette}
+                  {t(`products.${id}.silhouette`)}
                 </Badge>
               </div>
             </div>
             <CardHeader className="space-y-2 pb-4">
               <CardTitle className="text-[1.85rem] leading-tight">
-                {product.name}
+                {t(`products.${id}.name`)}
               </CardTitle>
-              <p className="text-sm text-muted-foreground">{product.note}</p>
+              <p className="text-sm text-muted-foreground">
+                {t(`products.${id}.note`)}
+              </p>
             </CardHeader>
             <CardContent className="pt-0">
               <p className="font-display text-3xl leading-none text-brand-cocoa">
-                {product.price}
+                {productPrices[id]}
               </p>
             </CardContent>
             <CardFooter>
               <Button variant="outline" className="w-full">
-                Save preview
+                {t("savePreview")}
               </Button>
             </CardFooter>
           </Card>

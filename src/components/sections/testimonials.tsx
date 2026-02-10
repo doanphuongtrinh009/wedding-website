@@ -1,32 +1,29 @@
 "use client";
 
 import { useReducedMotion, m } from "framer-motion";
+import { useTranslations } from "next-intl";
+
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { fadeUp, motionTimings, staggerContainer } from "@/components/motion/variants";
 
 const testimonials = [
   {
-    quote:
-      "The stylist understood my ceremony vision immediately. The booking process was clear, and every fitting was perfectly paced.",
-    name: "Linh T.",
-    event: "Garden Ceremony"
+    key: "linh",
+    name: "Linh T."
   },
   {
-    quote:
-      "I shortlisted dresses online, booked in one click, and found my gown in the first appointment. The service felt truly private.",
-    name: "Emily R.",
-    event: "City Wedding"
+    key: "emily",
+    name: "Emily R."
   },
   {
-    quote:
-      "From first message to final alteration, communication was fast and professional. I always knew exactly what was next.",
-    name: "Gia N.",
-    event: "Destination Wedding"
+    key: "gia",
+    name: "Gia N."
   }
 ] as const;
 
 export function Testimonials() {
   const shouldReduceMotion = useReducedMotion();
+  const t = useTranslations("Testimonials");
 
   return (
     <m.section
@@ -37,13 +34,13 @@ export function Testimonials() {
       variants={staggerContainer(motionTimings.stagger, 0.1)}
     >
       <m.div className="mb-6 space-y-3" variants={fadeUp}>
-        <p className="editorial-kicker">Client testimonials</p>
-        <h2 className="max-w-2xl">Booked with confidence, loved in person.</h2>
+        <p className="editorial-kicker">{t("kicker")}</p>
+        <h2 className="max-w-2xl">{t("heading")}</h2>
       </m.div>
 
       <div className="grid gap-4 md:grid-cols-3 md:gap-5">
         {testimonials.map((testimonial) => (
-          <m.div key={testimonial.name} variants={fadeUp}>
+          <m.div key={testimonial.key} variants={fadeUp}>
             <Card
               variant="editorial"
               className="bg-card/86"
@@ -54,13 +51,15 @@ export function Testimonials() {
                 </p>
               </CardHeader>
               <CardContent className="space-y-4">
-                <p className="text-base text-foreground">“{testimonial.quote}”</p>
+                <p className="text-base text-foreground">
+                  “{t(`reviews.${testimonial.key}.quote`)}”
+                </p>
                 <div>
                   <p className="font-semibold text-foreground">
                     {testimonial.name}
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    {testimonial.event}
+                    {t(`reviews.${testimonial.key}.event`)}
                   </p>
                 </div>
               </CardContent>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 
 import { CatalogPagination } from "@/components/shop/catalog-pagination";
 import { CatalogToolbar } from "@/components/shop/catalog-toolbar";
@@ -12,14 +13,17 @@ import {
   catalogSortOptions
 } from "@/lib/shop";
 
-export const metadata: Metadata = {
-  title: "Bridal Collections",
-  description:
-    "Browse luxury bridal gowns and reserve private try-on appointments.",
-  alternates: {
-    canonical: "/collections"
-  }
-};
+export async function generateMetadata() {
+  const t = await getTranslations("CollectionsPage");
+
+  return {
+    title: t("title"),
+    description: t("description"),
+    alternates: {
+      canonical: "/collections"
+    }
+  };
+}
 
 const allowedSortValues = new Set(
   catalogSortOptions.map((option) => option.value)
@@ -54,6 +58,7 @@ export default async function CollectionsPage({
 }: {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
+  const t = await getTranslations("CollectionsPage");
   const params = await searchParams;
   const query = getSingleSearchParam(params.q)?.trim() ?? "";
   const sort = getSortValue(getSingleSearchParam(params.sort));
@@ -74,26 +79,21 @@ export default async function CollectionsPage({
   return (
     <section className="section-shell">
       <div className="mb-space-lg space-y-4">
-        <p className="editorial-kicker">Product Catalog</p>
-        <h1>Bridal collections</h1>
-        <p className="max-w-2xl text-muted-foreground">
-          Explore curated silhouettes, compare pricing, and schedule in-store
-          try-on appointments directly from each product page.
-        </p>
+        <p className="editorial-kicker">{t("kicker")}</p>
+        <h1>{t("title")}</h1>
+        <p className="max-w-2xl text-muted-foreground">{t("description")}</p>
       </div>
 
       <CatalogToolbar defaultQuery={query} defaultSort={sort} />
 
       <div className="mt-5 flex items-center justify-between gap-3 rounded-xl border border-border/70 bg-background/70 px-4 py-3 text-sm text-muted-foreground">
-        <p>{catalog.total} gowns available</p>
+        <p>{t("count", { count: catalog.total })}</p>
       </div>
 
       {catalog.items.length === 0 ? (
         <div className="bg-card/82 mt-6 rounded-[1.3rem] border border-border/70 p-10 text-center shadow-editorial">
-          <p className="font-display text-3xl">No products found</p>
-          <p className="mt-2 text-muted-foreground">
-            Try a different keyword or remove filters.
-          </p>
+          <p className="font-display text-3xl">{t("noResultsTitle")}</p>
+          <p className="mt-2 text-muted-foreground">{t("noResultsDesc")}</p>
         </div>
       ) : (
         <MotionStaggerGrid className="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3">

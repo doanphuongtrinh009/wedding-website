@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { notFound } from "next/navigation";
+import { getTranslations } from "next-intl/server";
 
 import { ProductGallery } from "@/components/shop/product-gallery";
 import { Badge } from "@/components/ui/badge";
@@ -14,7 +15,6 @@ import { getProductBySlug, getWishlistProductIds } from "@/lib/shop";
 type ProductDetailPageProps = {
   params: Promise<{ slug: string }>;
 };
-
 
 export async function generateMetadata(
   props: ProductDetailPageProps
@@ -53,10 +53,8 @@ export async function generateMetadata(
   };
 }
 
-
-export default async function ProductDetailPage(
-  props: ProductDetailPageProps
-) {
+export default async function ProductDetailPage(props: ProductDetailPageProps) {
+  const t = await getTranslations("ProductDetail");
   const params = await props.params;
   const { slug } = params;
   const profile = await getCurrentUserProfile();
@@ -101,13 +99,13 @@ export default async function ProductDetailPage(
 
         <div className="space-y-6">
           <div className="space-y-4">
-            <p className="editorial-kicker">Product Detail</p>
+            <p className="editorial-kicker">{t("kicker")}</p>
             <h1 className="text-5xl md:text-6xl">{product.name}</h1>
             <p className="font-display text-4xl leading-none text-brand-cocoa">
               {formatCurrency(product.priceInCents, product.currency)}
             </p>
             {product.isFeatured ? (
-              <Badge variant="secondary">Featured edit</Badge>
+              <Badge variant="secondary">{t("featured")}</Badge>
             ) : null}
           </div>
 
@@ -115,16 +113,16 @@ export default async function ProductDetailPage(
 
           <div className="grid gap-3 sm:grid-cols-2">
             <Button asChild className="w-full">
-              <Link href={`/book?productId=${product.id}`}>Book try-on</Link>
+              <Link href={`/book?productId=${product.id}`}>{t("bookTryOn")}</Link>
             </Button>
             <Button asChild variant="outline" className="w-full">
-              <Link href="/collections">Back to catalog</Link>
+              <Link href="/collections">{t("backToCatalog")}</Link>
             </Button>
           </div>
 
           <div className="grid gap-2 rounded-xl border border-border/70 bg-card/80 p-4 text-sm text-muted-foreground sm:grid-cols-2">
-            <p>Secure appointment confirmation within one business day.</p>
-            <p>Alteration timeline and fitting milestones included.</p>
+            <p>{t("confirmationNote")}</p>
+            <p>{t("alterationNote")}</p>
           </div>
 
           <div className="grid gap-2 sm:grid-cols-2">
@@ -134,7 +132,7 @@ export default async function ProductDetailPage(
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-full border border-border/80 bg-card/85 px-4 py-2 text-[0.66rem] font-semibold uppercase tracking-[0.13em] text-foreground transition hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background motion-safe:hover:-translate-y-0.5"
             >
-              Chat on WhatsApp
+              {t("chatWhatsApp")}
             </a>
             <a
               href={siteConfig.support.zaloUrl}
@@ -142,7 +140,7 @@ export default async function ProductDetailPage(
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-full border border-border/80 bg-card/85 px-4 py-2 text-[0.66rem] font-semibold uppercase tracking-[0.13em] text-foreground transition hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background motion-safe:hover:-translate-y-0.5"
             >
-              Chat on Zalo
+              {t("chatZalo")}
             </a>
           </div>
 
@@ -154,7 +152,7 @@ export default async function ProductDetailPage(
                 className="shrink-0"
               />
               <p className="text-sm text-muted-foreground">
-                Save this gown to your wishlist for account follow-up.
+                {t("saveToWishlist")}
               </p>
             </div>
           ) : (
@@ -163,9 +161,9 @@ export default async function ProductDetailPage(
                 href="/sign-in"
                 className="font-semibold text-foreground underline-offset-4 hover:underline"
               >
-                Sign in
+                {t("signInToSave")}
               </Link>{" "}
-              to save this product to your wishlist.
+              {t("signInToSaveNote")}
             </div>
           )}
         </div>

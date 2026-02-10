@@ -1,7 +1,9 @@
 "use client";
 
 import { Heart } from "lucide-react";
-import { usePathname, useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
+import { usePathname } from "@/i18n/routing";
+import { useRouter } from "next/navigation";
 import { useState, useTransition } from "react";
 
 import { toggleWishlistAction } from "@/actions/shop-actions";
@@ -25,8 +27,9 @@ export function WishlistToggleButton({
   const [isPending, startTransition] = useTransition();
   const [isWishlisted, setIsWishlisted] = useState(initialWishlisted);
   const { toast } = useToast();
+  const t = useTranslations("Wishlist");
 
-  const buttonLabel = isWishlisted ? "Remove from wishlist" : "Add to wishlist";
+  const buttonLabel = isWishlisted ? t("removeFromWishlist") : t("addToWishlist");
 
   function onToggle() {
     startTransition(async () => {
@@ -44,7 +47,7 @@ export function WishlistToggleButton({
 
         if (result.status === "error") {
           toast({
-            title: "Unable to update wishlist",
+            title: t("actionFailed"),
             description: result.message,
             tone: "destructive"
           });
@@ -57,8 +60,8 @@ export function WishlistToggleButton({
         }
       } catch {
         toast({
-          title: "Wishlist action failed",
-          description: "Please try again in a moment.",
+          title: t("actionFailed"),
+          description: t("tryAgain"),
           tone: "destructive"
         });
       }

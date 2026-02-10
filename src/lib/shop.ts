@@ -82,21 +82,19 @@ export async function getCatalogProducts({
     status: ProductStatus.ACTIVE,
     ...(searchQuery
       ? {
-          OR: [
-            {
-              name: {
-                contains: searchQuery,
-                mode: "insensitive"
-              }
-            },
-            {
-              description: {
-                contains: searchQuery,
-                mode: "insensitive"
-              }
+        OR: [
+          {
+            name: {
+              contains: searchQuery
             }
-          ]
-        }
+          },
+          {
+            description: {
+              contains: searchQuery
+            }
+          }
+        ]
+      }
       : {})
   };
 

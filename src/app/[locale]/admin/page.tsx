@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 
 import { AdminOverview } from "@/components/admin/admin-overview";
 import { Button } from "@/components/ui/button";

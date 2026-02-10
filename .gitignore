@@ -34,3 +34,4 @@ pnpm-debug.log*
 # prisma
 /prisma/*.db
 /prisma/*.db-journal
+.env*.local

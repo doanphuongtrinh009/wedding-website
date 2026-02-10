@@ -52,8 +52,9 @@ export function ProductCard({
             alt={primaryImage.altText || product.name}
             fill
             className="object-cover transition duration-700 motion-safe:group-hover:scale-[1.035]"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             priority={imagePriority}
+            quality={85}
             fetchPriority={imagePriority ? "high" : "auto"}
           />
         ) : (

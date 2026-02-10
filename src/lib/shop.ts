@@ -85,12 +85,20 @@ export async function getCatalogProducts({
         OR: [
           {
             name: {
-              contains: searchQuery
+              contains: searchQuery,
+              mode: 'insensitive'
             }
           },
           {
             description: {
-              contains: searchQuery
+              contains: searchQuery,
+              mode: 'insensitive'
+            }
+          },
+          {
+            slug: {
+              contains: searchQuery,
+              mode: 'insensitive'
             }
           }
         ]

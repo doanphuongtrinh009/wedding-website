@@ -96,15 +96,10 @@ const config: Config = {
         "fade-in": {
           from: { opacity: "0", transform: "translateY(12px)" },
           to: { opacity: "1", transform: "translateY(0)" }
-        },
-        float: {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-8px)" }
         }
       },
       animation: {
-        "fade-in": "fade-in 0.75s cubic-bezier(0.2, 0.7, 0.2, 1) both",
-        float: "float 8s ease-in-out infinite"
+        "fade-in": "fade-in 0.75s cubic-bezier(0.2, 0.7, 0.2, 1) both"
       }
     }
   },

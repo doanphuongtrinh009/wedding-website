@@ -2,7 +2,6 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
 
-import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { RealBrides } from "@/components/sections/real-brides";
 

@@ -47,7 +47,7 @@ export function RealBrides() {
             </div>
 
             <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:grid-rows-2 h-[600px] md:h-[600px]">
-                {brides.map((bride, index) => (
+                {brides.map((bride) => (
                     <div
                         key={bride.id}
                         className={cn(

@@ -5,10 +5,8 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-
 import { Button } from "@/components/ui/button";
 import { getOptimizedCloudinaryUrl } from "@/lib/image";
-import { cn } from "@/lib/utils";
 
 type LightboxImage = {
     id: string;

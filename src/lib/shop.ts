@@ -172,6 +172,7 @@ export const getProductBySlug = cache(async (slug: string) => {
       priceInCents: true,
       currency: true,
       createdAt: true,
+      updatedAt: true,
       isFeatured: true,
       images: {
         orderBy: {

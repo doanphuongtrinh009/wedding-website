@@ -9,6 +9,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { siteConfig } from "@/config/site";
 import { getBookableProducts } from "@/lib/shop";
 
+type ServiceCode = "makeup" | "photo";
+
+const supportedServiceCodes = new Set<ServiceCode>(["makeup", "photo"]);
+
 export const metadata: Metadata = {
   title: "Book Try-On Appointment",
   description:
@@ -17,6 +21,21 @@ export const metadata: Metadata = {
 
 function getSingleSearchParam(value: string | string[] | undefined) {
   return Array.isArray(value) ? value[0] : value;
+}
+
+function parseServiceCodes(paramValue: string | undefined): ServiceCode[] {
+  if (!paramValue) {
+    return [];
+  }
+
+  const parsed = paramValue
+    .split(",")
+    .map((item) => item.trim().toLowerCase())
+    .filter((item): item is ServiceCode =>
+      supportedServiceCodes.has(item as ServiceCode)
+    );
+
+  return Array.from(new Set(parsed));
 }
 
 export default async function BookingPage({
@@ -29,6 +48,9 @@ export default async function BookingPage({
   const products = await getBookableProducts();
 
   const selectedProductId = getSingleSearchParam(params.productId) ?? "";
+  const selectedServices = parseServiceCodes(
+    getSingleSearchParam(params.services)
+  );
   const error = getSingleSearchParam(params.error);
 
   const errorCopy: Record<string, string> = {
@@ -68,6 +90,9 @@ export default async function BookingPage({
         <p className="editorial-kicker">{t("kicker")}</p>
         <h1>{t("title")}</h1>
         <p className="text-muted-foreground">{t("description")}</p>
+        <p className="inline-flex rounded-full border border-border/70 bg-card/80 px-3 py-1.5 text-xs text-muted-foreground">
+          {t("serviceOnlyHint")}
+        </p>
       </div>
 
       {error && errorCopy[error] ? (
@@ -93,6 +118,7 @@ export default async function BookingPage({
               action={createTryOnBookingAction}
               products={products}
               selectedProductId={selectedProductId}
+              selectedServices={selectedServices}
             />
           </CardContent>
         </Card>

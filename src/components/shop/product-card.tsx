@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
+import { ArrowUpRight, CalendarDays } from "lucide-react";
 
 import { WishlistToggleButton } from "@/components/shop/wishlist-toggle-button";
 import { Badge } from "@/components/ui/badge";
@@ -42,7 +43,7 @@ export function ProductCard({
   return (
     <Card
       variant="product"
-      className="group overflow-hidden bg-card/95 [content-visibility:auto]"
+      className="group flex h-full flex-col overflow-hidden bg-card/95 [content-visibility:auto]"
     >
       <div className="relative aspect-[4/5] border-b border-border/70 bg-secondary/35">
         {primaryImage ? (
@@ -83,37 +84,54 @@ export function ProductCard({
         ) : null}
       </div>
 
-      <CardHeader className="space-y-2 pb-2">
-        <p className="text-[0.66rem] font-semibold uppercase tracking-[0.18em] text-brand-taupe">
-          {t("tryOnEligible")}
-        </p>
-        <CardTitle className="text-[1.8rem] leading-tight md:text-[1.95rem]">
-          <Link
-            href={`/collections/${product.slug}`}
-            className="transition-colors hover:text-primary"
-          >
-            {product.name}
-          </Link>
-        </CardTitle>
-        <p className="text-sm text-muted-foreground">
-          {truncate(product.description, 108)}
-        </p>
-      </CardHeader>
+      <div className="flex flex-1 flex-col">
+        <CardHeader className="space-y-2 pb-2">
+          <p className="text-[0.66rem] font-semibold uppercase tracking-[0.18em] text-brand-taupe">
+            {t("tryOnEligible")}
+          </p>
+          <CardTitle className="min-h-[4.6rem] text-[1.8rem] leading-tight md:min-h-[5rem] md:text-[1.95rem]">
+            <Link
+              href={`/collections/${product.slug}`}
+              className="line-clamp-2 transition-colors hover:text-primary"
+            >
+              {product.name}
+            </Link>
+          </CardTitle>
+          <p className="min-h-[5.25rem] text-sm leading-relaxed text-muted-foreground">
+            {truncate(product.description, 108)}
+          </p>
+        </CardHeader>
 
-      <CardContent className="pt-0">
-        <p className="font-display text-[2rem] leading-none text-brand-cocoa">
-          {formatCurrency(product.priceInCents, product.currency)}
-        </p>
-      </CardContent>
+        <CardContent className="pt-0">
+          <p className="font-display text-[2rem] leading-none text-brand-cocoa">
+            {formatCurrency(product.priceInCents, product.currency)}
+          </p>
+        </CardContent>
 
-      <CardFooter className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-        <Button asChild variant="outline" className="w-full">
-          <Link href={`/collections/${product.slug}`}>{t("viewGown")}</Link>
-        </Button>
-        <Button asChild className="w-full">
-          <Link href={`/book?productId=${product.id}`}>{t("bookTryOn")}</Link>
-        </Button>
-      </CardFooter>
+        <CardFooter className="mt-auto pt-2">
+          <div className="grid w-full grid-cols-1 gap-2 sm:grid-cols-2">
+            <Button
+              asChild
+              variant="outline"
+              className="h-11 rounded-2xl border-border/80 bg-background/75 px-4 text-[0.76rem] font-semibold normal-case tracking-[0.03em] shadow-none hover:border-brand-taupe/45 hover:bg-card/95 hover:shadow-editorial"
+            >
+              <Link href={`/collections/${product.slug}`}>
+                <span>{t("viewGown")}</span>
+                <ArrowUpRight className="size-3.5" aria-hidden="true" />
+              </Link>
+            </Button>
+            <Button
+              asChild
+              className="h-11 rounded-2xl border border-brand-cocoa/10 bg-[linear-gradient(135deg,hsl(var(--brand-cocoa))_12%,hsl(var(--primary))_100%)] px-4 text-[0.76rem] font-semibold normal-case tracking-[0.03em] shadow-soft hover:border-brand-gold/25 hover:brightness-110 hover:shadow-luxury"
+            >
+              <Link href={`/book?productId=${product.id}`}>
+                <CalendarDays className="size-3.5" aria-hidden="true" />
+                <span>{t("bookTryOn")}</span>
+              </Link>
+            </Button>
+          </div>
+        </CardFooter>
+      </div>
     </Card>
   );
 }

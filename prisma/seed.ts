@@ -11,7 +11,11 @@ const seedProducts = [
     priceInCents: 28500000, // 28.500.000 VND
     currency: "VND",
     isFeatured: true,
-    images: [{ cloudinaryPublicId: "bridal/aurora-1", secureUrl: "/images/products/aurora-1.png", altText: "Váy cưới lụa Aurora dáng chữ A", position: 0 }]
+    images: [
+      { cloudinaryPublicId: "bridal/aurora-1", secureUrl: "/images/products/aurora-1.png", altText: "Toàn cảnh Aurora Lụa Mikado", position: 0 },
+      { cloudinaryPublicId: "bridal/aurora-1-detail-bodice", secureUrl: "/images/products/details/aurora-1-detail-bodice.png", altText: "Chi tiết thân váy Aurora Lụa Mikado", position: 1 },
+      { cloudinaryPublicId: "bridal/aurora-1-detail-skirt", secureUrl: "/images/products/details/aurora-1-detail-skirt.png", altText: "Chi tiết chân váy Aurora Lụa Mikado", position: 2 }
+    ]
   },
   {
     slug: "luna-chiffon-a-line",
@@ -20,7 +24,11 @@ const seedProducts = [
     priceInCents: 21000000,
     currency: "VND",
     isFeatured: false,
-    images: [{ cloudinaryPublicId: "bridal/luna-1", secureUrl: "/images/products/aurora-1.png", altText: "Váy cưới Luna Chiffon", position: 0 }]
+    images: [
+      { cloudinaryPublicId: "bridal/luna-1", secureUrl: "/images/products/slip-1.png", altText: "Toàn cảnh Luna Chiffon Bay Bổng", position: 0 },
+      { cloudinaryPublicId: "bridal/luna-1-detail-bodice", secureUrl: "/images/products/details/slip-1-detail-bodice.png", altText: "Chi tiết thân váy Luna Chiffon", position: 1 },
+      { cloudinaryPublicId: "bridal/luna-1-detail-drape", secureUrl: "/images/products/details/slip-1-detail-drape.png", altText: "Chi tiết nếp rủ Luna Chiffon", position: 2 }
+    ]
   },
   {
     slug: "flora-applique-a-line",
@@ -29,7 +37,11 @@ const seedProducts = [
     priceInCents: 32000000,
     currency: "VND",
     isFeatured: false,
-    images: [{ cloudinaryPublicId: "bridal/flora-1", secureUrl: "/images/products/aurora-1.png", altText: "Váy cưới Flora đính hoa 3D", position: 0 }]
+    images: [
+      { cloudinaryPublicId: "bridal/flora-1", secureUrl: "/images/products/aurora-1.png", altText: "Toàn cảnh Flora Đính Kết 3D", position: 0 },
+      { cloudinaryPublicId: "bridal/flora-1-lace-detail", secureUrl: "/images/categories/lace-detail.png", altText: "Chi tiết ren và đính kết của Flora", position: 1 },
+      { cloudinaryPublicId: "bridal/flora-1-detail-skirt", secureUrl: "/images/products/details/aurora-1-detail-skirt.png", altText: "Chi tiết chân váy tulle của Flora", position: 2 }
+    ]
   },
 
   // Mermaid / Fitted (Dáng Đuôi Cá)
@@ -40,7 +52,11 @@ const seedProducts = [
     priceInCents: 31200000,
     currency: "VND",
     isFeatured: true,
-    images: [{ cloudinaryPublicId: "bridal/celeste-1", secureUrl: "/images/products/mermaid-1.png", altText: "Váy cưới Celeste đuôi cá tối giản", position: 0 }]
+    images: [
+      { cloudinaryPublicId: "bridal/celeste-1", secureUrl: "/images/products/mermaid-1.png", altText: "Toàn cảnh Celeste Đuôi Cá Tối Giản", position: 0 },
+      { cloudinaryPublicId: "bridal/celeste-1-detail-bodice", secureUrl: "/images/products/details/mermaid-1-detail-bodice.png", altText: "Chi tiết thân váy Celeste", position: 1 },
+      { cloudinaryPublicId: "bridal/celeste-1-detail-drape", secureUrl: "/images/products/details/mermaid-1-detail-drape.png", altText: "Chi tiết nếp rủ Celeste", position: 2 }
+    ]
   },
   {
     slug: "nova-satin-mermaid",
@@ -49,7 +65,11 @@ const seedProducts = [
     priceInCents: 29500000,
     currency: "VND",
     isFeatured: true,
-    images: [{ cloudinaryPublicId: "bridal/nova-1", secureUrl: "/images/products/mermaid-1.png", altText: "Váy cưới Nova Satin", position: 0 }]
+    images: [
+      { cloudinaryPublicId: "bridal/nova-1", secureUrl: "/images/products/mermaid-1.png", altText: "Toàn cảnh Nova Satin Quý Phái", position: 0 },
+      { cloudinaryPublicId: "bridal/nova-1-detail-bodice", secureUrl: "/images/products/details/mermaid-1-detail-bodice.png", altText: "Chi tiết thân váy Nova Satin", position: 1 },
+      { cloudinaryPublicId: "bridal/nova-1-detail-drape", secureUrl: "/images/products/details/mermaid-1-detail-drape.png", altText: "Chi tiết đuôi váy Nova Satin", position: 2 }
+    ]
   },
   {
     slug: "aria-lace-fit-flare",
@@ -58,7 +78,11 @@ const seedProducts = [
     priceInCents: 35000000,
     currency: "VND",
     isFeatured: false,
-    images: [{ cloudinaryPublicId: "bridal/aria-1", secureUrl: "/images/products/mermaid-1.png", altText: "Váy cưới ren Aria", position: 0 }]
+    images: [
+      { cloudinaryPublicId: "bridal/aria-1", secureUrl: "/images/products/mermaid-1.png", altText: "Toàn cảnh Aria Ren Chantilly", position: 0 },
+      { cloudinaryPublicId: "bridal/aria-1-lace-detail", secureUrl: "/images/categories/lace-detail.png", altText: "Chi tiết ren Chantilly của Aria", position: 1 },
+      { cloudinaryPublicId: "bridal/aria-1-detail-bodice", secureUrl: "/images/products/details/mermaid-1-detail-bodice.png", altText: "Chi tiết thân váy Aria", position: 2 }
+    ]
   },
 
   // Ballgown (Dáng Bồng Xòe)
@@ -69,7 +93,11 @@ const seedProducts = [
     priceInCents: 38000000,
     currency: "VND",
     isFeatured: true,
-    images: [{ cloudinaryPublicId: "bridal/juliet-1", secureUrl: "/images/products/ballgown-1.png", altText: "Váy cưới công chúa Juliet", position: 0 }]
+    images: [
+      { cloudinaryPublicId: "bridal/juliet-1", secureUrl: "/images/products/ballgown-1.png", altText: "Toàn cảnh Juliet Công Chúa Tulle", position: 0 },
+      { cloudinaryPublicId: "bridal/juliet-1-detail-bodice", secureUrl: "/images/products/details/ballgown-1-detail-bodice.png", altText: "Chi tiết thân váy Juliet", position: 1 },
+      { cloudinaryPublicId: "bridal/juliet-1-detail-volume", secureUrl: "/images/products/details/ballgown-1-detail-volume.png", altText: "Chi tiết độ bồng của Juliet", position: 2 }
+    ]
   },
   {
     slug: "ophelia-embroidered-gown",
@@ -78,7 +106,11 @@ const seedProducts = [
     priceInCents: 45000000,
     currency: "VND",
     isFeatured: false,
-    images: [{ cloudinaryPublicId: "bridal/ophelia-1", secureUrl: "/images/products/ballgown-1.png", altText: "Váy cưới thêu Ophelia", position: 0 }]
+    images: [
+      { cloudinaryPublicId: "bridal/ophelia-1", secureUrl: "/images/products/ballgown-1.png", altText: "Toàn cảnh Ophelia Thêu Hoàng Gia", position: 0 },
+      { cloudinaryPublicId: "bridal/ophelia-1-lace-detail", secureUrl: "/images/categories/lace-detail.png", altText: "Chi tiết thêu và ren của Ophelia", position: 1 },
+      { cloudinaryPublicId: "bridal/ophelia-1-detail-volume", secureUrl: "/images/products/details/ballgown-1-detail-volume.png", altText: "Chi tiết chân váy Ophelia", position: 2 }
+    ]
   }
 ] as const;
 

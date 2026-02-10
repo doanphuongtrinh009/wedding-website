@@ -96,6 +96,7 @@ const bookingSchema = z.object({
   appointmentTime: z.string().regex(/^\d{2}:\d{2}$/, "Invalid time format"),
   eventDate: z.string().date().optional(),
   notes: z.string().trim().max(1500).optional(),
+  services: z.array(z.enum(["makeup", "photo"])).max(2).optional(),
   timeZone: z.string().trim().min(1).max(64).optional()
 });
 
@@ -129,12 +130,17 @@ function isValidTimeZone(timeZone: string) {
 }
 
 export async function createTryOnBookingAction(formData: FormData) {
+  const selectedServices = formData
+    .getAll("services")
+    .filter((value): value is string => typeof value === "string");
+
   const parsedInput = bookingSchema.safeParse({
     productId: formData.get("productId") || undefined,
     appointmentDate: formData.get("appointmentDate"),
     appointmentTime: formData.get("appointmentTime"),
     eventDate: formData.get("eventDate") || undefined,
     notes: formData.get("notes") || undefined,
+    services: selectedServices.length > 0 ? selectedServices : undefined,
     timeZone: formData.get("timeZone") || undefined
   });
 
@@ -201,6 +207,17 @@ export async function createTryOnBookingAction(formData: FormData) {
     parsedInput.data.timeZone && isValidTimeZone(parsedInput.data.timeZone)
       ? parsedInput.data.timeZone
       : "UTC";
+  const dedupedServices = Array.from(
+    new Set(parsedInput.data.services ?? [])
+  );
+  const serviceNotePrefix =
+    dedupedServices.length > 0
+      ? `[addons] ${dedupedServices.join(", ")}`
+      : "";
+  const bookingNotes = [serviceNotePrefix, parsedInput.data.notes]
+    .map((value) => value?.trim())
+    .filter((value): value is string => Boolean(value))
+    .join("\n");
 
   try {
     await prisma.$transaction(
@@ -235,7 +252,7 @@ export async function createTryOnBookingAction(formData: FormData) {
             appointmentTimeZone,
             durationInMinutes: appointmentDurationInMinutes,
             eventDate,
-            notes: parsedInput.data.notes
+            notes: bookingNotes || undefined
           }
         });
       },

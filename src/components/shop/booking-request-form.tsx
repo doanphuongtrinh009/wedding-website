@@ -22,10 +22,15 @@ type BookingProduct = {
   name: string;
 };
 
+type ServiceCode = "makeup" | "photo";
+
+const serviceCodes: ServiceCode[] = ["makeup", "photo"];
+
 type BookingRequestFormProps = {
   action: (formData: FormData) => void | Promise<void>;
   products: BookingProduct[];
   selectedProductId: string;
+  selectedServices: ServiceCode[];
 };
 
 function SubmitBookingButton() {
@@ -42,12 +47,17 @@ function SubmitBookingButton() {
 export function BookingRequestForm({
   action,
   products,
-  selectedProductId
+  selectedProductId,
+  selectedServices
 }: BookingRequestFormProps) {
   const t = useTranslations("Booking.form");
   const shouldReduceMotion = useReducedMotion();
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const [shouldShake, setShouldShake] = useState(false);
+  const selectedServiceSet = useMemo(
+    () => new Set(selectedServices),
+    [selectedServices]
+  );
   const today = useMemo(() => new Date().toISOString().slice(0, 10), []);
 
   useEffect(() => {
@@ -186,6 +196,9 @@ export function BookingRequestForm({
                 ))}
               </select>
             </div>
+            <p className="text-xs text-muted-foreground">
+              {t("productOptionalNote")}
+            </p>
             {fieldErrors.productId ? (
               <p
                 id="productId-error"
@@ -271,6 +284,34 @@ export function BookingRequestForm({
                 {fieldErrors.eventDate}
               </p>
             ) : null}
+          </div>
+
+          <div className="space-y-3">
+            <Label>{t("addOnServices")}</Label>
+            <div className="grid gap-2 sm:grid-cols-2">
+              {serviceCodes.map((serviceCode) => (
+                <label
+                  key={serviceCode}
+                  className="group flex cursor-pointer gap-3 rounded-2xl border border-border/70 bg-background/75 p-3 transition hover:border-brand-taupe/35 hover:bg-card/90"
+                >
+                  <input
+                    type="checkbox"
+                    name="services"
+                    value={serviceCode}
+                    defaultChecked={selectedServiceSet.has(serviceCode)}
+                    className="mt-1 size-4 rounded border-border text-primary focus:ring-ring"
+                  />
+                  <span className="block">
+                    <span className="block text-sm font-semibold text-foreground">
+                      {t(`services.${serviceCode}.title`)}
+                    </span>
+                    <span className="mt-1 block text-sm leading-relaxed text-muted-foreground">
+                      {t(`services.${serviceCode}.note`)}
+                    </span>
+                  </span>
+                </label>
+              ))}
+            </div>
           </div>
         </m.div>
 

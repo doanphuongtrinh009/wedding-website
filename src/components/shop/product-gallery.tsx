@@ -1,7 +1,9 @@
 "use client";
 
 import { AnimatePresence, m, useReducedMotion } from "framer-motion";
+import { Expand } from "lucide-react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { useMemo, useState } from "react";
 
 import { motionEase, motionTimings } from "@/components/motion/variants";
@@ -24,6 +26,7 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const shouldReduceMotion = useReducedMotion();
+  const t = useTranslations("ProductDetail");
 
   const activeImage = images[activeIndex];
   const galleryImages = useMemo(() => images.slice(0, 7), [images]);
@@ -38,15 +41,16 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
     <div className="space-y-4">
       <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-border/70 bg-secondary/40">
         <AnimatePresence initial={false} mode="wait">
-          <m.div
+          <m.button
+            type="button"
             key={activeImage.id}
             className="absolute inset-0 z-10 cursor-zoom-in"
             initial={shouldReduceMotion ? false : { opacity: 0, scale: 1.02 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={shouldReduceMotion ? undefined : { opacity: 0, scale: 0.99 }}
             transition={{ duration: motionTimings.base, ease: motionEase }}
+            aria-label={t("zoomLabel")}
             onClick={() => {
-              console.log("Main Image Clicked");
               setLightboxOpen(true);
             }}
           >
@@ -63,29 +67,12 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
               fetchPriority={activeIndex === 0 ? "high" : "auto"}
               sizes="(max-width: 1024px) 100vw, 60vw"
             />
-          </m.div>
+          </m.button>
         </AnimatePresence>
 
-        {/* Zoom Indicator */}
-        <div className="absolute right-4 top-4 z-20 pointer-events-none rounded-full bg-black/40 p-2 text-white/90 backdrop-blur-sm transition-opacity hover:bg-black/60">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="lucide lucide-expand"
-          >
-            <path d="m21 21-6-6" />
-            <path d="M3 11v-4a4 4 0 0 1 4-4h4" />
-            <path d="M13 3h4a4 4 0 0 1 4 4v4" />
-            <path d="M11 13H7a4 4 0 0 0-4 4v4" />
-            <path d="M13 21h4a4 4 0 0 0 4-4v-4" />
-          </svg>
+        <div className="pointer-events-none absolute right-4 top-4 z-20 rounded-full bg-black/40 p-2 text-white/90 backdrop-blur-sm">
+          <Expand className="size-4" aria-hidden="true" />
+          <span className="sr-only">{t("zoomLabel")}</span>
         </div>
       </div>
 
@@ -105,7 +92,7 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
                     ? "border-primary shadow-soft"
                     : "border-border/70 hover:border-primary/45"
                 )}
-                aria-label={`View image ${index + 1}`}
+                aria-label={t("thumbnailAria", { index: index + 1 })}
                 aria-pressed={isActive}
               >
                 <Image

@@ -1,6 +1,4 @@
-"use client";
-
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { Search } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -13,12 +11,14 @@ type CatalogToolbarProps = {
   defaultSort: CatalogSort;
 };
 
-export function CatalogToolbar({
+export async function CatalogToolbar({
   defaultQuery,
   defaultSort
 }: CatalogToolbarProps) {
-  const t = useTranslations("CatalogToolbar");
-  const tSort = useTranslations("CatalogSort");
+  const [t, tSort] = await Promise.all([
+    getTranslations("CatalogToolbar"),
+    getTranslations("CatalogSort")
+  ]);
 
   return (
     <form className="grid gap-3 rounded-[1.3rem] border border-border/75 bg-card/85 p-4 shadow-editorial md:grid-cols-[1fr_auto_auto]">

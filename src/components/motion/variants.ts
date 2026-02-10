@@ -33,15 +33,17 @@ export const staggerContainer = (
 });
 
 export const pageFadeRise: Variants = {
-  initial: { opacity: 0, y: 10 },
+  initial: { opacity: 0, y: 18, scale: 0.995 },
   animate: {
     opacity: 1,
     y: 0,
-    transition: { duration: motionTimings.base, ease: motionEase }
+    scale: 1,
+    transition: { duration: motionTimings.slow, ease: motionEase }
   },
   exit: {
     opacity: 0,
-    y: 6,
+    y: -10,
+    scale: 0.995,
     transition: { duration: motionTimings.fast, ease: motionEase }
   }
 };

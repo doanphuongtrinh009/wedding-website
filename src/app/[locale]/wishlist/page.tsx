@@ -2,6 +2,7 @@ import { Link } from "@/i18n/routing";
 import { getTranslations } from "next-intl/server";
 
 import { MotionStaggerGrid } from "@/components/motion/stagger-grid";
+import { WishlistToastProvider } from "@/components/providers/wishlist-toast-provider";
 import { ProductCard } from "@/components/shop/product-card";
 import { Button } from "@/components/ui/button";
 import { requireUserProfile } from "@/lib/auth";
@@ -45,17 +46,19 @@ export default async function WishlistPage() {
           </Button>
         </div>
       ) : (
-        <MotionStaggerGrid className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {wishlistItems.map((wishlistItem, index) => (
-            <ProductCard
-              key={wishlistItem.product.id}
-              product={wishlistItem.product}
-              isWishlisted={true}
-              showWishlist={true}
-              imagePriority={index === 0}
-            />
-          ))}
-        </MotionStaggerGrid>
+        <WishlistToastProvider>
+          <MotionStaggerGrid className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {wishlistItems.map((wishlistItem, index) => (
+              <ProductCard
+                key={wishlistItem.product.id}
+                product={wishlistItem.product}
+                isWishlisted={true}
+                showWishlist={true}
+                imagePriority={index === 0}
+              />
+            ))}
+          </MotionStaggerGrid>
+        </WishlistToastProvider>
       )}
     </section>
   );

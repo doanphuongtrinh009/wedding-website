@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { CatalogPagination } from "@/components/shop/catalog-pagination";
 import { CatalogToolbar } from "@/components/shop/catalog-toolbar";
 import { MotionStaggerGrid } from "@/components/motion/stagger-grid";
+import { WishlistToastProvider } from "@/components/providers/wishlist-toast-provider";
 import { ProductCard } from "@/components/shop/product-card";
 import { getCurrentUserProfile } from "@/lib/auth";
 import {
@@ -57,19 +58,23 @@ export default async function CollectionsPage({
 }: {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
-  const t = await getTranslations("CollectionsPage");
-  const params = await searchParams;
+  const [t, params] = await Promise.all([
+    getTranslations("CollectionsPage"),
+    searchParams
+  ]);
   const query = getSingleSearchParam(params.q)?.trim() ?? "";
   const sort = getSortValue(getSingleSearchParam(params.sort));
   const page = getPageValue(getSingleSearchParam(params.page));
 
-  const profile = await getCurrentUserProfile();
-  const catalog = await getCatalogProducts({
-    query,
-    sort,
-    page,
-    pageSize: 12
-  });
+  const [profile, catalog] = await Promise.all([
+    getCurrentUserProfile(),
+    getCatalogProducts({
+      query,
+      sort,
+      page,
+      pageSize: 12
+    })
+  ]);
 
   const wishlistIds = profile
     ? await getWishlistProductIds(profile.id)
@@ -95,17 +100,19 @@ export default async function CollectionsPage({
           <p className="mt-2 text-muted-foreground">{t("noResultsDesc")}</p>
         </div>
       ) : (
-        <MotionStaggerGrid className="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {catalog.items.map((product, index) => (
-            <ProductCard
-              key={product.id}
-              product={product}
-              isWishlisted={wishlistIds.has(product.id)}
-              showWishlist={Boolean(profile)}
-              imagePriority={index < 2}
-            />
-          ))}
-        </MotionStaggerGrid>
+        <WishlistToastProvider>
+          <MotionStaggerGrid className="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {catalog.items.map((product, index) => (
+              <ProductCard
+                key={product.id}
+                product={product}
+                isWishlisted={wishlistIds.has(product.id)}
+                showWishlist={Boolean(profile)}
+                imagePriority={index < 2}
+              />
+            ))}
+          </MotionStaggerGrid>
+        </WishlistToastProvider>
       )}
 
       <CatalogPagination

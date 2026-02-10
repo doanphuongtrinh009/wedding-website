@@ -8,6 +8,7 @@ import { RealBrides } from "@/components/sections/real-brides";
 import { Testimonials } from "@/components/sections/testimonials";
 import { TrustBadges } from "@/components/sections/trust-badges";
 import { MotionStaggerGrid } from "@/components/motion/stagger-grid";
+import { WishlistToastProvider } from "@/components/providers/wishlist-toast-provider";
 import { Button } from "@/components/ui/button";
 import { getCurrentUserProfile } from "@/lib/auth";
 import { getFeaturedProducts, getWishlistProductIds } from "@/lib/shop";
@@ -27,9 +28,11 @@ export async function generateMetadata({
 }
 
 export default async function HomePage() {
-  const t = await getTranslations("FeaturedSection");
-  const profile = await getCurrentUserProfile();
-  const featuredProducts = await getFeaturedProducts(4);
+  const [t, profile, featuredProducts] = await Promise.all([
+    getTranslations("FeaturedSection"),
+    getCurrentUserProfile(),
+    getFeaturedProducts(4)
+  ]);
   const wishlistIds = profile
     ? await getWishlistProductIds(profile.id)
     : new Set<string>();
@@ -60,17 +63,19 @@ export default async function HomePage() {
             </p>
           </div>
         ) : (
-          <MotionStaggerGrid className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {featuredProducts.map((product, index) => (
-              <ProductCard
-                key={product.id}
-                product={product}
-                isWishlisted={wishlistIds.has(product.id)}
-                showWishlist={Boolean(profile)}
-                imagePriority={index === 0}
-              />
-            ))}
-          </MotionStaggerGrid>
+          <WishlistToastProvider>
+            <MotionStaggerGrid className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+              {featuredProducts.map((product, index) => (
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                  isWishlisted={wishlistIds.has(product.id)}
+                  showWishlist={Boolean(profile)}
+                  imagePriority={index === 0}
+                />
+              ))}
+            </MotionStaggerGrid>
+          </WishlistToastProvider>
         )}
       </section>
       <RealBrides />

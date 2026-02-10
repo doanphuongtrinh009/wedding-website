@@ -1,14 +1,6 @@
-"use client";
-
-import { m } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { CalendarDays, Gem, Scissors } from "lucide-react";
 
-import {
-  fadeUp,
-  motionTimings,
-  staggerContainer
-} from "@/components/motion/variants";
 import {
   Card,
   CardContent,
@@ -32,26 +24,20 @@ const highlightItems = [
   }
 ] as const;
 
-export function HomeHighlights() {
-  const t = useTranslations("HomeHighlights");
+export async function HomeHighlights() {
+  const t = await getTranslations("HomeHighlights");
 
   return (
-    <m.section
-      className="section-shell pt-0"
-      variants={staggerContainer(motionTimings.stagger, 0.2)}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
-    >
-      <m.div variants={fadeUp} className="mb-space-md max-w-3xl space-y-4">
+    <section className="section-shell pt-0">
+      <div className="mb-space-md max-w-3xl space-y-4">
         <p className="editorial-kicker">{t("kicker")}</p>
         <h2>{t("heading")}</h2>
         <p className="text-muted-foreground">{t("intro")}</p>
-      </m.div>
+      </div>
 
       <div className="grid gap-4 md:grid-cols-3 md:gap-6">
         {highlightItems.map((item) => (
-          <m.div key={item.key} variants={fadeUp} className="h-full">
+          <div key={item.key} className="h-full">
             <Card
               variant="editorial"
               className="group flex h-full flex-col bg-card/75 transition-colors hover:bg-card/95"
@@ -73,9 +59,9 @@ export function HomeHighlights() {
                 </p>
               </CardContent>
             </Card>
-          </m.div>
+          </div>
         ))}
       </div>
-    </m.section>
+    </section>
   );
 }

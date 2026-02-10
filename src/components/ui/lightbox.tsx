@@ -3,7 +3,7 @@
 import { AnimatePresence, m, MotionConfig } from "framer-motion";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { getOptimizedCloudinaryUrl } from "@/lib/image";
@@ -28,8 +28,21 @@ export function Lightbox({
     onClose
 }: LightboxProps) {
     const [index, setIndex] = useState(initialIndex);
-    console.log("Lightbox Render:", { isOpen, initialIndex, index });
     const [direction, setDirection] = useState(0);
+
+    const paginate = useCallback((newDirection: number) => {
+        setDirection(newDirection);
+        setIndex((prev) => {
+            if (images.length === 0) {
+                return prev;
+            }
+
+            let next = prev + newDirection;
+            if (next < 0) next = images.length - 1;
+            if (next >= images.length) next = 0;
+            return next;
+        });
+    }, [images.length]);
 
     useEffect(() => {
         if (isOpen) {
@@ -52,17 +65,7 @@ export function Lightbox({
         };
         window.addEventListener("keydown", handleKeyDown);
         return () => window.removeEventListener("keydown", handleKeyDown);
-    }, [isOpen, index]); // eslint-disable-line react-hooks/exhaustive-deps
-
-    const paginate = (newDirection: number) => {
-        setDirection(newDirection);
-        setIndex((prev) => {
-            let next = prev + newDirection;
-            if (next < 0) next = images.length - 1;
-            if (next >= images.length) next = 0;
-            return next;
-        });
-    };
+    }, [isOpen, onClose, paginate]);
 
     if (!isOpen) return null;
 

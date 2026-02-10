@@ -3,12 +3,12 @@
 import { AnimatePresence, m, useReducedMotion } from "framer-motion";
 import { Expand } from "lucide-react";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { useTranslations } from "next-intl";
 import { useMemo, useState } from "react";
 
 import { motionEase, motionTimings } from "@/components/motion/variants";
 import { getOptimizedCloudinaryUrl } from "@/lib/image";
-import { Lightbox } from "@/components/ui/lightbox";
 import { cn } from "@/lib/utils";
 
 type GalleryImage = {
@@ -21,6 +21,11 @@ type ProductGalleryProps = {
   images: GalleryImage[];
   productName: string;
 };
+
+const Lightbox = dynamic(
+  () => import("@/components/ui/lightbox").then((module) => module.Lightbox),
+  { ssr: false }
+);
 
 export function ProductGallery({ images, productName }: ProductGalleryProps) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -114,12 +119,14 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
         </div>
       ) : null}
 
-      <Lightbox
-        images={images}
-        initialIndex={activeIndex}
-        isOpen={lightboxOpen}
-        onClose={() => setLightboxOpen(false)}
-      />
+      {lightboxOpen ? (
+        <Lightbox
+          images={images}
+          initialIndex={activeIndex}
+          isOpen={lightboxOpen}
+          onClose={() => setLightboxOpen(false)}
+        />
+      ) : null}
     </div>
   );
 }

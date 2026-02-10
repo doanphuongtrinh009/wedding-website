@@ -1,6 +1,4 @@
-"use client";
-
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 
 import { buttonVariants } from "@/components/ui/button";
@@ -33,13 +31,13 @@ function getPageHref(page: number, query: string, sort: CatalogSort) {
   return serialized ? `/collections?${serialized}` : "/collections";
 }
 
-export function CatalogPagination({
+export async function CatalogPagination({
   page,
   totalPages,
   query,
   sort
 }: CatalogPaginationProps) {
-  const t = useTranslations("CatalogPagination");
+  const t = await getTranslations("CatalogPagination");
 
   if (totalPages <= 1) {
     return null;

@@ -13,6 +13,7 @@ import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 
 import { ProductGallery } from "@/components/shop/product-gallery";
+import { WishlistToastProvider } from "@/components/providers/wishlist-toast-provider";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { WishlistToggleButton } from "@/components/shop/wishlist-toggle-button";
@@ -398,24 +399,26 @@ export default async function ProductDetailPage(props: ProductDetailPageProps) {
           </div>
 
           {profile ? (
-            <div className="soft-frame p-4">
-              <p className="font-semibold text-foreground">{t("wishlistTitle")}</p>
-              <p className="mt-1 text-sm text-muted-foreground">
-                {t("saveToWishlist")}
-              </p>
-              <div className="mt-3 flex items-center gap-3">
-                <WishlistToggleButton
-                  productId={product.id}
-                  initialWishlisted={wishlistIds.has(product.id)}
-                  className="shrink-0"
-                />
-                <p className="text-sm text-muted-foreground">
-                  {wishlistIds.has(product.id)
-                    ? t("wishlistSaved")
-                    : t("wishlistReady")}
+            <WishlistToastProvider>
+              <div className="soft-frame p-4">
+                <p className="font-semibold text-foreground">{t("wishlistTitle")}</p>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  {t("saveToWishlist")}
                 </p>
+                <div className="mt-3 flex items-center gap-3">
+                  <WishlistToggleButton
+                    productId={product.id}
+                    initialWishlisted={wishlistIds.has(product.id)}
+                    className="shrink-0"
+                  />
+                  <p className="text-sm text-muted-foreground">
+                    {wishlistIds.has(product.id)
+                      ? t("wishlistSaved")
+                      : t("wishlistReady")}
+                  </p>
+                </div>
               </div>
-            </div>
+            </WishlistToastProvider>
           ) : (
             <div className="soft-frame p-4 text-sm text-muted-foreground">
               <p className="mb-1 font-semibold text-foreground">

@@ -100,13 +100,152 @@ const bookingSchema = z.object({
   timeZone: z.string().trim().min(1).max(64).optional()
 });
 
-function getAppointmentDateTime(
+type ZonedDateTimeParts = {
+  year: number;
+  month: number;
+  day: number;
+  hour: number;
+  minute: number;
+  second: number;
+};
+
+const zonedDateTimeFormatters = new Map<string, Intl.DateTimeFormat>();
+
+function getZonedDateTimeFormatter(timeZone: string) {
+  const existingFormatter = zonedDateTimeFormatters.get(timeZone);
+
+  if (existingFormatter) {
+    return existingFormatter;
+  }
+
+  const formatter = new Intl.DateTimeFormat("en-US", {
+    timeZone,
+    hourCycle: "h23",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit"
+  });
+
+  zonedDateTimeFormatters.set(timeZone, formatter);
+
+  return formatter;
+}
+
+function getZonedDateTimeParts(date: Date, timeZone: string): ZonedDateTimeParts {
+  const parts = getZonedDateTimeFormatter(timeZone)
+    .formatToParts(date)
+    .reduce<Partial<ZonedDateTimeParts>>((accumulator, part) => {
+      if (part.type === "literal") {
+        return accumulator;
+      }
+
+      if (
+        part.type === "year" ||
+        part.type === "month" ||
+        part.type === "day" ||
+        part.type === "hour" ||
+        part.type === "minute" ||
+        part.type === "second"
+      ) {
+        accumulator[part.type] = Number(part.value);
+      }
+
+      return accumulator;
+    }, {});
+
+  return {
+    year: parts.year ?? 0,
+    month: parts.month ?? 0,
+    day: parts.day ?? 0,
+    hour: parts.hour ?? 0,
+    minute: parts.minute ?? 0,
+    second: parts.second ?? 0
+  };
+}
+
+function getTimeZoneOffsetMs(date: Date, timeZone: string) {
+  const zoned = getZonedDateTimeParts(date, timeZone);
+  const zonedAsUtcMs = Date.UTC(
+    zoned.year,
+    zoned.month - 1,
+    zoned.day,
+    zoned.hour,
+    zoned.minute,
+    zoned.second
+  );
+
+  return zonedAsUtcMs - date.getTime();
+}
+
+function parseDateAndTimeParts(
   appointmentDate: string,
   appointmentTime: string
 ) {
-  const appointmentAt = new Date(`${appointmentDate}T${appointmentTime}:00`);
+  const [year, month, day] = appointmentDate.split("-").map(Number);
+  const [hour, minute] = appointmentTime.split(":").map(Number);
+
+  if (
+    !Number.isInteger(year) ||
+    !Number.isInteger(month) ||
+    !Number.isInteger(day) ||
+    !Number.isInteger(hour) ||
+    !Number.isInteger(minute)
+  ) {
+    return null;
+  }
+
+  return { year, month, day, hour, minute };
+}
+
+function getAppointmentDateTime(
+  appointmentDate: string,
+  appointmentTime: string,
+  timeZone: string
+) {
+  const parsedParts = parseDateAndTimeParts(appointmentDate, appointmentTime);
+
+  if (!parsedParts) {
+    return null;
+  }
+
+  const naiveUtcMs = Date.UTC(
+    parsedParts.year,
+    parsedParts.month - 1,
+    parsedParts.day,
+    parsedParts.hour,
+    parsedParts.minute,
+    0
+  );
+
+  if (Number.isNaN(naiveUtcMs)) {
+    return null;
+  }
+
+  // Convert user-selected local wall clock time in `timeZone`
+  // into a UTC instant, then run one extra pass for DST edge cases.
+  let appointmentAt = new Date(
+    naiveUtcMs - getTimeZoneOffsetMs(new Date(naiveUtcMs), timeZone)
+  );
+  appointmentAt = new Date(
+    naiveUtcMs - getTimeZoneOffsetMs(appointmentAt, timeZone)
+  );
 
   if (Number.isNaN(appointmentAt.getTime())) {
+    return null;
+  }
+
+  const roundTrip = getZonedDateTimeParts(appointmentAt, timeZone);
+  const isSameLocalDateTime =
+    roundTrip.year === parsedParts.year &&
+    roundTrip.month === parsedParts.month &&
+    roundTrip.day === parsedParts.day &&
+    roundTrip.hour === parsedParts.hour &&
+    roundTrip.minute === parsedParts.minute;
+
+  if (!isSameLocalDateTime) {
     return null;
   }
 
@@ -158,9 +297,15 @@ export async function createTryOnBookingAction(formData: FormData) {
     redirect("/sign-in?redirect_url=/book");
   }
 
+  const appointmentTimeZone =
+    parsedInput.data.timeZone && isValidTimeZone(parsedInput.data.timeZone)
+      ? parsedInput.data.timeZone
+      : "UTC";
+
   const appointmentAt = getAppointmentDateTime(
     parsedInput.data.appointmentDate,
-    parsedInput.data.appointmentTime
+    parsedInput.data.appointmentTime,
+    appointmentTimeZone
   );
 
   if (!appointmentAt || appointmentAt <= new Date()) {
@@ -203,10 +348,6 @@ export async function createTryOnBookingAction(formData: FormData) {
     }
   }
 
-  const appointmentTimeZone =
-    parsedInput.data.timeZone && isValidTimeZone(parsedInput.data.timeZone)
-      ? parsedInput.data.timeZone
-      : "UTC";
   const dedupedServices = Array.from(
     new Set(parsedInput.data.services ?? [])
   );

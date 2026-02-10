@@ -27,6 +27,7 @@ const adminDressSelect = Prisma.validator<Prisma.ProductSelect>()({
   id: true,
   slug: true,
   name: true,
+  currency: true,
   priceInCents: true,
   status: true,
   isFeatured: true,

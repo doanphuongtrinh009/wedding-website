@@ -14,6 +14,8 @@ import { z } from "zod";
 import { requireAdmin } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 
+const defaultProductCurrency = "VND";
+
 function revalidatePaths(paths: string[]) {
   for (const path of new Set(paths)) {
     revalidatePath(path);
@@ -28,11 +30,16 @@ function slugify(input: string) {
     .replace(/^-+|-+$/g, "");
 }
 
-function parsePriceInCents(priceValue: string) {
-  const parsed = Number(priceValue);
+function parsePriceInCents(priceValue: string, currency: string) {
+  const normalized = priceValue.replace(/,/g, "").trim();
+  const parsed = Number(normalized);
 
   if (!Number.isFinite(parsed) || parsed <= 0) {
     return null;
+  }
+
+  if (currency === "VND") {
+    return Math.round(parsed);
   }
 
   return Math.round(parsed * 100);
@@ -43,6 +50,7 @@ async function createDressWithUniqueSlug(data: {
   slug: string;
   description: string;
   priceInCents: number;
+  currency: string;
   status: ProductStatus;
   isFeatured: boolean;
 }) {
@@ -58,7 +66,7 @@ async function createDressWithUniqueSlug(data: {
           priceInCents: data.priceInCents,
           status: data.status,
           isFeatured: data.isFeatured,
-          currency: "USD"
+          currency: data.currency
         }
       });
       return;
@@ -114,7 +122,10 @@ export async function createDressAction(formData: FormData) {
     return;
   }
 
-  const priceInCents = parsePriceInCents(parsedInput.data.price);
+  const priceInCents = parsePriceInCents(
+    parsedInput.data.price,
+    defaultProductCurrency
+  );
 
   if (!priceInCents) {
     return;
@@ -131,6 +142,7 @@ export async function createDressAction(formData: FormData) {
     slug: candidateSlug,
     description: parsedInput.data.description,
     priceInCents,
+    currency: defaultProductCurrency,
     status: parsedInput.data.status,
     isFeatured: parsedInput.data.isFeatured
   });
@@ -159,7 +171,23 @@ export async function updateDressAction(formData: FormData) {
     return;
   }
 
-  const priceInCents = parsePriceInCents(parsedInput.data.price);
+  const existingDress = await prisma.product.findUnique({
+    where: {
+      id: parsedInput.data.productId
+    },
+    select: {
+      currency: true
+    }
+  });
+
+  if (!existingDress) {
+    return;
+  }
+
+  const priceInCents = parsePriceInCents(
+    parsedInput.data.price,
+    existingDress.currency
+  );
 
   if (!priceInCents) {
     return;

@@ -11,7 +11,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { formatDateTime, formatEnumLabel } from "@/lib/format";
 import type { AdminDress } from "@/lib/admin";
 
-import { toDollars } from "./admin-helpers";
+import { toPriceInputValue } from "./admin-helpers";
 
 const productStatusOptions = Object.values(ProductStatus);
 
@@ -50,13 +50,13 @@ export function AdminDressesSection({ dresses }: AdminDressesSectionProps) {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="new-dress-price">Price (USD)</Label>
+            <Label htmlFor="new-dress-price">Price (VND)</Label>
             <Input
               id="new-dress-price"
               name="price"
               type="number"
               min="1"
-              step="0.01"
+              step="1"
               required
             />
           </div>
@@ -130,14 +130,19 @@ export function AdminDressesSection({ dresses }: AdminDressesSectionProps) {
 
                 <div className="grid gap-3 sm:grid-cols-3">
                   <div className="space-y-1">
-                    <Label htmlFor={`price-${dress.id}`}>Price</Label>
+                    <Label htmlFor={`price-${dress.id}`}>
+                      Price ({dress.currency})
+                    </Label>
                     <Input
                       id={`price-${dress.id}`}
                       name="price"
                       type="number"
                       min="1"
-                      step="0.01"
-                      defaultValue={toDollars(dress.priceInCents)}
+                      step={dress.currency === "VND" ? "1" : "0.01"}
+                      defaultValue={toPriceInputValue(
+                        dress.priceInCents,
+                        dress.currency
+                      )}
                       required
                     />
                   </div>

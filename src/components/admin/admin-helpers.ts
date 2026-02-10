@@ -1,7 +1,11 @@
 import { BookingStatus, OrderStatus } from "@prisma/client";
 
-export function toDollars(cents: number) {
-  return (cents / 100).toFixed(2);
+export function toPriceInputValue(valueInMinorUnits: number, currency: string) {
+  if (currency === "VND") {
+    return String(Math.round(valueInMinorUnits));
+  }
+
+  return (valueInMinorUnits / 100).toFixed(2);
 }
 
 export function getCustomerName(customer: {

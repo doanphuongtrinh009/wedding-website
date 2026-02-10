@@ -4,16 +4,18 @@ import type { HTMLAttributes } from "react";
 import { cn } from "@/lib/utils";
 
 const cardVariants = cva(
-  "rounded-[1.4rem] border text-card-foreground transition-all duration-500 ease-out",
+  "rounded-2xl border text-card-foreground transition-[transform,opacity,box-shadow] duration-300 ease-out motion-safe:will-change-transform",
   {
     variants: {
       variant: {
-        default: "border-border/70 bg-card shadow-soft",
-        elevated: "border-brand-pearl/90 bg-card shadow-luxury",
+        default:
+          "border-border/70 bg-card shadow-soft motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-editorial",
+        elevated:
+          "border-brand-pearl/90 bg-card shadow-luxury motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-luxury",
         editorial:
-          "border-border/65 bg-card/90 shadow-editorial backdrop-blur hover:border-brand-taupe/20 hover:shadow-luxury",
+          "border-border/65 bg-card/90 shadow-editorial backdrop-blur hover:border-brand-taupe/20 motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-luxury",
         product:
-          "border-border/70 bg-card shadow-soft motion-safe:hover:-translate-y-2 motion-safe:hover:shadow-luxury motion-safe:hover:border-brand-taupe/30"
+          "border-border/70 bg-card shadow-soft motion-safe:hover:-translate-y-1.5 motion-safe:hover:shadow-luxury motion-safe:hover:border-brand-taupe/30"
       }
     },
     defaultVariants: {

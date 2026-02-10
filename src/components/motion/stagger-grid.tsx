@@ -29,7 +29,9 @@ export function MotionStaggerGrid({
       className={cn(className)}
       variants={staggerContainer(stagger)}
       initial="hidden"
-      animate="visible"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.14, margin: "-8% 0px -8% 0px" }}
+      style={{ willChange: "opacity, transform" }}
     >
       {items.map((item, index) => (
         <m.div key={index} variants={fadeUp}>

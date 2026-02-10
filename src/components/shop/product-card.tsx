@@ -43,7 +43,7 @@ export function ProductCard({
   return (
     <Card
       variant="product"
-      className="group flex h-full flex-col overflow-hidden bg-card/95 [content-visibility:auto]"
+      className="group flex h-full flex-col overflow-hidden rounded-2xl bg-card/95 [content-visibility:auto]"
     >
       <div className="relative aspect-[4/5] border-b border-border/70 bg-secondary/35">
         {primaryImage ? (
@@ -51,7 +51,7 @@ export function ProductCard({
             src={optimizedPrimaryImage ?? primaryImage.secureUrl}
             alt={primaryImage.altText || product.name}
             fill
-            className="object-cover transition duration-700 motion-safe:group-hover:scale-[1.035]"
+            className="rounded-t-2xl object-cover transition-transform duration-300 ease-out motion-safe:will-change-transform motion-safe:group-hover:scale-[1.045]"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             priority={imagePriority}
             quality={85}

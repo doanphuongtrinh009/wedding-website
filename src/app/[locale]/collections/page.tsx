@@ -2,6 +2,7 @@ import { getTranslations } from "next-intl/server";
 
 import { CatalogPagination } from "@/components/shop/catalog-pagination";
 import { CatalogToolbar } from "@/components/shop/catalog-toolbar";
+import { SectionReveal } from "@/components/motion/section-reveal";
 import { MotionStaggerGrid } from "@/components/motion/stagger-grid";
 import { WishlistToastProvider } from "@/components/providers/wishlist-toast-provider";
 import { ProductCard } from "@/components/shop/product-card";
@@ -82,45 +83,51 @@ export default async function CollectionsPage({
 
   return (
     <section className="section-shell">
-      <div className="mb-space-lg space-y-4">
-        <p className="editorial-kicker">{t("kicker")}</p>
-        <h1>{t("title")}</h1>
-        <p className="max-w-2xl text-muted-foreground">{t("description")}</p>
-      </div>
-
-      <CatalogToolbar defaultQuery={query} defaultSort={sort} />
-
-      <div className="mt-5 flex items-center justify-between gap-3 rounded-xl border border-border/70 bg-background/70 px-4 py-3 text-sm text-muted-foreground">
-        <p>{t("count", { count: catalog.total })}</p>
-      </div>
-
-      {catalog.items.length === 0 ? (
-        <div className="bg-card/82 mt-6 rounded-[1.3rem] border border-border/70 p-10 text-center shadow-editorial">
-          <p className="font-display text-3xl">{t("noResultsTitle")}</p>
-          <p className="mt-2 text-muted-foreground">{t("noResultsDesc")}</p>
+      <SectionReveal>
+        <div className="mb-space-lg space-y-4">
+          <p className="editorial-kicker">{t("kicker")}</p>
+          <h1>{t("title")}</h1>
+          <p className="max-w-2xl text-muted-foreground">{t("description")}</p>
         </div>
-      ) : (
-        <WishlistToastProvider>
-          <MotionStaggerGrid className="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {catalog.items.map((product, index) => (
-              <ProductCard
-                key={product.id}
-                product={product}
-                isWishlisted={wishlistIds.has(product.id)}
-                showWishlist={Boolean(profile)}
-                imagePriority={index < 2}
-              />
-            ))}
-          </MotionStaggerGrid>
-        </WishlistToastProvider>
-      )}
 
-      <CatalogPagination
-        page={catalog.page}
-        totalPages={catalog.totalPages}
-        query={query}
-        sort={sort}
-      />
+        <CatalogToolbar defaultQuery={query} defaultSort={sort} />
+
+        <div className="mt-5 flex items-center justify-between gap-3 rounded-xl border border-border/70 bg-background/70 px-4 py-3 text-sm text-muted-foreground">
+          <p>{t("count", { count: catalog.total })}</p>
+        </div>
+      </SectionReveal>
+
+      <SectionReveal delay={0.05}>
+        {catalog.items.length === 0 ? (
+          <div className="bg-card/82 mt-6 rounded-[1.3rem] border border-border/70 p-10 text-center shadow-editorial">
+            <p className="font-display text-3xl">{t("noResultsTitle")}</p>
+            <p className="mt-2 text-muted-foreground">{t("noResultsDesc")}</p>
+          </div>
+        ) : (
+          <WishlistToastProvider>
+            <MotionStaggerGrid className="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+              {catalog.items.map((product, index) => (
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                  isWishlisted={wishlistIds.has(product.id)}
+                  showWishlist={Boolean(profile)}
+                  imagePriority={index < 2}
+                />
+              ))}
+            </MotionStaggerGrid>
+          </WishlistToastProvider>
+        )}
+      </SectionReveal>
+
+      <SectionReveal delay={0.08}>
+        <CatalogPagination
+          page={catalog.page}
+          totalPages={catalog.totalPages}
+          query={query}
+          sort={sort}
+        />
+      </SectionReveal>
     </section>
   );
 }

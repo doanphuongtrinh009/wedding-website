@@ -57,7 +57,7 @@ export async function RealBrides() {
                             src={bride.image}
                             alt={`Bride ${bride.name} in Quỳnh Trâm Bridal`}
                             fill
-                            className="object-cover transition-transform duration-700 group-hover:scale-105"
+                            className="rounded-2xl object-cover transition-transform duration-300 ease-out motion-safe:will-change-transform motion-safe:group-hover:scale-[1.04]"
                             sizes="(max-width: 768px) 100vw, 33vw"
                         />
                         <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent p-6 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">

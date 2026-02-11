@@ -87,9 +87,7 @@ export async function generateMetadata(
   const product = await getProductBySlug(slug);
 
   if (!product) {
-    return {
-      title: "Product not found"
-    };
+    notFound();
   }
 
   const primaryImage = product.images[0]?.secureUrl;

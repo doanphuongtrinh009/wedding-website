@@ -17,11 +17,22 @@ function isServiceCode(value: string): value is ServiceCode {
   return supportedServiceCodes.has(value);
 }
 
-export const metadata: Metadata = {
-  title: "Book Try-On Appointment",
-  description:
-    "Request a private bridal try-on appointment with your preferred gown."
-};
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Metadata" });
+
+  return {
+    title: t("bookTitle"),
+    description: t("bookDescription"),
+    alternates: {
+      canonical: "/book"
+    }
+  };
+}
 
 function getSingleSearchParam(value: string | string[] | undefined) {
   return Array.isArray(value) ? value[0] : value;

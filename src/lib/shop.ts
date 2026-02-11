@@ -29,14 +29,11 @@ export type ProductCard = Prisma.ProductGetPayload<{
 
 export type CatalogSort = "featured" | "newest" | "price_asc" | "price_desc";
 
-export const catalogSortOptions: ReadonlyArray<{
-  label: string;
-  value: CatalogSort;
-}> = [
-  { label: "Featured", value: "featured" },
-  { label: "Newest", value: "newest" },
-  { label: "Price: Low to high", value: "price_asc" },
-  { label: "Price: High to low", value: "price_desc" }
+export const catalogSortOptions: ReadonlyArray<CatalogSort> = [
+  "featured",
+  "newest",
+  "price_asc",
+  "price_desc"
 ] as const;
 
 function getCatalogOrderBy(

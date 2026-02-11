@@ -27,7 +27,7 @@ export async function generateMetadata() {
 }
 
 const allowedSortValues = new Set(
-  catalogSortOptions.map((option) => option.value)
+  catalogSortOptions
 );
 
 function getSingleSearchParam(value: string | string[] | undefined) {

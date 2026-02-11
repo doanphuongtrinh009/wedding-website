@@ -47,8 +47,8 @@ export async function CatalogToolbar({
           className="min-w-44"
         >
           {catalogSortOptions.map((option) => (
-            <option key={option.value} value={option.value}>
-              {tSort(option.value)}
+            <option key={option} value={option}>
+              {tSort(option)}
             </option>
           ))}
         </Select>

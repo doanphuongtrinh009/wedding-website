@@ -17,9 +17,8 @@ import { FloatingConversionCta } from "@/components/layout/floating-conversion-c
 
 import { Navbar } from "@/components/layout/navbar";
 import { siteConfig } from "@/config/site";
-import { Link } from "@/i18n/routing";
+import { isValidLocale, Link } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
-import { routing } from "@/i18n/routing";
 
 import "../globals.css";
 
@@ -101,19 +100,16 @@ export default async function RootLayout({
   const { locale } = await params;
 
   // Ensure that the incoming `locale` is valid
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  if (!routing.locales.includes(locale as any)) {
+  if (!isValidLocale(locale)) {
     notFound();
   }
 
-  const allMessages = await getMessages();
-  const messages = pickClientMessages(
-    allMessages as Record<string, unknown>
-  );
-  const [layoutT, navT] = await Promise.all([
+  const [allMessages, layoutT, navT] = await Promise.all([
+    getMessages(),
     getTranslations({ locale, namespace: "Layout" }),
     getTranslations({ locale, namespace: "Nav" })
   ]);
+  const messages = pickClientMessages(allMessages as Record<string, unknown>);
   const phoneHref = `tel:${siteConfig.support.phone.replace(/[^\d+]/g, "")}`;
   const currentYear = new Date().getFullYear();
   const quickLinks = [

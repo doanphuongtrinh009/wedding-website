@@ -3,7 +3,7 @@ import createMiddleware from "next-intl/middleware";
 import { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
-import { routing } from "./i18n/routing";
+import { isValidLocale, routing } from "./i18n/routing";
 
 const intlMiddleware = createMiddleware(routing);
 
@@ -21,10 +21,7 @@ const isProtectedRoute = createRouteMatcher([
 function getLocaleFromPathname(pathname: string) {
   const firstSegment = pathname.split("/")[1];
 
-  if (
-    firstSegment &&
-    routing.locales.includes(firstSegment as (typeof routing.locales)[number])
-  ) {
+  if (firstSegment && isValidLocale(firstSegment)) {
     return firstSegment;
   }
 

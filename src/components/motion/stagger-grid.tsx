@@ -1,7 +1,7 @@
 "use client";
 
 import { m, useReducedMotion } from "framer-motion";
-import { Children } from "react";
+import { Children, isValidElement } from "react";
 
 import { fadeUp, staggerContainer } from "@/components/motion/variants";
 import { cn } from "@/lib/utils";
@@ -34,7 +34,10 @@ export function MotionStaggerGrid({
       style={{ willChange: "opacity, transform" }}
     >
       {items.map((item, index) => (
-        <m.div key={index} variants={fadeUp}>
+        <m.div
+          key={isValidElement(item) && item.key ? item.key : index}
+          variants={fadeUp}
+        >
           {item}
         </m.div>
       ))}

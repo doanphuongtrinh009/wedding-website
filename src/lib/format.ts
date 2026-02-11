@@ -1,30 +1,47 @@
+const currencyFormatterCache = new Map<string, Intl.NumberFormat>();
+const dateFormatter = new Intl.DateTimeFormat("en-US", {
+  month: "long",
+  day: "numeric",
+  year: "numeric"
+});
+const dateTimeFormatter = new Intl.DateTimeFormat("en-US", {
+  month: "short",
+  day: "numeric",
+  year: "numeric",
+  hour: "numeric",
+  minute: "2-digit"
+});
+
+function getCurrencyFormatter(currency: string) {
+  const existingFormatter = currencyFormatterCache.get(currency);
+
+  if (existingFormatter) {
+    return existingFormatter;
+  }
+
+  const formatter = new Intl.NumberFormat("vi-VN", {
+    style: "currency",
+    currency,
+    maximumFractionDigits: 0
+  });
+  currencyFormatterCache.set(currency, formatter);
+
+  return formatter;
+}
+
 export function formatCurrency(valueInCents: number, currency: string) {
   const isVND = currency === "VND";
   const value = isVND ? valueInCents : valueInCents / 100;
 
-  return new Intl.NumberFormat("vi-VN", {
-    style: "currency",
-    currency,
-    maximumFractionDigits: 0
-  }).format(value);
+  return getCurrencyFormatter(currency).format(value);
 }
 
 export function formatDate(dateValue: Date | string) {
-  return new Intl.DateTimeFormat("en-US", {
-    month: "long",
-    day: "numeric",
-    year: "numeric"
-  }).format(new Date(dateValue));
+  return dateFormatter.format(new Date(dateValue));
 }
 
 export function formatDateTime(dateValue: Date | string) {
-  return new Intl.DateTimeFormat("en-US", {
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-    hour: "numeric",
-    minute: "2-digit"
-  }).format(new Date(dateValue));
+  return dateTimeFormatter.format(new Date(dateValue));
 }
 
 export function formatEnumLabel(value: string) {

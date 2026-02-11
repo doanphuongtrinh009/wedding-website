@@ -1,4 +1,4 @@
-import { UserRole } from "@prisma/client";
+import { Prisma, UserRole } from "@prisma/client";
 import { auth, currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 
@@ -8,16 +8,32 @@ const isClerkConfigured = Boolean(
   process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY && process.env.CLERK_SECRET_KEY
 );
 
-export async function getCurrentUserProfile() {
+function isClerkRuntimeDisabled() {
+  return (
+    process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY?.includes(
+      "test_Y2xlcmsuZXhhbXBsZS5jb20k"
+    ) || process.env.CLERK_SECRET_KEY?.includes("dummy")
+  );
+}
+
+function canUseClerkAuth() {
   if (!isClerkConfigured || !isDatabaseConfigured) {
-    return null;
+    return false;
   }
 
-  // Skip Clerk auth if using dummy/mock keys
-  if (
-    process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY?.includes("test_Y2xlcmsuZXhhbXBsZS5jb20k") ||
-    process.env.CLERK_SECRET_KEY?.includes("dummy")
-  ) {
+  return !isClerkRuntimeDisabled();
+}
+
+function getProfileByClerkUserId(clerkUserId: string) {
+  return prisma.userProfile.findUnique({
+    where: {
+      clerkUserId
+    }
+  });
+}
+
+export async function getCurrentUserProfile() {
+  if (!canUseClerkAuth()) {
     return null;
   }
 
@@ -28,9 +44,7 @@ export async function getCurrentUserProfile() {
       return null;
     }
 
-    return prisma.userProfile.findUnique({
-      where: { clerkUserId: userId }
-    });
+    return getProfileByClerkUserId(userId);
   } catch (error) {
     console.error("Auth error:", error);
     return null;
@@ -38,15 +52,7 @@ export async function getCurrentUserProfile() {
 }
 
 export async function ensureUserProfile() {
-  if (!isClerkConfigured || !isDatabaseConfigured) {
-    return null;
-  }
-
-  // Skip Clerk auth if using dummy/mock keys
-  if (
-    process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY?.includes("test_Y2xlcmsuZXhhbXBsZS5jb20k") ||
-    process.env.CLERK_SECRET_KEY?.includes("dummy")
-  ) {
+  if (!canUseClerkAuth()) {
     return null;
   }
 
@@ -56,9 +62,7 @@ export async function ensureUserProfile() {
     return null;
   }
 
-  const existingProfile = await prisma.userProfile.findUnique({
-    where: { clerkUserId: userId }
-  });
+  const existingProfile = await getProfileByClerkUserId(userId);
 
   if (existingProfile) {
     return existingProfile;
@@ -71,15 +75,29 @@ export async function ensureUserProfile() {
 
   const fallbackEmail = primaryEmail ?? `${userId}@local.maison-etoile`;
 
-  return prisma.userProfile.create({
-    data: {
-      clerkUserId: userId,
-      email: fallbackEmail,
-      firstName: clerkUser?.firstName ?? undefined,
-      lastName: clerkUser?.lastName ?? undefined,
-      phone: clerkUser?.phoneNumbers?.[0]?.phoneNumber ?? undefined
+  try {
+    return await prisma.userProfile.create({
+      data: {
+        clerkUserId: userId,
+        email: fallbackEmail,
+        firstName: clerkUser?.firstName ?? undefined,
+        lastName: clerkUser?.lastName ?? undefined,
+        phone: clerkUser?.phoneNumbers?.[0]?.phoneNumber ?? undefined
+      }
+    });
+  } catch (error) {
+    // Parallel first-logins can collide on unique constraints; fetch the row
+    // created by the other request instead of failing the action/page render.
+    const isUniqueConflict =
+      error instanceof Prisma.PrismaClientKnownRequestError &&
+      error.code === "P2002";
+
+    if (!isUniqueConflict) {
+      throw error;
     }
-  });
+
+    return getProfileByClerkUserId(userId);
+  }
 }
 
 export async function requireUserProfile() {

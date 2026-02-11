@@ -25,8 +25,10 @@ export async function generateMetadata(props: {
 }
 
 export default async function WishlistPage() {
-  const t = await getTranslations("Wishlist");
-  const profile = await requireUserProfile();
+  const [t, profile] = await Promise.all([
+    getTranslations("Wishlist"),
+    requireUserProfile()
+  ]);
   const wishlistItems = await getWishlistProducts(profile.id);
 
   return (

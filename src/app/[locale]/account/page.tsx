@@ -42,10 +42,12 @@ export default async function AccountPage({
 }: {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
-  const t = await getTranslations("Account");
-  const statusT = await getTranslations("Status");
-  const params = await searchParams;
-  const profile = await requireUserProfile();
+  const [t, statusT, params, profile] = await Promise.all([
+    getTranslations("Account"),
+    getTranslations("Status"),
+    searchParams,
+    requireUserProfile()
+  ]);
   const overview = await getAccountOverview(profile.id);
 
   const bookingCreated =

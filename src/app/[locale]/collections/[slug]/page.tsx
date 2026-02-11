@@ -117,8 +117,10 @@ export async function generateMetadata(
 }
 
 export default async function ProductDetailPage(props: ProductDetailPageProps) {
-  const t = await getTranslations("ProductDetail");
-  const params = await props.params;
+  const [t, params] = await Promise.all([
+    getTranslations("ProductDetail"),
+    props.params
+  ]);
   const { slug, locale } = params;
   const [profile, product] = await Promise.all([
     getCurrentUserProfile(),

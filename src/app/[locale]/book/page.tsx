@@ -11,7 +11,11 @@ import { getBookableProducts } from "@/lib/shop";
 
 type ServiceCode = "makeup" | "photo";
 
-const supportedServiceCodes = new Set<ServiceCode>(["makeup", "photo"]);
+const supportedServiceCodes = new Set<string>(["makeup", "photo"]);
+
+function isServiceCode(value: string): value is ServiceCode {
+  return supportedServiceCodes.has(value);
+}
 
 export const metadata: Metadata = {
   title: "Book Try-On Appointment",
@@ -31,9 +35,7 @@ function parseServiceCodes(paramValue: string | undefined): ServiceCode[] {
   const parsed = paramValue
     .split(",")
     .map((item) => item.trim().toLowerCase())
-    .filter((item): item is ServiceCode =>
-      supportedServiceCodes.has(item as ServiceCode)
-    );
+    .filter((item): item is ServiceCode => isServiceCode(item));
 
   return Array.from(new Set(parsed));
 }
@@ -43,9 +45,11 @@ export default async function BookingPage({
 }: {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
-  const t = await getTranslations("Booking");
-  const params = await searchParams;
-  const products = await getBookableProducts();
+  const [t, params, products] = await Promise.all([
+    getTranslations("Booking"),
+    searchParams,
+    getBookableProducts()
+  ]);
 
   const selectedProductId = getSingleSearchParam(params.productId) ?? "";
   const selectedServices = parseServiceCodes(

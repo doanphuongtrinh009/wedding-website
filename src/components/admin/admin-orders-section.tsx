@@ -1,4 +1,4 @@
-import { OrderStatus, PaymentStatus } from "@prisma/client";
+import { OrderStatus, PaymentStatus } from "@/generated/prisma/browser";
 
 import { updateOrderAction } from "@/actions/admin-actions";
 import {

@@ -1,7 +1,9 @@
-import { Prisma, UserRole } from "@prisma/client";
 import { auth, currentUser } from "@clerk/nextjs/server";
-import { redirect } from "next/navigation";
+import { getLocale } from "next-intl/server";
 
+import { Prisma, UserRole } from "@/generated/prisma/client";
+import { redirect as intlRedirect } from "@/i18n/routing";
+import { type LocalizedHref, resolveLocale } from "@/lib/localized-paths";
 import { isDatabaseConfigured, prisma } from "@/lib/prisma";
 
 const isClerkConfigured = Boolean(
@@ -29,6 +31,23 @@ function getProfileByClerkUserId(clerkUserId: string) {
     where: {
       clerkUserId
     }
+  });
+}
+
+async function getRequestLocale() {
+  try {
+    return resolveLocale(await getLocale());
+  } catch {
+    return resolveLocale(undefined);
+  }
+}
+
+async function redirectWithLocale(href: LocalizedHref): Promise<never> {
+  const locale = await getRequestLocale();
+
+  return intlRedirect({
+    href,
+    locale
   });
 }
 
@@ -73,7 +92,7 @@ export async function ensureUserProfile() {
     (emailAddress) => emailAddress.id === clerkUser.primaryEmailAddressId
   )?.emailAddress;
 
-  const fallbackEmail = primaryEmail ?? `${userId}@local.maison-etoile`;
+  const fallbackEmail = primaryEmail ?? `${userId}@local.quynhtrambridal`;
 
   try {
     return await prisma.userProfile.create({
@@ -102,13 +121,13 @@ export async function ensureUserProfile() {
 
 export async function requireUserProfile() {
   if (!isDatabaseConfigured) {
-    redirect("/");
+    return redirectWithLocale("/");
   }
 
   const profile = await ensureUserProfile();
 
   if (!profile) {
-    redirect("/sign-in");
+    return redirectWithLocale("/sign-in");
   }
 
   return profile;
@@ -118,7 +137,7 @@ export async function requireAdmin() {
   const profile = await requireUserProfile();
 
   if (profile.role !== UserRole.ADMIN) {
-    redirect("/");
+    return redirectWithLocale("/");
   }
 
   return profile;

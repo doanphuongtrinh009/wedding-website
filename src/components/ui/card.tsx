@@ -13,7 +13,7 @@ const cardVariants = cva(
         elevated:
           "border-brand-pearl/90 bg-card shadow-luxury motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-luxury",
         editorial:
-          "border-border/65 bg-card/90 shadow-editorial backdrop-blur hover:border-brand-taupe/20 motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-luxury",
+          "border-border/65 bg-card/90 shadow-editorial backdrop-blur-sm hover:border-brand-taupe/20 motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-luxury",
         product:
           "border-border/70 bg-card shadow-soft motion-safe:hover:-translate-y-1.5 motion-safe:hover:shadow-luxury motion-safe:hover:border-brand-taupe/30"
       }

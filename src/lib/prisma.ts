@@ -1,7 +1,7 @@
-import { PrismaClient } from "@prisma/client";
+import { PrismaPg } from "@prisma/adapter-pg";
+import { PrismaClient } from "@/generated/prisma/client";
 
 declare global {
-  // eslint-disable-next-line no-var
   var prisma: PrismaClient | undefined;
 }
 
@@ -11,15 +11,26 @@ export const isDatabaseConfigured = Boolean(
   databaseUrl && databaseUrl !== "undefined"
 );
 
-export const prisma =
+const prismaClientSingleton =
   global.prisma ||
-  new PrismaClient({
-    log:
-      process.env.NODE_ENV === "development"
-        ? ["query", "warn", "error"]
-        : ["error"]
+  (isDatabaseConfigured
+    ? new PrismaClient({
+        adapter: new PrismaPg({ connectionString: databaseUrl }),
+        log:
+          process.env.NODE_ENV === "development"
+            ? ["query", "warn", "error"]
+            : ["error"]
+      })
+    : undefined);
+
+export const prisma =
+  prismaClientSingleton ||
+  new Proxy({} as PrismaClient, {
+    get() {
+      throw new Error("DATABASE_URL is not configured.");
+    }
   });
 
-if (process.env.NODE_ENV !== "production") {
-  global.prisma = prisma;
+if (process.env.NODE_ENV !== "production" && prismaClientSingleton) {
+  global.prisma = prismaClientSingleton;
 }

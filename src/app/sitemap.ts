@@ -54,7 +54,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   try {
     const [{ prisma }, { ProductStatus }] = await Promise.all([
       import("@/lib/prisma"),
-      import("@prisma/client")
+      import("@/generated/prisma/client")
     ]);
 
     products = await prisma.product.findMany({

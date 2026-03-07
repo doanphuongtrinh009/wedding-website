@@ -1,109 +1,252 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-:root {
-  --brand-ivory: 35 55% 97%;
-  --brand-pearl: 30 29% 92%;
-  --brand-blush: 17 47% 88%;
-  --brand-rose: 9 33% 73%;
-  --brand-taupe: 24 13% 49%;
-  --brand-cocoa: 18 24% 24%;
-  --brand-gold: 36 43% 61%;
+@custom-variant dark (&:is(.dark *));
 
-  --background: var(--brand-ivory);
-  --foreground: 16 19% 18%;
-  --card: 0 0% 100%;
-  --card-foreground: 16 19% 18%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 16 19% 18%;
-  --primary: 18 30% 26%;
-  --primary-foreground: 34 53% 96%;
-  --secondary: 29 30% 91%;
-  --secondary-foreground: 17 20% 22%;
-  --muted: 30 34% 93%;
-  --muted-foreground: 23 11% 41%;
-  --accent: 15 55% 89%;
-  --accent-foreground: 17 22% 24%;
-  --destructive: 0 72% 49%;
-  --destructive-foreground: 0 0% 100%;
-  --border: 29 24% 81%;
-  --input: 29 24% 81%;
-  --ring: 20 35% 41%;
-
-  --space-2xs: 0.5rem;
-  --space-xs: 0.8125rem;
-  --space-sm: 1.125rem;
-  --space-md: 1.75rem;
-  --space-lg: 2.5rem;
-  --space-xl: 3.5rem;
-  --space-2xl: 5rem;
-  --space-3xl: 7rem;
-
-  --radius: 0.9rem;
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+  @media (width >= --theme(--breakpoint-sm)) {
+    max-width: none;
+  }
+  @media (width >= 1280px) {
+    max-width: 1280px;
+  }
 }
 
-.dark {
-  --background: 18 17% 12%;
-  --foreground: 31 30% 92%;
-  --card: 18 16% 15%;
-  --card-foreground: 31 30% 92%;
-  --popover: 18 16% 15%;
-  --popover-foreground: 31 30% 92%;
-  --primary: 29 41% 73%;
-  --primary-foreground: 20 22% 16%;
-  --secondary: 22 14% 24%;
-  --secondary-foreground: 31 30% 92%;
-  --muted: 20 11% 22%;
-  --muted-foreground: 24 14% 70%;
-  --accent: 14 24% 32%;
-  --accent-foreground: 31 30% 92%;
-  --destructive: 2 62% 42%;
-  --destructive-foreground: 0 0% 100%;
-  --border: 24 10% 26%;
-  --input: 24 10% 26%;
-  --ring: 30 45% 72%;
+@theme {
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-brand-ivory: hsl(var(--brand-ivory));
+  --color-brand-pearl: hsl(var(--brand-pearl));
+  --color-brand-blush: hsl(var(--brand-blush));
+  --color-brand-rose: hsl(var(--brand-rose));
+  --color-brand-taupe: hsl(var(--brand-taupe));
+  --color-brand-cocoa: hsl(var(--brand-cocoa));
+  --color-brand-gold: hsl(var(--brand-gold));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --spacing-space-2xs: var(--space-2xs);
+  --spacing-space-xs: var(--space-xs);
+  --spacing-space-sm: var(--space-sm);
+  --spacing-space-md: var(--space-md);
+  --spacing-space-lg: var(--space-lg);
+  --spacing-space-xl: var(--space-xl);
+  --spacing-space-2xl: var(--space-2xl);
+  --spacing-space-3xl: var(--space-3xl);
+
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
+
+  --text-overline: 0.7rem;
+  --text-overline--letter-spacing: 0.2em;
+  --text-overline--line-height: 1.45;
+  --text-overline--font-weight: 600;
+  --text-body: 1rem;
+  --text-body--line-height: 1.78;
+  --text-display: clamp(2.55rem, 5vw, 4.9rem);
+  --text-display--line-height: 1.01;
+  --text-display--letter-spacing: -0.034em;
+
+  --shadow-luxury: 0 40px 100px -30px rgba(89, 54, 44, 0.25);
+  --shadow-soft: 0 20px 50px -20px rgba(89, 54, 44, 0.15);
+  --shadow-editorial: 0 16px 44px -28px rgba(89, 54, 44, 0.12);
+
+  --animate-fade-in: fade-in 0.75s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
-* {
-  @apply border-border;
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
 }
 
-html {
-  scroll-behavior: smooth;
+@utility section-shell {
+  @apply container py-space-lg md:py-space-2xl;
 }
 
-body {
-  @apply min-h-screen bg-background font-sans text-foreground antialiased;
-  background-image:
-    radial-gradient(circle at 6% 8%, rgba(219, 186, 160, 0.2), transparent 40%),
-    radial-gradient(
-      circle at 95% 0%,
-      rgba(228, 196, 177, 0.24),
-      transparent 36%
-    ),
-    radial-gradient(
-      circle at 72% 38%,
-      rgba(244, 230, 218, 0.58),
-      transparent 42%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(255, 252, 248, 0.96) 0%,
-      rgba(248, 242, 237, 0.97) 100%
-    );
+@utility editorial-kicker {
+  @apply text-overline uppercase text-brand-taupe/95;
 }
 
-::selection {
-  background: hsl(var(--accent));
-  color: hsl(var(--accent-foreground));
+@utility soft-frame {
+  @apply rounded-2xl border border-border/75 bg-card/95 shadow-soft backdrop-blur-sm;
 }
 
-h1,
-h2,
-h3,
-h4 {
-  @apply font-display;
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@utility luxe-orb {
+  @apply pointer-events-none absolute rounded-full;
+}
+
+@utility skeleton-luxe {
+  background: linear-gradient(
+    110deg,
+    hsl(var(--muted)) 8%,
+    hsl(var(--card)) 18%,
+    hsl(var(--muted)) 33%
+  );
+  background-size: 220% 100%;
+  animation: skeleton-shimmer 2.2s ease-in-out infinite;
+}
+
+@layer utilities {
+  :root {
+    --brand-ivory: 35 55% 97%;
+    --brand-pearl: 30 29% 92%;
+    --brand-blush: 17 47% 88%;
+    --brand-rose: 9 33% 73%;
+    --brand-taupe: 24 13% 49%;
+    --brand-cocoa: 18 24% 24%;
+    --brand-gold: 36 43% 61%;
+
+    --background: var(--brand-ivory);
+    --foreground: 16 19% 18%;
+    --card: 0 0% 100%;
+    --card-foreground: 16 19% 18%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 16 19% 18%;
+    --primary: 18 30% 26%;
+    --primary-foreground: 34 53% 96%;
+    --secondary: 29 30% 91%;
+    --secondary-foreground: 17 20% 22%;
+    --muted: 30 34% 93%;
+    --muted-foreground: 23 11% 41%;
+    --accent: 15 55% 89%;
+    --accent-foreground: 17 22% 24%;
+    --destructive: 0 72% 49%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 29 24% 81%;
+    --input: 29 24% 81%;
+    --ring: 20 35% 41%;
+
+    --space-2xs: 0.5rem;
+    --space-xs: 0.8125rem;
+    --space-sm: 1.125rem;
+    --space-md: 1.75rem;
+    --space-lg: 2.5rem;
+    --space-xl: 3.5rem;
+    --space-2xl: 5rem;
+    --space-3xl: 7rem;
+
+    --radius: 0.9rem;
+  }
+
+  .dark {
+    --background: 18 17% 12%;
+    --foreground: 31 30% 92%;
+    --card: 18 16% 15%;
+    --card-foreground: 31 30% 92%;
+    --popover: 18 16% 15%;
+    --popover-foreground: 31 30% 92%;
+    --primary: 29 41% 73%;
+    --primary-foreground: 20 22% 16%;
+    --secondary: 22 14% 24%;
+    --secondary-foreground: 31 30% 92%;
+    --muted: 20 11% 22%;
+    --muted-foreground: 24 14% 70%;
+    --accent: 14 24% 32%;
+    --accent-foreground: 31 30% 92%;
+    --destructive: 2 62% 42%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 24 10% 26%;
+    --input: 24 10% 26%;
+    --ring: 30 45% 72%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply min-h-screen bg-background font-sans text-foreground antialiased;
+    background-image:
+      radial-gradient(
+        circle at 6% 8%,
+        rgba(219, 186, 160, 0.2),
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 95% 0%,
+        rgba(228, 196, 177, 0.24),
+        transparent 36%
+      ),
+      radial-gradient(
+        circle at 72% 38%,
+        rgba(244, 230, 218, 0.58),
+        transparent 42%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(255, 252, 248, 0.96) 0%,
+        rgba(248, 242, 237, 0.97) 100%
+      );
+  }
+
+  ::selection {
+    background: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+  }
 }
 
 @layer base {
@@ -121,39 +264,6 @@ h4 {
 
   p {
     @apply text-body leading-relaxed;
-  }
-}
-
-@layer utilities {
-  .section-shell {
-    @apply container py-space-lg md:py-space-2xl;
-  }
-
-  .editorial-kicker {
-    @apply text-overline uppercase text-brand-taupe/95;
-  }
-
-  .soft-frame {
-    @apply rounded-2xl border border-border/75 bg-card/95 shadow-soft backdrop-blur;
-  }
-
-  .text-balance {
-    text-wrap: balance;
-  }
-
-  .luxe-orb {
-    @apply pointer-events-none absolute rounded-full;
-  }
-
-  .skeleton-luxe {
-    background: linear-gradient(
-      110deg,
-      hsl(var(--muted)) 8%,
-      hsl(var(--card)) 18%,
-      hsl(var(--muted)) 33%
-    );
-    background-size: 220% 100%;
-    animation: skeleton-shimmer 2.2s ease-in-out infinite;
   }
 }
 

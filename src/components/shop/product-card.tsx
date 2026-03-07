@@ -45,7 +45,7 @@ export function ProductCard({
       variant="product"
       className="group flex h-full flex-col overflow-hidden rounded-2xl bg-card/95 [content-visibility:auto]"
     >
-      <div className="relative aspect-[4/5] border-b border-border/70 bg-secondary/35">
+      <div className="relative aspect-4/5 border-b border-border/70 bg-secondary/35">
         {primaryImage ? (
           <Image
             src={optimizedPrimaryImage ?? primaryImage.secureUrl}
@@ -69,7 +69,7 @@ export function ProductCard({
         {product.isFeatured ? (
           <Badge
             variant="secondary"
-            className="bg-background/88 absolute left-3 top-3 backdrop-blur"
+            className="bg-background/88 absolute left-3 top-3 backdrop-blur-sm"
           >
             {t("featured")}
           </Badge>
@@ -90,7 +90,7 @@ export function ProductCard({
           <p className="text-[0.66rem] font-semibold uppercase tracking-[0.18em] text-brand-taupe">
             {t("tryOnEligible")}
           </p>
-          <CardTitle className="min-h-[4.6rem] text-[1.8rem] leading-tight md:min-h-[5rem] md:text-[1.95rem]">
+          <CardTitle className="min-h-[4.6rem] text-[1.8rem] leading-tight md:min-h-20 md:text-[1.95rem]">
             <Link
               href={`/collections/${product.slug}`}
               className="line-clamp-2 transition-colors hover:text-primary"
@@ -98,7 +98,7 @@ export function ProductCard({
               {product.name}
             </Link>
           </CardTitle>
-          <p className="min-h-[5.25rem] text-sm leading-relaxed text-muted-foreground">
+          <p className="min-h-21 text-sm leading-relaxed text-muted-foreground">
             {truncate(product.description, 108)}
           </p>
         </CardHeader>

@@ -83,7 +83,7 @@ export default async function MakeupServicePage() {
             </div>
           </div>
 
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-border/70 bg-secondary/35">
+          <div className="relative aspect-4/3 overflow-hidden rounded-2xl border border-border/70 bg-secondary/35">
             <Image
               src="/images/products/slip-1.png"
               alt={t("heroImageAlt")}
@@ -143,7 +143,7 @@ export default async function MakeupServicePage() {
           <div className="grid gap-3 md:grid-cols-3">
             {galleryItems.map((item) => (
               <figure key={item.key} className="space-y-2">
-                <div className="relative aspect-[4/5] overflow-hidden rounded-xl border border-border/70 bg-secondary/30">
+                <div className="relative aspect-4/5 overflow-hidden rounded-xl border border-border/70 bg-secondary/30">
                   <Image
                     src={item.src}
                     alt={t(`gallery.${item.key}.alt`)}

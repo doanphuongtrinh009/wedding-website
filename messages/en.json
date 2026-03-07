@@ -1,715 +1,718 @@
 {
-    "LocaleSwitcher": {
-        "vi": "Tiếng Việt",
-        "en": "English"
+  "LocaleSwitcher": {
+    "vi": "Tiếng Việt",
+    "en": "English"
+  },
+  "Metadata": {
+    "homeTitle": "Luxury Bridal Shop",
+    "homeDescription": "Shop bridal collections, save wishlist favorites, and book private try-on appointments.",
+    "bookTitle": "Book Try-On Appointment",
+    "bookDescription": "Request a private bridal try-on appointment with your preferred gown."
+  },
+  "Layout": {
+    "skipToContent": "Skip to main content",
+    "footerTagline": "Modern bridal appointments and couture styling.",
+    "footerDescription": "A bridal atelier for gowns, makeup, and photo services with clear milestones from consultation to wedding day.",
+    "footerHome": "Home",
+    "footerAtelierLabel": "Luxury bridal atelier",
+    "footerByAppointment": "By appointment only",
+    "footerQuickLinks": "Quick links",
+    "footerServiceLinks": "Services",
+    "footerBundleCta": "Book Makeup + Photo bundle",
+    "footerContact": "Contact",
+    "footerWhatsapp": "WhatsApp consultation",
+    "footerZalo": "Zalo consultation",
+    "footerHours": "Consultation hours: 9:00 AM - 8:00 PM (daily)",
+    "footerFollowUs": "Social channels",
+    "footerCopyright": "© {year} Quỳnh Trâm Bridal. All rights reserved."
+  },
+  "Nav": {
+    "collections": "Collections",
+    "services": "Services",
+    "bookTryOn": "Book Try-On",
+    "wishlist": "Wishlist",
+    "account": "Account",
+    "reserveFitting": "Reserve fitting",
+    "signIn": "Sign in",
+    "signOut": "Sign out",
+    "contact": "Contact",
+    "menu": "Menu",
+    "myAccount": "My Account",
+    "openMenu": "Open menu",
+    "servicesOverview": "Service overview",
+    "makeupService": "Makeup service",
+    "photoService": "Photo service",
+    "servicesOverviewHint": "View all three service lines",
+    "makeupServiceHint": "Pricing, visuals, and process",
+    "photoServiceHint": "Concepts, packages, and timeline",
+    "serviceMenuHint": "Book any service standalone or bundle them together."
+  },
+  "Hero": {
+    "badge": "Quỳnh Trâm Bridal 2026",
+    "kicker": "Private showroom experience",
+    "heading": "Bridal pieces shaped with couture precision and a quietly modern spirit.",
+    "description": "A luxury bridal house blending editorial taste with intimate service. Discover refined silhouettes, private fittings, and meticulous alteration pathways designed around your timeline.",
+    "reserveFitting": "Reserve private fitting",
+    "browseCollections": "Browse collections",
+    "appointments": "Appointments",
+    "appointmentsValue": "1:1 stylist only",
+    "alterations": "Alterations",
+    "alterationsValue": "Milestone tracked",
+    "leadTime": "Lead time",
+    "leadTimeValue": "4-6 months",
+    "clientExperience": "Client experience",
+    "clientHeading": "One bride, one stylist, full focus.",
+    "clientDescription": "Every appointment is paced around body fit, textile education, and styling confidence for ceremony, reception, and post-ceremony moments.",
+    "fittingLength": "Fitting length",
+    "fittingLengthValue": "90 minutes",
+    "showroomCadence": "Showroom cadence",
+    "showroomCadenceValue": "By appointment"
+  },
+  "FeaturedSection": {
+    "kicker": "Featured Collection",
+    "heading": "Best-loved gowns for private try-on this season.",
+    "viewCatalog": "View full catalog",
+    "comingSoon": "Featured styles coming soon",
+    "comingSoonNote": "Product merchandising can be updated from the admin panel."
+  },
+  "ProductCard": {
+    "tryOnEligible": "Private try-on eligible",
+    "featured": "Featured",
+    "viewGown": "View gown",
+    "bookTryOn": "Book try-on"
+  },
+  "ProductDetail": {
+    "kicker": "Product detail",
+    "subtitle": "One-on-one showroom guidance by appointment",
+    "featured": "Featured edit",
+    "priceLabel": "Reference price",
+    "bookTryOn": "Book private fitting",
+    "backToCatalog": "Back to catalog",
+    "confirmationNote": "Secure appointment confirmation within one business day.",
+    "alterationNote": "Alteration timeline and fitting milestones included.",
+    "chatWhatsApp": "Chat on WhatsApp",
+    "chatZalo": "Chat on Zalo",
+    "supportTitle": "Quick consultation via",
+    "addOnKicker": "Add-on services",
+    "addOnTitle": "You can include Makeup and Photo services directly in your fitting request.",
+    "addOns": {
+      "makeup": {
+        "title": "Bridal Makeup",
+        "detail": "Makeup direction aligned to your ceremony concept and lighting setup.",
+        "cta": "Add Makeup"
+      },
+      "photo": {
+        "title": "Wedding Photo",
+        "detail": "Consultation for pre-wedding or wedding-day photo packages based on your timeline.",
+        "cta": "Add Photo"
+      },
+      "bundleCta": "Book with Makeup + Photo"
     },
-    "Metadata": {
-        "homeTitle": "Luxury Bridal Shop",
-        "homeDescription": "Shop bridal collections, save wishlist favorites, and book private try-on appointments.",
-        "bookTitle": "Book Try-On Appointment",
-        "bookDescription": "Request a private bridal try-on appointment with your preferred gown."
+    "info": {
+      "productCode": "Style code",
+      "lookbook": "Lookbook images",
+      "lookbookValue": "{count} images",
+      "updatedOn": "Updated",
+      "responseTime": "Booking response",
+      "responseTimeValue": "Within 1 business day"
     },
-    "Layout": {
-        "skipToContent": "Skip to main content",
-        "footerTagline": "Modern bridal appointments and couture styling.",
-        "footerDescription": "A bridal atelier for gowns, makeup, and photo services with clear milestones from consultation to wedding day.",
-        "footerHome": "Home",
-        "footerAtelierLabel": "Luxury bridal atelier",
-        "footerByAppointment": "By appointment only",
-        "footerQuickLinks": "Quick links",
-        "footerServiceLinks": "Services",
-        "footerBundleCta": "Book Makeup + Photo bundle",
-        "footerContact": "Contact",
-        "footerWhatsapp": "WhatsApp consultation",
-        "footerZalo": "Zalo consultation",
-        "footerHours": "Consultation hours: 9:00 AM - 8:00 PM (daily)",
-        "footerFollowUs": "Social channels",
-        "footerCopyright": "© {year} Quỳnh Trâm Bridal. All rights reserved."
+    "attributes": {
+      "silhouette": "Silhouette",
+      "fabric": "Fabric",
+      "occasion": "Best for",
+      "silhouetteValues": {
+        "aLine": "A-Line",
+        "mermaid": "Mermaid",
+        "ballGown": "Ball Gown",
+        "column": "Column",
+        "classic": "Modern classic"
+      },
+      "fabricValues": {
+        "chiffon": "Soft chiffon",
+        "satin": "Lustrous satin",
+        "crepe": "Matte crepe",
+        "lace": "Soft lace",
+        "mikado": "Structured mikado",
+        "tulle": "Layered tulle",
+        "mixed": "Mixed fabrics"
+      },
+      "occasionValues": {
+        "beach": "Beach ceremony",
+        "outdoor": "Outdoor wedding",
+        "ballroom": "Ballroom reception",
+        "intimate": "Intimate celebration",
+        "allRound": "Flexible across concepts"
+      }
     },
-    "Nav": {
-        "collections": "Collections",
-        "services": "Services",
-        "bookTryOn": "Book Try-On",
-        "wishlist": "Wishlist",
-        "account": "Account",
-        "reserveFitting": "Reserve fitting",
-        "signIn": "Sign in",
-        "contact": "Contact",
-        "menu": "Menu",
-        "myAccount": "My Account",
-        "openMenu": "Open menu",
-        "servicesOverview": "Service overview",
-        "makeupService": "Makeup service",
-        "photoService": "Photo service",
-        "servicesOverviewHint": "View all three service lines",
-        "makeupServiceHint": "Pricing, visuals, and process",
-        "photoServiceHint": "Concepts, packages, and timeline",
-        "serviceMenuHint": "Book any service standalone or bundle them together."
+    "journeyKicker": "After you book",
+    "journeyTitle": "What you get at each step",
+    "journey": {
+      "confirm": {
+        "title": "Fast confirmation",
+        "detail": "Our team confirms your slot and sends preparation notes before the appointment."
+      },
+      "fitting": {
+        "title": "Goal-oriented fitting",
+        "detail": "Your stylist works from body fit, event concept, and budget range you shared."
+      },
+      "aftercare": {
+        "title": "Alteration follow-through",
+        "detail": "Refit milestones and final handoff timing are mapped clearly to your wedding timeline."
+      }
     },
-    "Hero": {
-        "badge": "Quỳnh Trâm Bridal 2026",
-        "kicker": "Private showroom experience",
-        "heading": "Bridal pieces shaped with couture precision and a quietly modern spirit.",
-        "description": "A luxury bridal house blending editorial taste with intimate service. Discover refined silhouettes, private fittings, and meticulous alteration pathways designed around your timeline.",
-        "reserveFitting": "Reserve private fitting",
-        "browseCollections": "Browse collections",
-        "appointments": "Appointments",
-        "appointmentsValue": "1:1 stylist only",
-        "alterations": "Alterations",
-        "alterationsValue": "Milestone tracked",
-        "leadTime": "Lead time",
-        "leadTimeValue": "4-6 months",
-        "clientExperience": "Client experience",
-        "clientHeading": "One bride, one stylist, full focus.",
-        "clientDescription": "Every appointment is paced around body fit, textile education, and styling confidence for ceremony, reception, and post-ceremony moments.",
-        "fittingLength": "Fitting length",
-        "fittingLengthValue": "90 minutes",
-        "showroomCadence": "Showroom cadence",
-        "showroomCadenceValue": "By appointment"
+    "wishlistTitle": "Track this style",
+    "saveToWishlist": "Save this gown to your wishlist for account follow-up.",
+    "wishlistReady": "Tap the heart to save this style and compare it later in your account.",
+    "wishlistSaved": "This style is already in your wishlist.",
+    "signInToSave": "Sign in",
+    "signInToSaveNote": "to save this product to your wishlist.",
+    "zoomLabel": "Zoom product image",
+    "thumbnailAria": "View image {index}"
+  },
+  "Wishlist": {
+    "kicker": "Saved Favorites",
+    "heading": "Your wishlist",
+    "description": "Keep your favorite gowns in one place and book try-on appointments when you are ready.",
+    "empty": "No saved products yet",
+    "emptyNote": "Start exploring the catalog and add products to shortlist.",
+    "explore": "Explore collections",
+    "addToWishlist": "Add to wishlist",
+    "removeFromWishlist": "Remove from wishlist",
+    "actionFailed": "Wishlist action failed",
+    "tryAgain": "Please try again in a moment."
+  },
+  "Account": {
+    "kicker": "Client Account",
+    "heading": "Welcome back",
+    "description": "Manage your try-on bookings, wishlist shortlist, and profile information in one place.",
+    "bookingCreated": "Booking request submitted successfully. We will follow up shortly.",
+    "profile": "Profile",
+    "email": "Email",
+    "name": "Name",
+    "phone": "Phone",
+    "upcomingBookings": "Upcoming bookings",
+    "wishlistItems": "Wishlist items",
+    "bookTryOn": "Book try-on",
+    "openWishlist": "Open wishlist",
+    "recentBookings": "Recent bookings",
+    "noBookings": "No bookings yet",
+    "noBookingsNote": "Schedule your first private try-on appointment.",
+    "bookNow": "Book now",
+    "appointment": "Appointment",
+    "product": "Product",
+    "weddingDate": "Wedding date"
+  },
+  "Booking": {
+    "kicker": "Try-On Booking",
+    "title": "Reserve your private bridal appointment.",
+    "description": "Choose a date, share your event timeline, and we will confirm your fitting request with stylist prep notes.",
+    "serviceOnlyHint": "You can book Makeup or Photo services without selecting a wedding gown.",
+    "formTitle": "Appointment request form",
+    "timelineTitle": "Service timeline",
+    "confirmationNote": "We send confirmation details with stylist prep guidance after reviewing your preferred date and notes.",
+    "signInPrompt": "For account tracking and wishlist sync, please",
+    "signInLink": "sign in",
+    "supportButtons": {
+      "whatsapp": "WhatsApp support",
+      "zalo": "Zalo support"
     },
-    "FeaturedSection": {
-        "kicker": "Featured Collection",
-        "heading": "Best-loved gowns for private try-on this season.",
-        "viewCatalog": "View full catalog",
-        "comingSoon": "Featured styles coming soon",
-        "comingSoonNote": "Product merchandising can be updated from the admin panel."
-    },
-    "ProductCard": {
-        "tryOnEligible": "Private try-on eligible",
-        "featured": "Featured",
-        "viewGown": "View gown",
-        "bookTryOn": "Book try-on"
-    },
-    "ProductDetail": {
-        "kicker": "Product detail",
-        "subtitle": "One-on-one showroom guidance by appointment",
-        "featured": "Featured edit",
-        "priceLabel": "Reference price",
-        "bookTryOn": "Book private fitting",
-        "backToCatalog": "Back to catalog",
-        "confirmationNote": "Secure appointment confirmation within one business day.",
-        "alterationNote": "Alteration timeline and fitting milestones included.",
-        "chatWhatsApp": "Chat on WhatsApp",
-        "chatZalo": "Chat on Zalo",
-        "supportTitle": "Quick consultation via",
-        "addOnKicker": "Add-on services",
-        "addOnTitle": "You can include Makeup and Photo services directly in your fitting request.",
-        "addOns": {
-            "makeup": {
-                "title": "Bridal Makeup",
-                "detail": "Makeup direction aligned to your ceremony concept and lighting setup.",
-                "cta": "Add Makeup"
-            },
-            "photo": {
-                "title": "Wedding Photo",
-                "detail": "Consultation for pre-wedding or wedding-day photo packages based on your timeline.",
-                "cta": "Add Photo"
-            },
-            "bundleCta": "Book with Makeup + Photo"
+    "form": {
+      "submitting": "Submitting...",
+      "submitButton": "Submit booking request",
+      "appointmentDetails": "Appointment details",
+      "preferredGown": "Preferred gown",
+      "noPreference": "No preference yet",
+      "productOptionalNote": "You can leave this empty for Makeup/Photo-only bookings.",
+      "appointmentDate": "Appointment date",
+      "appointmentTime": "Appointment time",
+      "weddingDate": "Wedding date (optional)",
+      "stylingContext": "Styling context",
+      "styleNotes": "Style notes",
+      "styleNotesPlaceholder": "Share venue details, dress preferences, and timeline constraints.",
+      "addOnServices": "Add-on services (optional)",
+      "services": {
+        "makeup": {
+          "title": "Bridal Makeup",
+          "note": "Prioritize this if you want makeup look planning during your fitting process."
         },
-        "info": {
-            "productCode": "Style code",
-            "lookbook": "Lookbook images",
-            "lookbookValue": "{count} images",
-            "updatedOn": "Updated",
-            "responseTime": "Booking response",
-            "responseTimeValue": "Within 1 business day"
-        },
-        "attributes": {
-            "silhouette": "Silhouette",
-            "fabric": "Fabric",
-            "occasion": "Best for",
-            "silhouetteValues": {
-                "aLine": "A-Line",
-                "mermaid": "Mermaid",
-                "ballGown": "Ball Gown",
-                "column": "Column",
-                "classic": "Modern classic"
-            },
-            "fabricValues": {
-                "chiffon": "Soft chiffon",
-                "satin": "Lustrous satin",
-                "crepe": "Matte crepe",
-                "lace": "Soft lace",
-                "mikado": "Structured mikado",
-                "tulle": "Layered tulle",
-                "mixed": "Mixed fabrics"
-            },
-            "occasionValues": {
-                "beach": "Beach ceremony",
-                "outdoor": "Outdoor wedding",
-                "ballroom": "Ballroom reception",
-                "intimate": "Intimate celebration",
-                "allRound": "Flexible across concepts"
-            }
-        },
-        "journeyKicker": "After you book",
-        "journeyTitle": "What you get at each step",
-        "journey": {
-            "confirm": {
-                "title": "Fast confirmation",
-                "detail": "Our team confirms your slot and sends preparation notes before the appointment."
-            },
-            "fitting": {
-                "title": "Goal-oriented fitting",
-                "detail": "Your stylist works from body fit, event concept, and budget range you shared."
-            },
-            "aftercare": {
-                "title": "Alteration follow-through",
-                "detail": "Refit milestones and final handoff timing are mapped clearly to your wedding timeline."
-            }
-        },
-        "wishlistTitle": "Track this style",
-        "saveToWishlist": "Save this gown to your wishlist for account follow-up.",
-        "wishlistReady": "Tap the heart to save this style and compare it later in your account.",
-        "wishlistSaved": "This style is already in your wishlist.",
-        "signInToSave": "Sign in",
-        "signInToSaveNote": "to save this product to your wishlist.",
-        "zoomLabel": "Zoom product image",
-        "thumbnailAria": "View image {index}"
-    },
-    "Wishlist": {
-        "kicker": "Saved Favorites",
-        "heading": "Your wishlist",
-        "description": "Keep your favorite gowns in one place and book try-on appointments when you are ready.",
-        "empty": "No saved products yet",
-        "emptyNote": "Start exploring the catalog and add products to shortlist.",
-        "explore": "Explore collections",
-        "addToWishlist": "Add to wishlist",
-        "removeFromWishlist": "Remove from wishlist",
-        "actionFailed": "Wishlist action failed",
-        "tryAgain": "Please try again in a moment."
-    },
-    "Account": {
-        "kicker": "Client Account",
-        "heading": "Welcome back",
-        "description": "Manage your try-on bookings, wishlist shortlist, and profile information in one place.",
-        "bookingCreated": "Booking request submitted successfully. We will follow up shortly.",
-        "profile": "Profile",
-        "email": "Email",
-        "name": "Name",
-        "phone": "Phone",
-        "upcomingBookings": "Upcoming bookings",
-        "wishlistItems": "Wishlist items",
-        "bookTryOn": "Book try-on",
-        "openWishlist": "Open wishlist",
-        "recentBookings": "Recent bookings",
-        "noBookings": "No bookings yet",
-        "noBookingsNote": "Schedule your first private try-on appointment.",
-        "bookNow": "Book now",
-        "appointment": "Appointment",
-        "product": "Product",
-        "weddingDate": "Wedding date"
-    },
-    "Booking": {
-        "kicker": "Try-On Booking",
-        "title": "Reserve your private bridal appointment.",
-        "description": "Choose a date, share your event timeline, and we will confirm your fitting request with stylist prep notes.",
-        "serviceOnlyHint": "You can book Makeup or Photo services without selecting a wedding gown.",
-        "formTitle": "Appointment request form",
-        "timelineTitle": "Service timeline",
-        "confirmationNote": "We send confirmation details with stylist prep guidance after reviewing your preferred date and notes.",
-        "signInPrompt": "For account tracking and wishlist sync, please",
-        "signInLink": "sign in",
-        "supportButtons": {
-            "whatsapp": "WhatsApp support",
-            "zalo": "Zalo support"
-        },
-        "form": {
-            "submitting": "Submitting...",
-            "submitButton": "Submit booking request",
-            "appointmentDetails": "Appointment details",
-            "preferredGown": "Preferred gown",
-            "noPreference": "No preference yet",
-            "productOptionalNote": "You can leave this empty for Makeup/Photo-only bookings.",
-            "appointmentDate": "Appointment date",
-            "appointmentTime": "Appointment time",
-            "weddingDate": "Wedding date (optional)",
-            "stylingContext": "Styling context",
-            "styleNotes": "Style notes",
-            "styleNotesPlaceholder": "Share venue details, dress preferences, and timeline constraints.",
-            "addOnServices": "Add-on services (optional)",
-            "services": {
-                "makeup": {
-                    "title": "Bridal Makeup",
-                    "note": "Prioritize this if you want makeup look planning during your fitting process."
-                },
-                "photo": {
-                    "title": "Wedding Photo",
-                    "note": "Request package consultation for pre-wedding or wedding-day shooting."
-                }
-            },
-            "browseCollections": "Browse collections",
-            "validation": {
-                "reviewField": "Please review this field.",
-                "weddingDateError": "Wedding date must be on or after appointment date.",
-                "generalError": "Please review the highlighted fields."
-            }
-        },
-        "steps": {
-            "stylistPrep": {
-                "title": "Stylist preparation",
-                "detail": "Your style notes are reviewed ahead of the showroom appointment."
-            },
-            "privateFitting": {
-                "title": "Private fitting",
-                "detail": "Try-on session tailored to silhouette, fit, and ceremony timeline."
-            },
-            "aftercare": {
-                "title": "Aftercare planning",
-                "detail": "Alteration milestones and pickup timeline are confirmed with you."
-            }
-        },
-        "errors": {
-            "invalidForm": "Please complete all required fields.",
-            "invalidDatetime": "Choose a future appointment date and time.",
-            "invalidProduct": "Selected product is unavailable. Please choose another gown.",
-            "serviceUnavailable": "Booking service is temporarily unavailable. Please try again shortly.",
-            "slotUnavailable": "That time slot has been reserved. Please choose a different appointment time."
+        "photo": {
+          "title": "Wedding Photo",
+          "note": "Request package consultation for pre-wedding or wedding-day shooting."
         }
+      },
+      "browseCollections": "Browse collections",
+      "validation": {
+        "reviewField": "Please review this field.",
+        "weddingDateError": "Wedding date must be on or after appointment date.",
+        "generalError": "Please review the highlighted fields."
+      }
     },
-    "ServicesPage": {
-        "metaTitle": "Wedding services",
-        "metaDescription": "Explore Quỳnh Trâm Bridal's three service lines: bridal gowns, bridal makeup, and wedding photo.",
-        "kicker": "Complete wedding services",
-        "heading": "Three service lines, one team supporting your full wedding journey",
-        "description": "Beyond bridal gowns, we provide Makeup and Photo as standalone services so you can book each line independently or combine them into one coordinated plan.",
-        "heroPrimaryCta": "Book Makeup + Photo",
-        "heroSecondaryCta": "Browse bridal gowns",
-        "stats": {
-            "serviceLines": {
-                "label": "Service lines",
-                "value": "03"
-            },
-            "oneToOne": {
-                "label": "Consultation mode",
-                "value": "1:1"
-            },
-            "serviceOnly": {
-                "label": "Standalone booking",
-                "value": "Yes"
-            }
-        },
-        "cards": {
-            "dress": {
-                "title": "Bridal Gowns",
-                "summary": "Silhouette consultation, private fittings, and alteration milestones aligned to your wedding date.",
-                "point1": "Style shortlist based on body fit and event concept",
-                "point2": "Clear refit and alteration checkpoints",
-                "point3": "Quality handoff checklist before pickup",
-                "cta": "View gowns"
-            },
-            "makeup": {
-                "title": "Bridal Makeup",
-                "summary": "Makeup direction based on skin tone, venue lighting, and final wedding look.",
-                "point1": "Makeup style planning for ceremony and reception",
-                "point2": "Hair, veil, and accessory harmony guidance",
-                "point3": "Available as a standalone service",
-                "cta": "View Makeup service"
-            },
-            "photo": {
-                "title": "Wedding Photo",
-                "summary": "Photography concept planning with clear timeline, locations, and delivery expectations.",
-                "point1": "Pre-wedding and wedding-day options",
-                "point2": "Shot list aligned to your story and mood",
-                "point3": "Available as a standalone service",
-                "cta": "View Photo service"
-            }
-        },
-        "workflow": {
-            "title": "How we work",
-            "step1": {
-                "title": "Step 1: Confirm service scope",
-                "detail": "Choose the line you need: gown, makeup, photo, or a combined package."
-            },
-            "step2": {
-                "title": "Step 2: One-on-one consultation",
-                "detail": "We align budget, concept, and timeline to build a practical service plan."
-            },
-            "step3": {
-                "title": "Step 3: Deliver by milestones",
-                "detail": "Appointments, tasks, and checkpoints stay transparent from start to finish."
-            }
-        },
-        "serviceOnly": {
-            "title": "Book services without gown purchase",
-            "description": "You do not need to purchase a gown to book Makeup or Photo. The booking flow supports standalone service requests.",
-            "note": "In the booking form, simply leave “Preferred gown” empty and choose Makeup/Photo add-ons.",
-            "cta": "Book standalone service"
-        }
+    "steps": {
+      "stylistPrep": {
+        "title": "Stylist preparation",
+        "detail": "Your style notes are reviewed ahead of the showroom appointment."
+      },
+      "privateFitting": {
+        "title": "Private fitting",
+        "detail": "Try-on session tailored to silhouette, fit, and ceremony timeline."
+      },
+      "aftercare": {
+        "title": "Aftercare planning",
+        "detail": "Alteration milestones and pickup timeline are confirmed with you."
+      }
     },
-    "FloatingCta": {
-        "bookFitting": "Book fitting",
-        "reserveFitting": "Reserve private fitting"
-    },
-    "Collections": {
-        "kicker": "Collections",
-        "heading": "Signature silhouettes, curated for private appointments.",
-        "viewAll": "View all gowns"
-    },
-    "NotFound": {
-        "kicker": "Product",
-        "heading": "Gown not found",
-        "description": "This product may have been archived or renamed. Browse available collections for current inventory.",
-        "backToCatalog": "Back to catalog"
-    },
-    "HomeHighlights": {
-        "kicker": "How we work",
-        "heading": "Clear details so you can plan with confidence",
-        "intro": "Every appointment is grounded in real constraints: sample availability, alteration lead time, and decision checkpoints before the wedding week.",
-        "coutureTitle": "Selection that fits reality",
-        "coutureDesc": "We do not push trends. Stylists shortlist gowns based on your body shape, venue concept, and stated budget range.",
-        "coutureNote": "Each option includes fabric notes, fit behavior, alteration scope, and expected turnaround.",
-        "fittingTitle": "Structured fitting sessions",
-        "fittingDesc": "Appointments are one-on-one, starting from baseline silhouettes, then refined for movement, comfort, and ceremony use.",
-        "fittingNote": "After each session you get a concrete next-step summary: shortlisted styles, adjustment points, and return milestones.",
-        "calendarTitle": "Timeline with real milestones",
-        "calendarDesc": "Scheduling follows your actual wedding date, with room for alterations, re-fit checks, and contingency.",
-        "calendarNote": "If your timeline is tight, we call out risks early and propose alternatives instead of overpromising."
-    },
-    "CollectionsGrid": {
-        "kicker": "Collections",
-        "heading": "Signature silhouettes, curated for private appointments.",
-        "viewAll": "View all gowns",
-        "savePreview": "Save preview",
-        "products": {
-            "aurora": {
-                "name": "Aurora Silk A-Line",
-                "silhouette": "A-Line",
-                "note": "Hand draped bodice with cathedral train"
-            },
-            "celeste": {
-                "name": "Celeste Crepe Column",
-                "silhouette": "Column",
-                "note": "Sculpted waist and pearl button back"
-            },
-            "elysian": {
-                "name": "Elysian Lace Corset",
-                "silhouette": "Ball Gown",
-                "note": "French lace overlay and detachable sleeves"
-            },
-            "seraphina": {
-                "name": "Seraphina Satin Wrap",
-                "silhouette": "Fit & Flare",
-                "note": "Contoured seams with soft off-shoulder drape"
-            }
-        }
-    },
-    "CollectionsPage": {
-        "kicker": "Product Catalog",
-        "title": "Bridal collections",
-        "description": "Explore curated silhouettes, compare pricing, and schedule in-store try-on appointments directly from each product page.",
-        "count": "{count} gowns available",
-        "noResultsTitle": "No products found",
-        "noResultsDesc": "Try a different keyword or remove filters."
-    },
-    "CatalogToolbar": {
-        "searchLabel": "Search catalog",
-        "searchPlaceholder": "Search gowns, fabrics, silhouettes...",
-        "sortLabel": "Sort catalog",
-        "applyFilters": "Apply filters"
-    },
-    "CatalogSort": {
-        "featured": "Featured",
-        "newest": "Newest",
-        "price_asc": "Price: Low to high",
-        "price_desc": "Price: High to low"
-    },
-    "CatalogPagination": {
-        "previous": "Previous",
-        "next": "Next",
-        "pageOf": "Page {page} of {totalPages}"
-    },
-    "TrustBadges": {
-        "kicker": "Service commitments",
-        "items": {
-            "verified": {
-                "title": "Dedicated stylist support",
-                "detail": "Each appointment is one-on-one, with guidance tailored to fit, wedding style, and your budget plan."
-            },
-            "rating": {
-                "title": "Transparent process",
-                "detail": "Sample availability, stock condition, and alteration cost range are shared before you commit."
-            },
-            "timeline": {
-                "title": "Concrete scheduling",
-                "detail": "Fitting, alteration, and pickup milestones are confirmed clearly so you can coordinate your wedding plan."
-            },
-            "finish": {
-                "title": "Pre-handover quality checks",
-                "detail": "Before pickup, we review seams, included accessories, and care instructions with you."
-            }
-        }
-    },
-    "Testimonials": {
-        "kicker": "Client testimonials",
-        "heading": "Booked with confidence, loved in person.",
-        "reviews": {
-            "linh": {
-                "quote": "The stylist understood my ceremony vision immediately. The booking process was clear, and every fitting was perfectly paced.",
-                "event": "Garden Ceremony"
-            },
-            "emily": {
-                "quote": "I shortlisted dresses online, booked in one click, and found my gown in the first appointment. The service felt truly private.",
-                "event": "City Wedding"
-            },
-            "gia": {
-                "quote": "From first message to final alteration, communication was fast and professional. I always knew exactly what was next.",
-                "event": "Destination Wedding"
-            }
-        }
-    },
-    "Status": {
-        "PENDING": "Pending",
-        "CONFIRMED": "Confirmed",
-        "CANCELLED": "Cancelled",
-        "COMPLETED": "Completed"
-    },
-    "RealBrides": {
-        "label": "Real Brides",
-        "title": "Maison Etoile Muses",
-        "subtitle": "Discover the effortless elegance of our brides across the globe.",
-        "cta": "View Collections"
-    },
-    "AboutPage": {
-        "kicker": "Our Heritage",
-        "heroTitle1": "Modern couture,",
-        "heroTitle2": "intimate service.",
-        "heroDesc1": "Maison Etoile is a bridal atelier focused on modern silhouettes, private fittings, and personalized styling guidance from first appointment to final alteration.",
-        "heroDesc2": "Every gown consultation is tailored to your ceremony timeline, venue setting, and comfort preferences to ensure a confident and refined wedding-day fit.",
-        "processTitle": "From Sketch to Aisle",
-        "steps": {
-            "consult": {
-                "title": "Style Consultation",
-                "desc": "Meet your stylist to discuss vision and venue."
-            },
-            "fitting": {
-                "title": "Private Fittings",
-                "desc": "Exclusive 90-minute sessions in our atelier."
-            },
-            "alteration": {
-                "title": "Precise Alterations",
-                "desc": "Meticulous adjustments for the perfect fit."
-            }
-        },
-        "cta": "Book Appointment"
-    },
-    "MakeupServicePage": {
-        "metaTitle": "Bridal makeup service",
-        "metaDescription": "Explore Quỳnh Trâm Bridal makeup service details: styles, reference pricing, image examples, and booking process.",
-        "kicker": "Bridal makeup",
-        "heading": "Makeup service planned around real wedding timelines and lighting",
-        "description": "Our makeup team works from your skin tone, venue lighting, dress style, and event flow. You can book Makeup as a standalone service without purchasing a gown.",
-        "stats": {
-            "priceFrom": {
-                "label": "Starts from",
-                "value": "2,500,000 VND"
-            },
-            "serviceType": {
-                "label": "Booking mode",
-                "value": "Standalone or bundled"
-            },
-            "responseTime": {
-                "label": "Response time",
-                "value": "Within 1 business day"
-            }
-        },
-        "ctas": {
-            "bookOnly": "Book Makeup",
-            "bookBundle": "Book Makeup + Photo",
-            "backServices": "Back to services"
-        },
-        "heroImageAlt": "Bridal stylist finishing a makeup look",
-        "packageTitle": "Reference pricing",
-        "packageNote": "Prices are reference only and may change based on team size, start time, location, and extra requests.",
-        "packages": {
-            "trial": {
-                "label": "Package 1",
-                "name": "Makeup trial session",
-                "price": "2,500,000 VND",
-                "desc": "Best when you need to finalize your look before the wedding day.",
-                "feature1": "Tone and style consultation based on face shape and gown concept",
-                "feature2": "1 makeup look + basic hair setup at studio",
-                "feature3": "Written notes to recreate the finalized look on event day"
-            },
-            "weddingDay": {
-                "label": "Package 2",
-                "name": "Wedding day makeup",
-                "price": "6,500,000 VND",
-                "desc": "For brides needing hair and makeup support on the ceremony day.",
-                "feature1": "1 bridal makeup look + 1 hairstyle",
-                "feature2": "Light touch-up support before ceremony start",
-                "feature3": "Suitable for single-event timelines under 6 hours"
-            },
-            "premium": {
-                "label": "Package 3",
-                "name": "Premium full-session makeup",
-                "price": "12,900,000 VND",
-                "desc": "Built for long timelines with ceremony and reception transitions.",
-                "feature1": "2 look variations for ceremony and reception contexts",
-                "feature2": "On-site support for touch-up within committed timeline",
-                "feature3": "Coordination support for hair, veil, and photo accessories"
-            }
-        },
-        "galleryTitle": "Style references",
-        "galleryIntro": "Some makeup directions brides book most often during the recent wedding season.",
-        "gallery": {
-            "look1": {
-                "alt": "Natural bridal makeup style in daylight",
-                "caption": "Natural soft-skin look suited for outdoor ceremonies and daylight photography."
-            },
-            "look2": {
-                "alt": "Bridal makeup with balanced eye focus",
-                "caption": "Balanced eye-focused look that holds well in close-up and stage lighting."
-            },
-            "look3": {
-                "alt": "Private bridal makeup preparation area in showroom",
-                "caption": "Private preparation area at showroom with one-on-one booking flow."
-            }
-        },
-        "processTitle": "How the service runs",
-        "stepLabel": "Step {index}",
-        "process": {
-            "step1": {
-                "title": "Confirm needs and timeline",
-                "detail": "You share event date, makeup time window, and preferred style; we propose a fitting package."
-            },
-            "step2": {
-                "title": "Trial session (optional)",
-                "detail": "Trial helps lock base tone, eye direction, lip shade, hairstyle, and accessories before the wedding day."
-            },
-            "step3": {
-                "title": "Event day execution",
-                "detail": "Team arrives on schedule and follows the agreed checklist and timing plan."
-            }
-        },
-        "scopeTitle": "Scope and pricing notes",
-        "scopeIncluded": "Usually included",
-        "scopeExcluded": "Usually excluded",
-        "includedItems": {
-            "item1": "Tone and look consultation based on skin tone, dress, and wedding concept.",
-            "item2": "Bridal makeup and hair setup based on selected package scope.",
-            "item3": "Guidance to maintain look stability through the event timeline."
-        },
-        "excludedItems": {
-            "item1": "Early call-time fee (before 5 AM), distant travel, or overtime outside commitment.",
-            "item2": "Makeup for family or bridesmaids unless added to package.",
-            "item3": "External hair accessories, veil rentals, or custom purchases."
-        },
-        "supportTitle": "Need quick advice on schedule and pricing?",
-        "supportDesc": "Message us on WhatsApp or Zalo for a quote aligned with your exact wedding timeline.",
-        "supportCtas": {
-            "whatsapp": "Chat on WhatsApp",
-            "zalo": "Chat on Zalo"
-        }
-    },
-    "PhotoServicePage": {
-        "metaTitle": "Wedding photo service",
-        "metaDescription": "Explore Quỳnh Trâm Bridal photo service details: concept directions, reference pricing, visuals, and delivery process.",
-        "kicker": "Wedding photo",
-        "heading": "Wedding photography service with clear timeline and deliverables",
-        "description": "You can book Photo independently without buying a gown. The team supports planning from concept and shot flow to final image delivery milestones.",
-        "stats": {
-            "priceFrom": {
-                "label": "Starts from",
-                "value": "8,900,000 VND"
-            },
-            "serviceType": {
-                "label": "Booking mode",
-                "value": "Pre-wedding, wedding-day, or combo"
-            },
-            "delivery": {
-                "label": "Delivery timeline",
-                "value": "5-15 days (by package)"
-            }
-        },
-        "ctas": {
-            "bookOnly": "Book Photo",
-            "bookBundle": "Book Photo + Makeup",
-            "backServices": "Back to services"
-        },
-        "heroImageAlt": "Wedding photography setup with modern bridal styling",
-        "packageTitle": "Reference pricing",
-        "packageNote": "Prices are reference only and may vary by location, set count, crew size, and post-production scope.",
-        "packages": {
-            "halfDay": {
-                "label": "Package 1",
-                "name": "Pre-wedding Half Day",
-                "price": "8,900,000 VND",
-                "desc": "For couples needing a concise photo set in one session.",
-                "feature1": "Up to 4-hour shoot at 1 location",
-                "feature2": "Delivery: 40 color-corrected images + 10 retouched",
-                "feature3": "Shot-list guidance aligned to your selected mood"
-            },
-            "fullDay": {
-                "label": "Package 2",
-                "name": "Pre-wedding Full Day",
-                "price": "15,900,000 VND",
-                "desc": "Ideal for multi-location concepts and outfit changes.",
-                "feature1": "Up to 8-hour shoot, up to 2 locations",
-                "feature2": "Delivery: 80 color-corrected images + 25 retouched",
-                "feature3": "Planner support for timing and flow during shoot day"
-            },
-            "weddingDay": {
-                "label": "Package 3",
-                "name": "Wedding Day Documentary",
-                "price": "19,500,000 VND",
-                "desc": "Coverage from preparation to key reception moments.",
-                "feature1": "Timeline coverage across ceremony and reception blocks",
-                "feature2": "Early highlight delivery for immediate post-event use",
-                "feature3": "Story-driven curation based on event sequence"
-            }
-        },
-        "galleryTitle": "Concept references",
-        "galleryIntro": "Explore a few visual moods couples commonly choose for recent bookings.",
-        "gallery": {
-            "look1": {
-                "alt": "Editorial wedding portrait with soft lighting",
-                "caption": "Minimal editorial mood focused on posing rhythm and soft light control."
-            },
-            "look2": {
-                "alt": "Modern studio wedding portrait concept",
-                "caption": "Modern studio concept that emphasizes gown lines and natural expressions."
-            },
-            "look3": {
-                "alt": "Classic wedding portrait with voluminous gown",
-                "caption": "Classic romantic setup suited for traditional album direction."
-            }
-        },
-        "processTitle": "How the service runs",
-        "stepLabel": "Step {index}",
-        "process": {
-            "step1": {
-                "title": "Concept and budget alignment",
-                "detail": "We clarify style, location, wardrobe changes, and output goals before package confirmation."
-            },
-            "step2": {
-                "title": "Detailed shoot schedule",
-                "detail": "Timeline is split by makeup, outfit switch, travel blocks, and best light windows."
-            },
-            "step3": {
-                "title": "Shoot and delivery",
-                "detail": "After shooting, images are curated and delivered based on the agreed milestone timeline."
-            }
-        },
-        "scopeTitle": "Scope and pricing notes",
-        "scopeIncluded": "Usually included",
-        "scopeExcluded": "Usually excluded",
-        "includedItems": {
-            "item1": "Concept planning, shot-list direction, and retouch mood alignment.",
-            "item2": "Photography crew based on package scope (photographer and basic support).",
-            "item3": "Final image files delivered by quantity listed in the selected package."
-        },
-        "excludedItems": {
-            "item1": "Venue entry permits, special location fees, or venue-specific surcharges.",
-            "item2": "Long-distance travel or overnight accommodation for remote shoots.",
-            "item3": "Premium album printing or video production if not added separately."
-        },
-        "supportTitle": "Need a quote tailored to your plan?",
-        "supportDesc": "Message us on WhatsApp or Zalo and we will suggest the best package for your timeline and budget.",
-        "supportCtas": {
-            "whatsapp": "Chat on WhatsApp",
-            "zalo": "Chat on Zalo"
-        }
+    "errors": {
+      "invalidForm": "Please complete all required fields.",
+      "invalidDatetime": "Choose a future appointment date and time.",
+      "invalidProduct": "Selected product is unavailable. Please choose another gown.",
+      "serviceUnavailable": "Booking service is temporarily unavailable. Please try again shortly.",
+      "slotUnavailable": "That time slot has been reserved. Please choose a different appointment time."
     }
+  },
+  "ServicesPage": {
+    "metaTitle": "Wedding services",
+    "metaDescription": "Explore Quỳnh Trâm Bridal's three service lines: bridal gowns, bridal makeup, and wedding photo.",
+    "kicker": "Complete wedding services",
+    "heading": "Three service lines, one team supporting your full wedding journey",
+    "description": "Beyond bridal gowns, we provide Makeup and Photo as standalone services so you can book each line independently or combine them into one coordinated plan.",
+    "heroPrimaryCta": "Book Makeup + Photo",
+    "heroSecondaryCta": "Browse bridal gowns",
+    "stats": {
+      "serviceLines": {
+        "label": "Service lines",
+        "value": "03"
+      },
+      "oneToOne": {
+        "label": "Consultation mode",
+        "value": "1:1"
+      },
+      "serviceOnly": {
+        "label": "Standalone booking",
+        "value": "Yes"
+      }
+    },
+    "cards": {
+      "dress": {
+        "title": "Bridal Gowns",
+        "summary": "Silhouette consultation, private fittings, and alteration milestones aligned to your wedding date.",
+        "point1": "Style shortlist based on body fit and event concept",
+        "point2": "Clear refit and alteration checkpoints",
+        "point3": "Quality handoff checklist before pickup",
+        "cta": "View gowns"
+      },
+      "makeup": {
+        "title": "Bridal Makeup",
+        "summary": "Makeup direction based on skin tone, venue lighting, and final wedding look.",
+        "point1": "Makeup style planning for ceremony and reception",
+        "point2": "Hair, veil, and accessory harmony guidance",
+        "point3": "Available as a standalone service",
+        "cta": "View Makeup service"
+      },
+      "photo": {
+        "title": "Wedding Photo",
+        "summary": "Photography concept planning with clear timeline, locations, and delivery expectations.",
+        "point1": "Pre-wedding and wedding-day options",
+        "point2": "Shot list aligned to your story and mood",
+        "point3": "Available as a standalone service",
+        "cta": "View Photo service"
+      }
+    },
+    "workflow": {
+      "title": "How we work",
+      "step1": {
+        "title": "Step 1: Confirm service scope",
+        "detail": "Choose the line you need: gown, makeup, photo, or a combined package."
+      },
+      "step2": {
+        "title": "Step 2: One-on-one consultation",
+        "detail": "We align budget, concept, and timeline to build a practical service plan."
+      },
+      "step3": {
+        "title": "Step 3: Deliver by milestones",
+        "detail": "Appointments, tasks, and checkpoints stay transparent from start to finish."
+      }
+    },
+    "serviceOnly": {
+      "title": "Book services without gown purchase",
+      "description": "You do not need to purchase a gown to book Makeup or Photo. The booking flow supports standalone service requests.",
+      "note": "In the booking form, simply leave “Preferred gown” empty and choose Makeup/Photo add-ons.",
+      "cta": "Book standalone service"
+    }
+  },
+  "FloatingCta": {
+    "bookFitting": "Book fitting",
+    "reserveFitting": "Reserve private fitting"
+  },
+  "Collections": {
+    "kicker": "Collections",
+    "heading": "Signature silhouettes, curated for private appointments.",
+    "viewAll": "View all gowns"
+  },
+  "NotFound": {
+    "kicker": "Product",
+    "heading": "Gown not found",
+    "description": "This product may have been archived or renamed. Browse available collections for current inventory.",
+    "backToCatalog": "Back to catalog"
+  },
+  "HomeHighlights": {
+    "kicker": "How we work",
+    "heading": "Clear details so you can plan with confidence",
+    "intro": "Every appointment is grounded in real constraints: sample availability, alteration lead time, and decision checkpoints before the wedding week.",
+    "coutureTitle": "Selection that fits reality",
+    "coutureDesc": "We do not push trends. Stylists shortlist gowns based on your body shape, venue concept, and stated budget range.",
+    "coutureNote": "Each option includes fabric notes, fit behavior, alteration scope, and expected turnaround.",
+    "fittingTitle": "Structured fitting sessions",
+    "fittingDesc": "Appointments are one-on-one, starting from baseline silhouettes, then refined for movement, comfort, and ceremony use.",
+    "fittingNote": "After each session you get a concrete next-step summary: shortlisted styles, adjustment points, and return milestones.",
+    "calendarTitle": "Timeline with real milestones",
+    "calendarDesc": "Scheduling follows your actual wedding date, with room for alterations, re-fit checks, and contingency.",
+    "calendarNote": "If your timeline is tight, we call out risks early and propose alternatives instead of overpromising."
+  },
+  "CollectionsGrid": {
+    "kicker": "Collections",
+    "heading": "Signature silhouettes, curated for private appointments.",
+    "viewAll": "View all gowns",
+    "savePreview": "Save preview",
+    "products": {
+      "aurora": {
+        "name": "Aurora Silk A-Line",
+        "silhouette": "A-Line",
+        "note": "Hand draped bodice with cathedral train"
+      },
+      "celeste": {
+        "name": "Celeste Crepe Column",
+        "silhouette": "Column",
+        "note": "Sculpted waist and pearl button back"
+      },
+      "elysian": {
+        "name": "Elysian Lace Corset",
+        "silhouette": "Ball Gown",
+        "note": "French lace overlay and detachable sleeves"
+      },
+      "seraphina": {
+        "name": "Seraphina Satin Wrap",
+        "silhouette": "Fit & Flare",
+        "note": "Contoured seams with soft off-shoulder drape"
+      }
+    }
+  },
+  "CollectionsPage": {
+    "kicker": "Product Catalog",
+    "title": "Bridal collections",
+    "description": "Explore curated silhouettes, compare pricing, and schedule in-store try-on appointments directly from each product page.",
+    "count": "{count} gowns available",
+    "noResultsTitle": "No products found",
+    "noResultsDesc": "Try a different keyword or remove filters."
+  },
+  "CatalogToolbar": {
+    "searchLabel": "Search catalog",
+    "searchPlaceholder": "Search gowns, fabrics, silhouettes...",
+    "sortLabel": "Sort catalog",
+    "applyFilters": "Apply filters"
+  },
+  "CatalogSort": {
+    "featured": "Featured",
+    "newest": "Newest",
+    "price_asc": "Price: Low to high",
+    "price_desc": "Price: High to low"
+  },
+  "CatalogPagination": {
+    "previous": "Previous",
+    "next": "Next",
+    "pageOf": "Page {page} of {totalPages}"
+  },
+  "TrustBadges": {
+    "kicker": "Service commitments",
+    "items": {
+      "verified": {
+        "title": "Dedicated stylist support",
+        "detail": "Each appointment is one-on-one, with guidance tailored to fit, wedding style, and your budget plan."
+      },
+      "rating": {
+        "title": "Transparent process",
+        "detail": "Sample availability, stock condition, and alteration cost range are shared before you commit."
+      },
+      "timeline": {
+        "title": "Concrete scheduling",
+        "detail": "Fitting, alteration, and pickup milestones are confirmed clearly so you can coordinate your wedding plan."
+      },
+      "finish": {
+        "title": "Pre-handover quality checks",
+        "detail": "Before pickup, we review seams, included accessories, and care instructions with you."
+      }
+    }
+  },
+  "Testimonials": {
+    "kicker": "Client testimonials",
+    "heading": "Booked with confidence, loved in person.",
+    "reviews": {
+      "linh": {
+        "quote": "The stylist understood my ceremony vision immediately. The booking process was clear, and every fitting was perfectly paced.",
+        "event": "Garden Ceremony"
+      },
+      "emily": {
+        "quote": "I shortlisted dresses online, booked in one click, and found my gown in the first appointment. The service felt truly private.",
+        "event": "City Wedding"
+      },
+      "gia": {
+        "quote": "From first message to final alteration, communication was fast and professional. I always knew exactly what was next.",
+        "event": "Destination Wedding"
+      }
+    }
+  },
+  "Status": {
+    "PENDING": "Pending",
+    "CONFIRMED": "Confirmed",
+    "CANCELED": "Canceled",
+    "CANCELLED": "Cancelled",
+    "COMPLETED": "Completed",
+    "NO_SHOW": "No show"
+  },
+  "RealBrides": {
+    "label": "Real Brides",
+    "title": "Quỳnh Trâm Muses",
+    "subtitle": "Discover the effortless elegance of our brides across the globe.",
+    "cta": "View Collections"
+  },
+  "AboutPage": {
+    "kicker": "Our Heritage",
+    "heroTitle1": "Modern couture,",
+    "heroTitle2": "intimate service.",
+    "heroDesc1": "Quỳnh Trâm Bridal is a bridal atelier focused on modern silhouettes, private fittings, and personalized styling guidance from first appointment to final alteration.",
+    "heroDesc2": "Every gown consultation is tailored to your ceremony timeline, venue setting, and comfort preferences to ensure a confident and refined wedding-day fit.",
+    "processTitle": "From Sketch to Aisle",
+    "steps": {
+      "consult": {
+        "title": "Style Consultation",
+        "desc": "Meet your stylist to discuss vision and venue."
+      },
+      "fitting": {
+        "title": "Private Fittings",
+        "desc": "Exclusive 90-minute sessions in our atelier."
+      },
+      "alteration": {
+        "title": "Precise Alterations",
+        "desc": "Meticulous adjustments for the perfect fit."
+      }
+    },
+    "cta": "Book Appointment"
+  },
+  "MakeupServicePage": {
+    "metaTitle": "Bridal makeup service",
+    "metaDescription": "Explore Quỳnh Trâm Bridal makeup service details: styles, reference pricing, image examples, and booking process.",
+    "kicker": "Bridal makeup",
+    "heading": "Makeup service planned around real wedding timelines and lighting",
+    "description": "Our makeup team works from your skin tone, venue lighting, dress style, and event flow. You can book Makeup as a standalone service without purchasing a gown.",
+    "stats": {
+      "priceFrom": {
+        "label": "Starts from",
+        "value": "2,500,000 VND"
+      },
+      "serviceType": {
+        "label": "Booking mode",
+        "value": "Standalone or bundled"
+      },
+      "responseTime": {
+        "label": "Response time",
+        "value": "Within 1 business day"
+      }
+    },
+    "ctas": {
+      "bookOnly": "Book Makeup",
+      "bookBundle": "Book Makeup + Photo",
+      "backServices": "Back to services"
+    },
+    "heroImageAlt": "Bridal stylist finishing a makeup look",
+    "packageTitle": "Reference pricing",
+    "packageNote": "Prices are reference only and may change based on team size, start time, location, and extra requests.",
+    "packages": {
+      "trial": {
+        "label": "Package 1",
+        "name": "Makeup trial session",
+        "price": "2,500,000 VND",
+        "desc": "Best when you need to finalize your look before the wedding day.",
+        "feature1": "Tone and style consultation based on face shape and gown concept",
+        "feature2": "1 makeup look + basic hair setup at studio",
+        "feature3": "Written notes to recreate the finalized look on event day"
+      },
+      "weddingDay": {
+        "label": "Package 2",
+        "name": "Wedding day makeup",
+        "price": "6,500,000 VND",
+        "desc": "For brides needing hair and makeup support on the ceremony day.",
+        "feature1": "1 bridal makeup look + 1 hairstyle",
+        "feature2": "Light touch-up support before ceremony start",
+        "feature3": "Suitable for single-event timelines under 6 hours"
+      },
+      "premium": {
+        "label": "Package 3",
+        "name": "Premium full-session makeup",
+        "price": "12,900,000 VND",
+        "desc": "Built for long timelines with ceremony and reception transitions.",
+        "feature1": "2 look variations for ceremony and reception contexts",
+        "feature2": "On-site support for touch-up within committed timeline",
+        "feature3": "Coordination support for hair, veil, and photo accessories"
+      }
+    },
+    "galleryTitle": "Style references",
+    "galleryIntro": "Some makeup directions brides book most often during the recent wedding season.",
+    "gallery": {
+      "look1": {
+        "alt": "Natural bridal makeup style in daylight",
+        "caption": "Natural soft-skin look suited for outdoor ceremonies and daylight photography."
+      },
+      "look2": {
+        "alt": "Bridal makeup with balanced eye focus",
+        "caption": "Balanced eye-focused look that holds well in close-up and stage lighting."
+      },
+      "look3": {
+        "alt": "Private bridal makeup preparation area in showroom",
+        "caption": "Private preparation area at showroom with one-on-one booking flow."
+      }
+    },
+    "processTitle": "How the service runs",
+    "stepLabel": "Step {index}",
+    "process": {
+      "step1": {
+        "title": "Confirm needs and timeline",
+        "detail": "You share event date, makeup time window, and preferred style; we propose a fitting package."
+      },
+      "step2": {
+        "title": "Trial session (optional)",
+        "detail": "Trial helps lock base tone, eye direction, lip shade, hairstyle, and accessories before the wedding day."
+      },
+      "step3": {
+        "title": "Event day execution",
+        "detail": "Team arrives on schedule and follows the agreed checklist and timing plan."
+      }
+    },
+    "scopeTitle": "Scope and pricing notes",
+    "scopeIncluded": "Usually included",
+    "scopeExcluded": "Usually excluded",
+    "includedItems": {
+      "item1": "Tone and look consultation based on skin tone, dress, and wedding concept.",
+      "item2": "Bridal makeup and hair setup based on selected package scope.",
+      "item3": "Guidance to maintain look stability through the event timeline."
+    },
+    "excludedItems": {
+      "item1": "Early call-time fee (before 5 AM), distant travel, or overtime outside commitment.",
+      "item2": "Makeup for family or bridesmaids unless added to package.",
+      "item3": "External hair accessories, veil rentals, or custom purchases."
+    },
+    "supportTitle": "Need quick advice on schedule and pricing?",
+    "supportDesc": "Message us on WhatsApp or Zalo for a quote aligned with your exact wedding timeline.",
+    "supportCtas": {
+      "whatsapp": "Chat on WhatsApp",
+      "zalo": "Chat on Zalo"
+    }
+  },
+  "PhotoServicePage": {
+    "metaTitle": "Wedding photo service",
+    "metaDescription": "Explore Quỳnh Trâm Bridal photo service details: concept directions, reference pricing, visuals, and delivery process.",
+    "kicker": "Wedding photo",
+    "heading": "Wedding photography service with clear timeline and deliverables",
+    "description": "You can book Photo independently without buying a gown. The team supports planning from concept and shot flow to final image delivery milestones.",
+    "stats": {
+      "priceFrom": {
+        "label": "Starts from",
+        "value": "8,900,000 VND"
+      },
+      "serviceType": {
+        "label": "Booking mode",
+        "value": "Pre-wedding, wedding-day, or combo"
+      },
+      "delivery": {
+        "label": "Delivery timeline",
+        "value": "5-15 days (by package)"
+      }
+    },
+    "ctas": {
+      "bookOnly": "Book Photo",
+      "bookBundle": "Book Photo + Makeup",
+      "backServices": "Back to services"
+    },
+    "heroImageAlt": "Wedding photography setup with modern bridal styling",
+    "packageTitle": "Reference pricing",
+    "packageNote": "Prices are reference only and may vary by location, set count, crew size, and post-production scope.",
+    "packages": {
+      "halfDay": {
+        "label": "Package 1",
+        "name": "Pre-wedding Half Day",
+        "price": "8,900,000 VND",
+        "desc": "For couples needing a concise photo set in one session.",
+        "feature1": "Up to 4-hour shoot at 1 location",
+        "feature2": "Delivery: 40 color-corrected images + 10 retouched",
+        "feature3": "Shot-list guidance aligned to your selected mood"
+      },
+      "fullDay": {
+        "label": "Package 2",
+        "name": "Pre-wedding Full Day",
+        "price": "15,900,000 VND",
+        "desc": "Ideal for multi-location concepts and outfit changes.",
+        "feature1": "Up to 8-hour shoot, up to 2 locations",
+        "feature2": "Delivery: 80 color-corrected images + 25 retouched",
+        "feature3": "Planner support for timing and flow during shoot day"
+      },
+      "weddingDay": {
+        "label": "Package 3",
+        "name": "Wedding Day Documentary",
+        "price": "19,500,000 VND",
+        "desc": "Coverage from preparation to key reception moments.",
+        "feature1": "Timeline coverage across ceremony and reception blocks",
+        "feature2": "Early highlight delivery for immediate post-event use",
+        "feature3": "Story-driven curation based on event sequence"
+      }
+    },
+    "galleryTitle": "Concept references",
+    "galleryIntro": "Explore a few visual moods couples commonly choose for recent bookings.",
+    "gallery": {
+      "look1": {
+        "alt": "Editorial wedding portrait with soft lighting",
+        "caption": "Minimal editorial mood focused on posing rhythm and soft light control."
+      },
+      "look2": {
+        "alt": "Modern studio wedding portrait concept",
+        "caption": "Modern studio concept that emphasizes gown lines and natural expressions."
+      },
+      "look3": {
+        "alt": "Classic wedding portrait with voluminous gown",
+        "caption": "Classic romantic setup suited for traditional album direction."
+      }
+    },
+    "processTitle": "How the service runs",
+    "stepLabel": "Step {index}",
+    "process": {
+      "step1": {
+        "title": "Concept and budget alignment",
+        "detail": "We clarify style, location, wardrobe changes, and output goals before package confirmation."
+      },
+      "step2": {
+        "title": "Detailed shoot schedule",
+        "detail": "Timeline is split by makeup, outfit switch, travel blocks, and best light windows."
+      },
+      "step3": {
+        "title": "Shoot and delivery",
+        "detail": "After shooting, images are curated and delivered based on the agreed milestone timeline."
+      }
+    },
+    "scopeTitle": "Scope and pricing notes",
+    "scopeIncluded": "Usually included",
+    "scopeExcluded": "Usually excluded",
+    "includedItems": {
+      "item1": "Concept planning, shot-list direction, and retouch mood alignment.",
+      "item2": "Photography crew based on package scope (photographer and basic support).",
+      "item3": "Final image files delivered by quantity listed in the selected package."
+    },
+    "excludedItems": {
+      "item1": "Venue entry permits, special location fees, or venue-specific surcharges.",
+      "item2": "Long-distance travel or overnight accommodation for remote shoots.",
+      "item3": "Premium album printing or video production if not added separately."
+    },
+    "supportTitle": "Need a quote tailored to your plan?",
+    "supportDesc": "Message us on WhatsApp or Zalo and we will suggest the best package for your timeline and budget.",
+    "supportCtas": {
+      "whatsapp": "Chat on WhatsApp",
+      "zalo": "Chat on Zalo"
+    }
+  }
 }

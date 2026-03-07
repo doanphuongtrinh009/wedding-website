@@ -1,22 +1,40 @@
 "use server";
 
-import { BookingStatus, Prisma, ProductStatus } from "@prisma/client";
-import { revalidatePath } from "next/cache";
-import { redirect } from "next/navigation";
 import { z } from "zod";
 
+import { BookingStatus, Prisma, ProductStatus } from "@/generated/prisma/client";
+import { redirect as intlRedirect } from "@/i18n/routing";
 import { ensureUserProfile } from "@/lib/auth";
+import {
+  getLocalizedPath,
+  type LocalizedHref,
+  normalizeInternalPath,
+  resolveLocale
+} from "@/lib/localized-paths";
+import { revalidateLocalizedPath } from "@/lib/localized-revalidation";
 import { isDatabaseConfigured, prisma } from "@/lib/prisma";
 
 const toggleWishlistInputSchema = z.object({
   productId: z.string().cuid(),
   isWishlisted: z.boolean(),
+  locale: z.string().optional(),
   returnTo: z.string().optional()
 });
+
+function redirectWithLocale(
+  locale: string | undefined,
+  href: LocalizedHref
+): never {
+  return intlRedirect({
+    href,
+    locale: resolveLocale(locale)
+  });
+}
 
 export async function toggleWishlistAction(input: {
   productId: string;
   isWishlisted: boolean;
+  locale?: string;
   returnTo?: string;
 }) {
   const parsedInput = toggleWishlistInputSchema.safeParse(input);
@@ -75,13 +93,15 @@ export async function toggleWishlistAction(input: {
     });
   }
 
-  revalidatePath("/collections");
-  revalidatePath(`/collections/${product.slug}`);
-  revalidatePath("/wishlist");
-  revalidatePath("/account");
+  revalidateLocalizedPath("/collections");
+  revalidateLocalizedPath(`/collections/${product.slug}`);
+  revalidateLocalizedPath("/wishlist");
+  revalidateLocalizedPath("/account");
 
-  if (parsedInput.data.returnTo) {
-    revalidatePath(parsedInput.data.returnTo);
+  const returnTo = normalizeInternalPath(parsedInput.data.returnTo);
+
+  if (returnTo) {
+    revalidateLocalizedPath(returnTo);
   }
 
   return {
@@ -96,7 +116,10 @@ const bookingSchema = z.object({
   appointmentTime: z.string().regex(/^\d{2}:\d{2}$/, "Invalid time format"),
   eventDate: z.string().date().optional(),
   notes: z.string().trim().max(1500).optional(),
-  services: z.array(z.enum(["makeup", "photo"])).max(2).optional(),
+  services: z
+    .array(z.enum(["makeup", "photo"]))
+    .max(2)
+    .optional(),
   timeZone: z.string().trim().min(1).max(64).optional()
 });
 
@@ -134,7 +157,10 @@ function getZonedDateTimeFormatter(timeZone: string) {
   return formatter;
 }
 
-function getZonedDateTimeParts(date: Date, timeZone: string): ZonedDateTimeParts {
+function getZonedDateTimeParts(
+  date: Date,
+  timeZone: string
+): ZonedDateTimeParts {
   const parts = getZonedDateTimeFormatter(timeZone)
     .formatToParts(date)
     .reduce<Partial<ZonedDateTimeParts>>((accumulator, part) => {
@@ -269,6 +295,11 @@ function isValidTimeZone(timeZone: string) {
 }
 
 export async function createTryOnBookingAction(formData: FormData) {
+  const locale = resolveLocale(
+    typeof formData.get("locale") === "string"
+      ? String(formData.get("locale"))
+      : undefined
+  );
   const selectedServices = formData
     .getAll("services")
     .filter((value): value is string => typeof value === "string");
@@ -284,32 +315,54 @@ export async function createTryOnBookingAction(formData: FormData) {
   });
 
   if (!parsedInput.success) {
-    redirect("/book?error=invalid-form");
+    redirectWithLocale(locale, {
+      pathname: "/book",
+      query: {
+        error: "invalid-form"
+      }
+    });
   }
 
+  const bookingInput = parsedInput.data;
+
   if (!isDatabaseConfigured) {
-    redirect("/book?error=service-unavailable");
+    redirectWithLocale(locale, {
+      pathname: "/book",
+      query: {
+        error: "service-unavailable"
+      }
+    });
   }
 
   const profile = await ensureUserProfile();
 
   if (!profile) {
-    redirect("/sign-in?redirect_url=/book");
+    redirectWithLocale(locale, {
+      pathname: "/sign-in",
+      query: {
+        redirect_url: getLocalizedPath(locale, "/book")
+      }
+    });
   }
 
   const appointmentTimeZone =
-    parsedInput.data.timeZone && isValidTimeZone(parsedInput.data.timeZone)
-      ? parsedInput.data.timeZone
+    bookingInput.timeZone && isValidTimeZone(bookingInput.timeZone)
+      ? bookingInput.timeZone
       : "UTC";
 
   const appointmentAt = getAppointmentDateTime(
-    parsedInput.data.appointmentDate,
-    parsedInput.data.appointmentTime,
+    bookingInput.appointmentDate,
+    bookingInput.appointmentTime,
     appointmentTimeZone
   );
 
   if (!appointmentAt || appointmentAt <= new Date()) {
-    redirect("/book?error=invalid-datetime");
+    redirectWithLocale(locale, {
+      pathname: "/book",
+      query: {
+        error: "invalid-datetime"
+      }
+    });
   }
   const appointmentEndAt = new Date(
     appointmentAt.getTime() + appointmentDurationInMinutes * 60 * 1000
@@ -317,10 +370,10 @@ export async function createTryOnBookingAction(formData: FormData) {
 
   let productId: string | undefined;
 
-  if (parsedInput.data.productId) {
+  if (bookingInput.productId) {
     const product = await prisma.product.findFirst({
       where: {
-        id: parsedInput.data.productId,
+        id: bookingInput.productId,
         status: ProductStatus.ACTIVE
       },
       select: {
@@ -329,7 +382,12 @@ export async function createTryOnBookingAction(formData: FormData) {
     });
 
     if (!product) {
-      redirect("/book?error=invalid-product");
+      redirectWithLocale(locale, {
+        pathname: "/book",
+        query: {
+          error: "invalid-product"
+        }
+      });
     }
 
     productId = product.id;
@@ -337,25 +395,26 @@ export async function createTryOnBookingAction(formData: FormData) {
 
   let eventDate: Date | null = null;
 
-  if (parsedInput.data.eventDate) {
-    eventDate = new Date(`${parsedInput.data.eventDate}T00:00:00`);
+  if (bookingInput.eventDate) {
+    eventDate = new Date(`${bookingInput.eventDate}T00:00:00`);
 
     if (
       Number.isNaN(eventDate.getTime()) ||
-      parsedInput.data.eventDate < parsedInput.data.appointmentDate
+      bookingInput.eventDate < bookingInput.appointmentDate
     ) {
-      redirect("/book?error=invalid-datetime");
+      redirectWithLocale(locale, {
+        pathname: "/book",
+        query: {
+          error: "invalid-datetime"
+        }
+      });
     }
   }
 
-  const dedupedServices = Array.from(
-    new Set(parsedInput.data.services ?? [])
-  );
+  const dedupedServices = Array.from(new Set(bookingInput.services ?? []));
   const serviceNotePrefix =
-    dedupedServices.length > 0
-      ? `[addons] ${dedupedServices.join(", ")}`
-      : "";
-  const bookingNotes = [serviceNotePrefix, parsedInput.data.notes]
+    dedupedServices.length > 0 ? `[addons] ${dedupedServices.join(", ")}` : "";
+  const bookingNotes = [serviceNotePrefix, bookingInput.notes]
     .map((value) => value?.trim())
     .filter((value): value is string => Boolean(value))
     .join("\n");
@@ -410,14 +469,24 @@ export async function createTryOnBookingAction(formData: FormData) {
       (error instanceof Error && error.message === slotUnavailableError) ||
       isSerializationConflict
     ) {
-      redirect("/book?error=slot-unavailable");
+      redirectWithLocale(locale, {
+        pathname: "/book",
+        query: {
+          error: "slot-unavailable"
+        }
+      });
     }
 
     throw error;
   }
 
-  revalidatePath("/account");
-  revalidatePath("/book");
+  revalidateLocalizedPath("/account");
+  revalidateLocalizedPath("/book");
 
-  redirect("/account?booking=created");
+  redirectWithLocale(locale, {
+    pathname: "/account",
+    query: {
+      booking: "created"
+    }
+  });
 }

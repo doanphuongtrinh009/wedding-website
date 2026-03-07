@@ -30,7 +30,7 @@ export default function AboutPage() {
               <Link href="/book">{t("cta")}</Link>
             </Button>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl md:aspect-square lg:aspect-[4/5]">
+          <div className="relative aspect-4/3 overflow-hidden rounded-2xl md:aspect-square lg:aspect-4/5">
             <Image
               src="/images/bridal/boutique-interior.png"
               alt="Quỳnh Trâm Bridal Boutique Interior"
@@ -39,7 +39,7 @@ export default function AboutPage() {
               sizes="(max-width: 768px) 100vw, 50vw"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent" />
           </div>
         </div>
 

@@ -4,7 +4,7 @@ import { useAuth } from "@clerk/nextjs";
 import { Camera, ChevronDown, LayoutGrid, Menu, Sparkles } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/routing";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -53,13 +53,8 @@ export function MobileNav() {
         () => pathname === "/services" || pathname.startsWith("/services/"),
         [pathname]
     );
-    const [serviceGroupOpen, setServiceGroupOpen] = useState(isServicesRoute);
-
-    useEffect(() => {
-        if (isServicesRoute) {
-            setServiceGroupOpen(true);
-        }
-    }, [isServicesRoute]);
+    const [serviceGroupOpen, setServiceGroupOpen] = useState(false);
+    const isServiceGroupExpanded = isServicesRoute || serviceGroupOpen;
 
     return (
         <Sheet open={open} onOpenChange={setOpen}>
@@ -106,12 +101,12 @@ export function MobileNav() {
                             <ChevronDown
                                 className={cn(
                                     "size-4 transition-transform",
-                                    serviceGroupOpen ? "rotate-180" : "rotate-0"
+                                    isServiceGroupExpanded ? "rotate-180" : "rotate-0"
                                 )}
                             />
                         </button>
 
-                        {serviceGroupOpen ? (
+                        {isServiceGroupExpanded ? (
                             <div className="mt-3 border-l border-border/70 pl-3">
                                 <div className="space-y-2">
                                     {serviceItems.map((item) => (

@@ -4,8 +4,9 @@ import {
   Prisma,
   ProductStatus,
   UserRole
-} from "@prisma/client";
+} from "@/generated/prisma/client";
 
+import { siteConfig } from "@/config/site";
 import { isDatabaseConfigured, prisma } from "@/lib/prisma";
 
 const acceptedPaymentStatuses: PaymentStatus[] = [
@@ -23,7 +24,7 @@ function getTake(take?: number) {
   return Math.min(Math.max(take, 1), maxAdminListSize);
 }
 
-const adminDressSelect = Prisma.validator<Prisma.ProductSelect>()({
+const adminDressSelect = {
   id: true,
   slug: true,
   name: true,
@@ -38,9 +39,9 @@ const adminDressSelect = Prisma.validator<Prisma.ProductSelect>()({
       wishlistItems: true
     }
   }
-});
+} satisfies Prisma.ProductSelect;
 
-const adminBookingSelect = Prisma.validator<Prisma.BookingSelect>()({
+const adminBookingSelect = {
   id: true,
   bookingNumber: true,
   status: true,
@@ -66,9 +67,9 @@ const adminBookingSelect = Prisma.validator<Prisma.BookingSelect>()({
       slug: true
     }
   }
-});
+} satisfies Prisma.BookingSelect;
 
-const adminOrderSelect = Prisma.validator<Prisma.OrderSelect>()({
+const adminOrderSelect = {
   id: true,
   orderNumber: true,
   status: true,
@@ -90,9 +91,9 @@ const adminOrderSelect = Prisma.validator<Prisma.OrderSelect>()({
       items: true
     }
   }
-});
+} satisfies Prisma.OrderSelect;
 
-const adminCustomerSelect = Prisma.validator<Prisma.UserProfileSelect>()({
+const adminCustomerSelect = {
   id: true,
   email: true,
   firstName: true,
@@ -106,7 +107,7 @@ const adminCustomerSelect = Prisma.validator<Prisma.UserProfileSelect>()({
       wishlistItems: true
     }
   }
-});
+} satisfies Prisma.UserProfileSelect;
 
 export type AdminDress = Prisma.ProductGetPayload<{
   select: typeof adminDressSelect;
@@ -136,7 +137,8 @@ export async function getAdminSummaryStats() {
       totalCustomers: 0,
       totalRevenueInCents: 0,
       monthlyRevenueInCents: 0,
-      averageOrderValueInCents: 0
+      averageOrderValueInCents: 0,
+      currency: siteConfig.defaultCurrency
     };
   }
 
@@ -221,7 +223,8 @@ export async function getAdminSummaryStats() {
     totalCustomers,
     totalRevenueInCents,
     monthlyRevenueInCents,
-    averageOrderValueInCents
+    averageOrderValueInCents,
+    currency: siteConfig.defaultCurrency
   };
 }
 

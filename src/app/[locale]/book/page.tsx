@@ -112,7 +112,7 @@ export default async function BookingPage({
 
       {error && errorCopy[error] ? (
         <div
-          className="relative z-10 mb-6 rounded-2xl border border-destructive/35 bg-destructive/10 p-4 text-sm text-destructive shadow-sm"
+          className="relative z-10 mb-6 rounded-2xl border border-destructive/35 bg-destructive/10 p-4 text-sm text-destructive shadow-xs"
           role="alert"
           aria-live="assertive"
         >
@@ -181,7 +181,7 @@ export default async function BookingPage({
                 href={siteConfig.support.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-full border border-border/80 bg-card/85 px-4 py-2 text-[0.66rem] font-semibold uppercase tracking-[0.13em] text-foreground transition hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background motion-safe:hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center rounded-full border border-border/80 bg-card/85 px-4 py-2 text-[0.66rem] font-semibold uppercase tracking-[0.13em] text-foreground transition hover:text-primary focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background motion-safe:hover:-translate-y-0.5"
               >
                 {t("supportButtons.whatsapp")}
               </a>
@@ -189,7 +189,7 @@ export default async function BookingPage({
                 href={siteConfig.support.zaloUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-full border border-border/80 bg-card/85 px-4 py-2 text-[0.66rem] font-semibold uppercase tracking-[0.13em] text-foreground transition hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background motion-safe:hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center rounded-full border border-border/80 bg-card/85 px-4 py-2 text-[0.66rem] font-semibold uppercase tracking-[0.13em] text-foreground transition hover:text-primary focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background motion-safe:hover:-translate-y-0.5"
               >
                 {t("supportButtons.zalo")}
               </a>

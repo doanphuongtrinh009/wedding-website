@@ -81,7 +81,7 @@ function ToastViewport({
     <div
       aria-live="polite"
       aria-atomic="true"
-      className="pointer-events-none fixed inset-x-0 top-3 z-[70] flex flex-col items-center gap-2 px-3 md:inset-x-auto md:right-4 md:top-4 md:items-end"
+      className="pointer-events-none fixed inset-x-0 top-3 z-70 flex flex-col items-center gap-2 px-3 md:inset-x-auto md:right-4 md:top-4 md:items-end"
     >
       <AnimatePresence>
         {toasts.map((toast) => (
@@ -92,7 +92,7 @@ function ToastViewport({
             animate={shouldReduceMotion ? "animate" : "animate"}
             exit={shouldReduceMotion ? "exit" : "exit"}
             className={cn(
-              "bg-background/96 pointer-events-auto w-full max-w-sm rounded-2xl border p-3 shadow-luxury backdrop-blur",
+              "bg-background/96 pointer-events-auto w-full max-w-sm rounded-2xl border p-3 shadow-luxury backdrop-blur-sm",
               toast.tone === "destructive"
                 ? "border-destructive/35"
                 : "border-border/70"

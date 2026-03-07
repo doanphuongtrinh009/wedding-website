@@ -1,715 +1,718 @@
 {
-    "LocaleSwitcher": {
-        "vi": "Tiếng Việt",
-        "en": "English"
+  "LocaleSwitcher": {
+    "vi": "Tiếng Việt",
+    "en": "English"
+  },
+  "Metadata": {
+    "homeTitle": "Thời Trang Cưới Cao Cấp",
+    "homeDescription": "Khám phá bộ sưu tập cưới, lưu yêu thích và đặt lịch thử đồ riêng tư.",
+    "bookTitle": "Đặt Lịch Thử Đồ",
+    "bookDescription": "Đặt lịch hẹn thử đồ cưới riêng tư với mẫu váy yêu thích của bạn."
+  },
+  "Layout": {
+    "skipToContent": "Bỏ qua đến nội dung chính",
+    "footerTagline": "Đặt lịch cưới hiện đại và tạo mẫu thời trang cao cấp.",
+    "footerDescription": "Atelier chuyên váy cưới, Makeup và Photo với lộ trình rõ ràng từ tư vấn đến ngày cưới.",
+    "footerHome": "Trang chủ",
+    "footerAtelierLabel": "Atelier cưới cao cấp",
+    "footerByAppointment": "Làm việc theo lịch hẹn",
+    "footerQuickLinks": "Truy cập nhanh",
+    "footerServiceLinks": "Dịch vụ",
+    "footerBundleCta": "Đặt combo Makeup + Photo",
+    "footerContact": "Liên hệ",
+    "footerWhatsapp": "WhatsApp tư vấn",
+    "footerZalo": "Zalo tư vấn",
+    "footerHours": "Giờ tư vấn: 9:00 - 20:00 (hằng ngày)",
+    "footerFollowUs": "Mạng xã hội",
+    "footerCopyright": "© {year} Quỳnh Trâm Bridal. Bảo lưu mọi quyền."
+  },
+  "Nav": {
+    "collections": "Bộ Sưu Tập",
+    "services": "Dịch vụ",
+    "bookTryOn": "Đặt Lịch Thử",
+    "wishlist": "Yêu Thích",
+    "account": "Tài Khoản",
+    "reserveFitting": "Đặt lịch thử đồ",
+    "signIn": "Đăng nhập",
+    "signOut": "Đăng xuất",
+    "contact": "Liên hệ",
+    "menu": "Menu",
+    "myAccount": "Tài khoản",
+    "openMenu": "Mở menu",
+    "servicesOverview": "Tổng quan dịch vụ",
+    "makeupService": "Dịch vụ Makeup",
+    "photoService": "Dịch vụ Photo",
+    "servicesOverviewHint": "Xem toàn bộ 3 mảng dịch vụ",
+    "makeupServiceHint": "Bảng giá, hình ảnh và quy trình",
+    "photoServiceHint": "Concept chụp, gói giá và timeline",
+    "serviceMenuHint": "Bạn có thể đặt riêng từng mảng hoặc đặt combo dịch vụ."
+  },
+  "Hero": {
+    "badge": "Quỳnh Trâm Bridal 2026",
+    "kicker": "Trải nghiệm showroom riêng tư",
+    "heading": "Trang phục cưới tinh tế được tạo nên với kỹ thuật couture và tinh thần hiện đại.",
+    "description": "Nhà thời trang cưới cao cấp kết hợp gu thẩm mỹ editorial với dịch vụ cá nhân hóa. Khám phá các thiết kế tinh tế, buổi thử đồ riêng tư và quy trình chỉnh sửa tỉ mỉ theo timeline của bạn.",
+    "reserveFitting": "Đặt lịch thử riêng tư",
+    "browseCollections": "Xem bộ sưu tập",
+    "appointments": "Lịch hẹn",
+    "appointmentsValue": "1:1 với stylist",
+    "alterations": "Chỉnh sửa",
+    "alterationsValue": "Theo dõi milestone",
+    "leadTime": "Thời gian",
+    "leadTimeValue": "4-6 tháng",
+    "clientExperience": "Trải nghiệm khách hàng",
+    "clientHeading": "Một cô dâu, một stylist, toàn tâm phục vụ.",
+    "clientDescription": "Mỗi buổi hẹn được theo nhịp phù hợp với vóc dáng, kiến thức chất liệu, và sự tự tin về phong cách cho lễ cưới, tiệc và các khoảnh khắc sau lễ.",
+    "fittingLength": "Thời lượng thử đồ",
+    "fittingLengthValue": "90 phút",
+    "showroomCadence": "Lịch showroom",
+    "showroomCadenceValue": "Theo lịch hẹn"
+  },
+  "FeaturedSection": {
+    "kicker": "Bộ Sưu Tập Nổi Bật",
+    "heading": "Những mẫu váy được yêu thích nhất mùa này cho buổi thử đồ riêng tư.",
+    "viewCatalog": "Xem toàn bộ catalog",
+    "comingSoon": "Các mẫu nổi bật sắp ra mắt",
+    "comingSoonNote": "Danh mục sản phẩm có thể cập nhật từ trang quản trị."
+  },
+  "ProductCard": {
+    "tryOnEligible": "Có thể thử đồ riêng tư",
+    "featured": "Nổi bật",
+    "viewGown": "Xem váy cưới",
+    "bookTryOn": "Đặt lịch thử"
+  },
+  "ProductDetail": {
+    "kicker": "Chi tiết sản phẩm",
+    "subtitle": "Tư vấn 1:1 tại showroom theo lịch hẹn",
+    "featured": "Thiết kế nổi bật",
+    "priceLabel": "Giá tham khảo",
+    "bookTryOn": "Đặt lịch thử riêng tư",
+    "backToCatalog": "Quay lại catalog",
+    "confirmationNote": "Xác nhận lịch hẹn trong vòng một ngày làm việc.",
+    "alterationNote": "Bao gồm timeline chỉnh sửa và các mốc thử đồ.",
+    "chatWhatsApp": "Chat trên WhatsApp",
+    "chatZalo": "Chat trên Zalo",
+    "supportTitle": "Tư vấn nhanh qua",
+    "addOnKicker": "Dịch vụ đi kèm",
+    "addOnTitle": "Có thể thêm Makeup và Photo ngay trong lịch hẹn thử váy.",
+    "addOns": {
+      "makeup": {
+        "title": "Makeup cô dâu",
+        "detail": "Định hướng layout makeup theo concept lễ cưới và ánh sáng sân khấu/chụp ảnh.",
+        "cta": "Thêm Makeup"
+      },
+      "photo": {
+        "title": "Photo cưới",
+        "detail": "Tư vấn gói chụp pre-wedding hoặc chụp ngày cưới phù hợp timeline của bạn.",
+        "cta": "Thêm Photo"
+      },
+      "bundleCta": "Đặt lịch kèm Makeup + Photo"
     },
-    "Metadata": {
-        "homeTitle": "Thời Trang Cưới Cao Cấp",
-        "homeDescription": "Khám phá bộ sưu tập cưới, lưu yêu thích và đặt lịch thử đồ riêng tư.",
-        "bookTitle": "Đặt Lịch Thử Đồ",
-        "bookDescription": "Đặt lịch hẹn thử đồ cưới riêng tư với mẫu váy yêu thích của bạn."
+    "info": {
+      "productCode": "Mã mẫu",
+      "lookbook": "Ảnh lookbook",
+      "lookbookValue": "{count} ảnh",
+      "updatedOn": "Cập nhật",
+      "responseTime": "Phản hồi lịch hẹn",
+      "responseTimeValue": "Trong 1 ngày làm việc"
     },
-    "Layout": {
-        "skipToContent": "Bỏ qua đến nội dung chính",
-        "footerTagline": "Đặt lịch cưới hiện đại và tạo mẫu thời trang cao cấp.",
-        "footerDescription": "Atelier chuyên váy cưới, Makeup và Photo với lộ trình rõ ràng từ tư vấn đến ngày cưới.",
-        "footerHome": "Trang chủ",
-        "footerAtelierLabel": "Atelier cưới cao cấp",
-        "footerByAppointment": "Làm việc theo lịch hẹn",
-        "footerQuickLinks": "Truy cập nhanh",
-        "footerServiceLinks": "Dịch vụ",
-        "footerBundleCta": "Đặt combo Makeup + Photo",
-        "footerContact": "Liên hệ",
-        "footerWhatsapp": "WhatsApp tư vấn",
-        "footerZalo": "Zalo tư vấn",
-        "footerHours": "Giờ tư vấn: 9:00 - 20:00 (hằng ngày)",
-        "footerFollowUs": "Mạng xã hội",
-        "footerCopyright": "© {year} Quỳnh Trâm Bridal. Bảo lưu mọi quyền."
+    "attributes": {
+      "silhouette": "Dáng váy",
+      "fabric": "Chất liệu",
+      "occasion": "Phù hợp cho",
+      "silhouetteValues": {
+        "aLine": "Chữ A",
+        "mermaid": "Đuôi cá",
+        "ballGown": "Công chúa",
+        "column": "Suông ôm",
+        "classic": "Cổ điển hiện đại"
+      },
+      "fabricValues": {
+        "chiffon": "Chiffon nhẹ",
+        "satin": "Satin bóng mịn",
+        "crepe": "Crepe lì",
+        "lace": "Ren mềm",
+        "mikado": "Mikado đứng form",
+        "tulle": "Tulle bồng",
+        "mixed": "Phối chất liệu"
+      },
+      "occasionValues": {
+        "beach": "Tiệc bãi biển",
+        "outdoor": "Lễ ngoài trời",
+        "ballroom": "Sảnh tiệc lớn",
+        "intimate": "Tiệc thân mật",
+        "allRound": "Linh hoạt nhiều concept"
+      }
     },
-    "Nav": {
-        "collections": "Bộ Sưu Tập",
-        "services": "Dịch vụ",
-        "bookTryOn": "Đặt Lịch Thử",
-        "wishlist": "Yêu Thích",
-        "account": "Tài Khoản",
-        "reserveFitting": "Đặt lịch thử đồ",
-        "signIn": "Đăng nhập",
-        "contact": "Liên hệ",
-        "menu": "Menu",
-        "myAccount": "Tài khoản",
-        "openMenu": "Mở menu",
-        "servicesOverview": "Tổng quan dịch vụ",
-        "makeupService": "Dịch vụ Makeup",
-        "photoService": "Dịch vụ Photo",
-        "servicesOverviewHint": "Xem toàn bộ 3 mảng dịch vụ",
-        "makeupServiceHint": "Bảng giá, hình ảnh và quy trình",
-        "photoServiceHint": "Concept chụp, gói giá và timeline",
-        "serviceMenuHint": "Bạn có thể đặt riêng từng mảng hoặc đặt combo dịch vụ."
+    "journeyKicker": "Lộ trình sau khi đặt lịch",
+    "journeyTitle": "Bạn sẽ nhận được gì trong từng bước",
+    "journey": {
+      "confirm": {
+        "title": "Xác nhận lịch nhanh",
+        "detail": "Đội ngũ phản hồi khung giờ và hướng dẫn chuẩn bị trước buổi hẹn."
+      },
+      "fitting": {
+        "title": "Thử đồ theo mục tiêu",
+        "detail": "Stylist làm việc theo vóc dáng, concept lễ cưới và mức ngân sách đã trao đổi."
+      },
+      "aftercare": {
+        "title": "Theo dõi chỉnh sửa",
+        "detail": "Timeline sửa váy và mốc thử lại được chốt rõ để bạn chủ động kế hoạch."
+      }
     },
-    "Hero": {
-        "badge": "Quỳnh Trâm Bridal 2026",
-        "kicker": "Trải nghiệm showroom riêng tư",
-        "heading": "Trang phục cưới tinh tế được tạo nên với kỹ thuật couture và tinh thần hiện đại.",
-        "description": "Nhà thời trang cưới cao cấp kết hợp gu thẩm mỹ editorial với dịch vụ cá nhân hóa. Khám phá các thiết kế tinh tế, buổi thử đồ riêng tư và quy trình chỉnh sửa tỉ mỉ theo timeline của bạn.",
-        "reserveFitting": "Đặt lịch thử riêng tư",
-        "browseCollections": "Xem bộ sưu tập",
-        "appointments": "Lịch hẹn",
-        "appointmentsValue": "1:1 với stylist",
-        "alterations": "Chỉnh sửa",
-        "alterationsValue": "Theo dõi milestone",
-        "leadTime": "Thời gian",
-        "leadTimeValue": "4-6 tháng",
-        "clientExperience": "Trải nghiệm khách hàng",
-        "clientHeading": "Một cô dâu, một stylist, toàn tâm phục vụ.",
-        "clientDescription": "Mỗi buổi hẹn được theo nhịp phù hợp với vóc dáng, kiến thức chất liệu, và sự tự tin về phong cách cho lễ cưới, tiệc và các khoảnh khắc sau lễ.",
-        "fittingLength": "Thời lượng thử đồ",
-        "fittingLengthValue": "90 phút",
-        "showroomCadence": "Lịch showroom",
-        "showroomCadenceValue": "Theo lịch hẹn"
+    "wishlistTitle": "Theo dõi mẫu này",
+    "saveToWishlist": "Lưu váy này vào danh sách yêu thích để theo dõi.",
+    "wishlistReady": "Bấm biểu tượng tim để lưu mẫu và so sánh trong tài khoản.",
+    "wishlistSaved": "Mẫu đã nằm trong danh sách yêu thích của bạn.",
+    "signInToSave": "Đăng nhập",
+    "signInToSaveNote": "để lưu sản phẩm này vào yêu thích.",
+    "zoomLabel": "Phóng to ảnh sản phẩm",
+    "thumbnailAria": "Xem ảnh {index}"
+  },
+  "Wishlist": {
+    "kicker": "Sản Phẩm Đã Lưu",
+    "heading": "Danh sách yêu thích",
+    "description": "Giữ những mẫu váy yêu thích tại một nơi và đặt lịch thử khi sẵn sàng.",
+    "empty": "Chưa có sản phẩm nào",
+    "emptyNote": "Bắt đầu khám phá catalog và thêm sản phẩm vào danh sách.",
+    "explore": "Khám phá bộ sưu tập",
+    "addToWishlist": "Thêm vào yêu thích",
+    "removeFromWishlist": "Xóa khỏi yêu thích",
+    "actionFailed": "Không thể cập nhật",
+    "tryAgain": "Vui lòng thử lại."
+  },
+  "Account": {
+    "kicker": "Tài Khoản Khách Hàng",
+    "heading": "Chào mừng quay lại",
+    "description": "Quản lý lịch hẹn thử đồ, danh sách yêu thích và thông tin cá nhân tại đây.",
+    "bookingCreated": "Yêu cầu đặt lịch đã được gửi thành công. Chúng tôi sẽ liên hệ sớm.",
+    "profile": "Hồ sơ",
+    "email": "Email",
+    "name": "Tên",
+    "phone": "Số điện thoại",
+    "upcomingBookings": "Lịch hẹn sắp tới",
+    "wishlistItems": "Sản phẩm yêu thích",
+    "bookTryOn": "Đặt lịch thử",
+    "openWishlist": "Mở yêu thích",
+    "recentBookings": "Lịch hẹn gần đây",
+    "noBookings": "Chưa có lịch hẹn",
+    "noBookingsNote": "Đặt buổi thử đồ riêng tư đầu tiên của bạn.",
+    "bookNow": "Đặt ngay",
+    "appointment": "Lịch hẹn",
+    "product": "Sản phẩm",
+    "weddingDate": "Ngày cưới"
+  },
+  "Booking": {
+    "kicker": "Đặt Lịch Thử Đồ",
+    "title": "Đặt lịch hẹn thử đồ cưới riêng tư.",
+    "description": "Chọn ngày, chia sẻ timeline sự kiện, và chúng tôi sẽ xác nhận lịch hẹn cùng ghi chú chuẩn bị từ stylist.",
+    "serviceOnlyHint": "Bạn có thể đặt riêng Makeup hoặc Photo mà không cần chọn váy cưới.",
+    "formTitle": "Biểu mẫu đặt lịch",
+    "timelineTitle": "Timeline dịch vụ",
+    "confirmationNote": "Chúng tôi gửi xác nhận cùng hướng dẫn chuẩn bị từ stylist sau khi xem xét ngày và ghi chú.",
+    "signInPrompt": "Để theo dõi tài khoản và đồng bộ danh sách yêu thích, vui lòng",
+    "signInLink": "đăng nhập",
+    "supportButtons": {
+      "whatsapp": "Hỗ trợ WhatsApp",
+      "zalo": "Hỗ trợ Zalo"
     },
-    "FeaturedSection": {
-        "kicker": "Bộ Sưu Tập Nổi Bật",
-        "heading": "Những mẫu váy được yêu thích nhất mùa này cho buổi thử đồ riêng tư.",
-        "viewCatalog": "Xem toàn bộ catalog",
-        "comingSoon": "Các mẫu nổi bật sắp ra mắt",
-        "comingSoonNote": "Danh mục sản phẩm có thể cập nhật từ trang quản trị."
-    },
-    "ProductCard": {
-        "tryOnEligible": "Có thể thử đồ riêng tư",
-        "featured": "Nổi bật",
-        "viewGown": "Xem váy cưới",
-        "bookTryOn": "Đặt lịch thử"
-    },
-    "ProductDetail": {
-        "kicker": "Chi tiết sản phẩm",
-        "subtitle": "Tư vấn 1:1 tại showroom theo lịch hẹn",
-        "featured": "Thiết kế nổi bật",
-        "priceLabel": "Giá tham khảo",
-        "bookTryOn": "Đặt lịch thử riêng tư",
-        "backToCatalog": "Quay lại catalog",
-        "confirmationNote": "Xác nhận lịch hẹn trong vòng một ngày làm việc.",
-        "alterationNote": "Bao gồm timeline chỉnh sửa và các mốc thử đồ.",
-        "chatWhatsApp": "Chat trên WhatsApp",
-        "chatZalo": "Chat trên Zalo",
-        "supportTitle": "Tư vấn nhanh qua",
-        "addOnKicker": "Dịch vụ đi kèm",
-        "addOnTitle": "Có thể thêm Makeup và Photo ngay trong lịch hẹn thử váy.",
-        "addOns": {
-            "makeup": {
-                "title": "Makeup cô dâu",
-                "detail": "Định hướng layout makeup theo concept lễ cưới và ánh sáng sân khấu/chụp ảnh.",
-                "cta": "Thêm Makeup"
-            },
-            "photo": {
-                "title": "Photo cưới",
-                "detail": "Tư vấn gói chụp pre-wedding hoặc chụp ngày cưới phù hợp timeline của bạn.",
-                "cta": "Thêm Photo"
-            },
-            "bundleCta": "Đặt lịch kèm Makeup + Photo"
+    "form": {
+      "submitting": "Đang gửi...",
+      "submitButton": "Gửi yêu cầu đặt lịch",
+      "appointmentDetails": "Chi tiết lịch hẹn",
+      "preferredGown": "Váy cưới ưa thích",
+      "noPreference": "Chưa chọn",
+      "productOptionalNote": "Có thể để trống nếu bạn chỉ đặt Makeup/Photo.",
+      "appointmentDate": "Ngày hẹn",
+      "appointmentTime": "Giờ hẹn",
+      "weddingDate": "Ngày cưới (tùy chọn)",
+      "stylingContext": "Bối cảnh phong cách",
+      "styleNotes": "Ghi chú phong cách",
+      "styleNotesPlaceholder": "Chia sẻ chi tiết về địa điểm, sở thích váy cưới và ràng buộc thời gian.",
+      "addOnServices": "Dịch vụ đi kèm (tùy chọn)",
+      "services": {
+        "makeup": {
+          "title": "Makeup cô dâu",
+          "note": "Ưu tiên khi cần thử layout makeup trong ngày thử váy."
         },
-        "info": {
-            "productCode": "Mã mẫu",
-            "lookbook": "Ảnh lookbook",
-            "lookbookValue": "{count} ảnh",
-            "updatedOn": "Cập nhật",
-            "responseTime": "Phản hồi lịch hẹn",
-            "responseTimeValue": "Trong 1 ngày làm việc"
-        },
-        "attributes": {
-            "silhouette": "Dáng váy",
-            "fabric": "Chất liệu",
-            "occasion": "Phù hợp cho",
-            "silhouetteValues": {
-                "aLine": "Chữ A",
-                "mermaid": "Đuôi cá",
-                "ballGown": "Công chúa",
-                "column": "Suông ôm",
-                "classic": "Cổ điển hiện đại"
-            },
-            "fabricValues": {
-                "chiffon": "Chiffon nhẹ",
-                "satin": "Satin bóng mịn",
-                "crepe": "Crepe lì",
-                "lace": "Ren mềm",
-                "mikado": "Mikado đứng form",
-                "tulle": "Tulle bồng",
-                "mixed": "Phối chất liệu"
-            },
-            "occasionValues": {
-                "beach": "Tiệc bãi biển",
-                "outdoor": "Lễ ngoài trời",
-                "ballroom": "Sảnh tiệc lớn",
-                "intimate": "Tiệc thân mật",
-                "allRound": "Linh hoạt nhiều concept"
-            }
-        },
-        "journeyKicker": "Lộ trình sau khi đặt lịch",
-        "journeyTitle": "Bạn sẽ nhận được gì trong từng bước",
-        "journey": {
-            "confirm": {
-                "title": "Xác nhận lịch nhanh",
-                "detail": "Đội ngũ phản hồi khung giờ và hướng dẫn chuẩn bị trước buổi hẹn."
-            },
-            "fitting": {
-                "title": "Thử đồ theo mục tiêu",
-                "detail": "Stylist làm việc theo vóc dáng, concept lễ cưới và mức ngân sách đã trao đổi."
-            },
-            "aftercare": {
-                "title": "Theo dõi chỉnh sửa",
-                "detail": "Timeline sửa váy và mốc thử lại được chốt rõ để bạn chủ động kế hoạch."
-            }
-        },
-        "wishlistTitle": "Theo dõi mẫu này",
-        "saveToWishlist": "Lưu váy này vào danh sách yêu thích để theo dõi.",
-        "wishlistReady": "Bấm biểu tượng tim để lưu mẫu và so sánh trong tài khoản.",
-        "wishlistSaved": "Mẫu đã nằm trong danh sách yêu thích của bạn.",
-        "signInToSave": "Đăng nhập",
-        "signInToSaveNote": "để lưu sản phẩm này vào yêu thích.",
-        "zoomLabel": "Phóng to ảnh sản phẩm",
-        "thumbnailAria": "Xem ảnh {index}"
-    },
-    "Wishlist": {
-        "kicker": "Sản Phẩm Đã Lưu",
-        "heading": "Danh sách yêu thích",
-        "description": "Giữ những mẫu váy yêu thích tại một nơi và đặt lịch thử khi sẵn sàng.",
-        "empty": "Chưa có sản phẩm nào",
-        "emptyNote": "Bắt đầu khám phá catalog và thêm sản phẩm vào danh sách.",
-        "explore": "Khám phá bộ sưu tập",
-        "addToWishlist": "Thêm vào yêu thích",
-        "removeFromWishlist": "Xóa khỏi yêu thích",
-        "actionFailed": "Không thể cập nhật",
-        "tryAgain": "Vui lòng thử lại."
-    },
-    "Account": {
-        "kicker": "Tài Khoản Khách Hàng",
-        "heading": "Chào mừng quay lại",
-        "description": "Quản lý lịch hẹn thử đồ, danh sách yêu thích và thông tin cá nhân tại đây.",
-        "bookingCreated": "Yêu cầu đặt lịch đã được gửi thành công. Chúng tôi sẽ liên hệ sớm.",
-        "profile": "Hồ sơ",
-        "email": "Email",
-        "name": "Tên",
-        "phone": "Số điện thoại",
-        "upcomingBookings": "Lịch hẹn sắp tới",
-        "wishlistItems": "Sản phẩm yêu thích",
-        "bookTryOn": "Đặt lịch thử",
-        "openWishlist": "Mở yêu thích",
-        "recentBookings": "Lịch hẹn gần đây",
-        "noBookings": "Chưa có lịch hẹn",
-        "noBookingsNote": "Đặt buổi thử đồ riêng tư đầu tiên của bạn.",
-        "bookNow": "Đặt ngay",
-        "appointment": "Lịch hẹn",
-        "product": "Sản phẩm",
-        "weddingDate": "Ngày cưới"
-    },
-    "Booking": {
-        "kicker": "Đặt Lịch Thử Đồ",
-        "title": "Đặt lịch hẹn thử đồ cưới riêng tư.",
-        "description": "Chọn ngày, chia sẻ timeline sự kiện, và chúng tôi sẽ xác nhận lịch hẹn cùng ghi chú chuẩn bị từ stylist.",
-        "serviceOnlyHint": "Bạn có thể đặt riêng Makeup hoặc Photo mà không cần chọn váy cưới.",
-        "formTitle": "Biểu mẫu đặt lịch",
-        "timelineTitle": "Timeline dịch vụ",
-        "confirmationNote": "Chúng tôi gửi xác nhận cùng hướng dẫn chuẩn bị từ stylist sau khi xem xét ngày và ghi chú.",
-        "signInPrompt": "Để theo dõi tài khoản và đồng bộ danh sách yêu thích, vui lòng",
-        "signInLink": "đăng nhập",
-        "supportButtons": {
-            "whatsapp": "Hỗ trợ WhatsApp",
-            "zalo": "Hỗ trợ Zalo"
-        },
-        "form": {
-            "submitting": "Đang gửi...",
-            "submitButton": "Gửi yêu cầu đặt lịch",
-            "appointmentDetails": "Chi tiết lịch hẹn",
-            "preferredGown": "Váy cưới ưa thích",
-            "noPreference": "Chưa chọn",
-            "productOptionalNote": "Có thể để trống nếu bạn chỉ đặt Makeup/Photo.",
-            "appointmentDate": "Ngày hẹn",
-            "appointmentTime": "Giờ hẹn",
-            "weddingDate": "Ngày cưới (tùy chọn)",
-            "stylingContext": "Bối cảnh phong cách",
-            "styleNotes": "Ghi chú phong cách",
-            "styleNotesPlaceholder": "Chia sẻ chi tiết về địa điểm, sở thích váy cưới và ràng buộc thời gian.",
-            "addOnServices": "Dịch vụ đi kèm (tùy chọn)",
-            "services": {
-                "makeup": {
-                    "title": "Makeup cô dâu",
-                    "note": "Ưu tiên khi cần thử layout makeup trong ngày thử váy."
-                },
-                "photo": {
-                    "title": "Photo cưới",
-                    "note": "Đăng ký tư vấn gói chụp pre-wedding hoặc ngày cưới."
-                }
-            },
-            "browseCollections": "Xem bộ sưu tập",
-            "validation": {
-                "reviewField": "Vui lòng xem lại trường này.",
-                "weddingDateError": "Ngày cưới phải từ ngày hẹn trở đi.",
-                "generalError": "Vui lòng kiểm tra lại các trường được đánh dấu."
-            }
-        },
-        "steps": {
-            "stylistPrep": {
-                "title": "Chuẩn bị stylist",
-                "detail": "Ghi chú phong cách của bạn được xem trước khi hẹn tại showroom."
-            },
-            "privateFitting": {
-                "title": "Thử đồ riêng tư",
-                "detail": "Buổi thử được thiết kế theo vóc dáng, kích thước và timeline lễ cưới."
-            },
-            "aftercare": {
-                "title": "Kế hoạch chăm sóc sau",
-                "detail": "Xác nhận các mốc chỉnh sửa và timeline nhận đồ."
-            }
-        },
-        "errors": {
-            "invalidForm": "Vui lòng hoàn thành tất cả các trường bắt buộc.",
-            "invalidDatetime": "Chọn ngày và giờ hẹn trong tương lai.",
-            "invalidProduct": "Sản phẩm đã chọn không khả dụng. Vui lòng chọn váy khác.",
-            "serviceUnavailable": "Dịch vụ đặt lịch tạm thời không khả dụng. Vui lòng thử lại sau.",
-            "slotUnavailable": "Khung giờ đã được đặt. Vui lòng chọn giờ hẹn khác."
+        "photo": {
+          "title": "Photo cưới",
+          "note": "Đăng ký tư vấn gói chụp pre-wedding hoặc ngày cưới."
         }
+      },
+      "browseCollections": "Xem bộ sưu tập",
+      "validation": {
+        "reviewField": "Vui lòng xem lại trường này.",
+        "weddingDateError": "Ngày cưới phải từ ngày hẹn trở đi.",
+        "generalError": "Vui lòng kiểm tra lại các trường được đánh dấu."
+      }
     },
-    "ServicesPage": {
-        "metaTitle": "Dịch vụ cưới toàn diện",
-        "metaDescription": "Khám phá 3 mảng dịch vụ của Quỳnh Trâm Bridal: váy cưới, makeup cô dâu và chụp ảnh cưới.",
-        "kicker": "Dịch vụ cưới toàn diện",
-        "heading": "Ba mảng dịch vụ, một đội ngũ đồng hành xuyên suốt lễ cưới",
-        "description": "Ngoài váy cưới, chúng tôi cung cấp Makeup và Photo như các mảng riêng để bạn chủ động đặt từng phần hoặc kết hợp trọn gói theo timeline cưới.",
-        "heroPrimaryCta": "Đặt Makeup + Photo",
-        "heroSecondaryCta": "Xem bộ sưu tập váy",
-        "stats": {
-            "serviceLines": {
-                "label": "Mảng dịch vụ",
-                "value": "03"
-            },
-            "oneToOne": {
-                "label": "Tư vấn",
-                "value": "1:1"
-            },
-            "serviceOnly": {
-                "label": "Đặt riêng từng mảng",
-                "value": "Có"
-            }
-        },
-        "cards": {
-            "dress": {
-                "title": "Váy cưới",
-                "summary": "Tư vấn silhouette, thử váy riêng tư và lên timeline chỉnh sửa theo ngày cưới của bạn.",
-                "point1": "Chọn mẫu theo vóc dáng và concept tiệc",
-                "point2": "Theo dõi mốc thử lại và chỉnh sửa",
-                "point3": "Bàn giao váy kèm checklist chất lượng",
-                "cta": "Xem váy cưới"
-            },
-            "makeup": {
-                "title": "Makeup cô dâu",
-                "summary": "Thiết kế layout makeup theo tone da, ánh sáng sân khấu và phong cách váy cưới đã chọn.",
-                "point1": "Tư vấn style makeup cho lễ chính và tiệc",
-                "point2": "Lên phương án tóc - veil - phụ kiện đồng bộ",
-                "point3": "Có thể đặt độc lập, không cần mua váy",
-                "cta": "Xem dịch vụ Makeup"
-            },
-            "photo": {
-                "title": "Photo cưới",
-                "summary": "Xây concept chụp hình cưới với lộ trình rõ về địa điểm, trang phục và deliverables.",
-                "point1": "Tư vấn pre-wedding hoặc chụp ngày cưới",
-                "point2": "Gợi ý shot-list theo câu chuyện cặp đôi",
-                "point3": "Có thể đặt độc lập, không cần mua váy",
-                "cta": "Xem dịch vụ Photo"
-            }
-        },
-        "workflow": {
-            "title": "Quy trình làm việc",
-            "step1": {
-                "title": "Bước 1: Chốt nhu cầu",
-                "detail": "Bạn chọn mảng cần dùng: váy cưới, makeup, photo hoặc combo."
-            },
-            "step2": {
-                "title": "Bước 2: Tư vấn 1:1",
-                "detail": "Đội ngũ làm rõ ngân sách, concept và timeline để chốt phương án phù hợp."
-            },
-            "step3": {
-                "title": "Bước 3: Triển khai theo mốc",
-                "detail": "Lịch hẹn, các đầu việc và cột mốc được xác nhận minh bạch trong suốt quá trình."
-            }
-        },
-        "serviceOnly": {
-            "title": "Đặt dịch vụ không kèm váy",
-            "description": "Bạn không bắt buộc mua váy cưới để đặt Makeup hoặc Photo. Hệ thống đặt lịch hỗ trợ chọn dịch vụ riêng theo nhu cầu.",
-            "note": "Khi vào form đặt lịch, chỉ cần để trống trường “Váy cưới ưa thích” và chọn dịch vụ Makeup/Photo.",
-            "cta": "Đặt dịch vụ riêng"
-        }
+    "steps": {
+      "stylistPrep": {
+        "title": "Chuẩn bị stylist",
+        "detail": "Ghi chú phong cách của bạn được xem trước khi hẹn tại showroom."
+      },
+      "privateFitting": {
+        "title": "Thử đồ riêng tư",
+        "detail": "Buổi thử được thiết kế theo vóc dáng, kích thước và timeline lễ cưới."
+      },
+      "aftercare": {
+        "title": "Kế hoạch chăm sóc sau",
+        "detail": "Xác nhận các mốc chỉnh sửa và timeline nhận đồ."
+      }
     },
-    "FloatingCta": {
-        "bookFitting": "Đặt lịch thử",
-        "reserveFitting": "Đặt lịch thử riêng tư"
-    },
-    "Collections": {
-        "kicker": "Bộ Sưu Tập",
-        "heading": "Các mẫu thiết kế đặc trưng, dành cho buổi hẹn riêng tư.",
-        "viewAll": "Xem tất cả"
-    },
-    "NotFound": {
-        "kicker": "Sản phẩm",
-        "heading": "Không tìm thấy váy cưới",
-        "description": "Sản phẩm này có thể đã được lưu trữ hoặc đổi tên. Xem các bộ sưu tập có sẵn để tìm sản phẩm hiện tại.",
-        "backToCatalog": "Quay lại catalog"
-    },
-    "HomeHighlights": {
-        "kicker": "Cách chúng tôi làm việc",
-        "heading": "Thông tin rõ ràng để bạn chủ động trước ngày cưới",
-        "intro": "Mỗi buổi hẹn tập trung vào dữ liệu thực tế: tình trạng mẫu váy, thời gian chỉnh sửa và các mốc cần chốt để tránh cập rập sát ngày lễ.",
-        "coutureTitle": "Tuyển chọn phù hợp thật",
-        "coutureDesc": "Không đẩy theo xu hướng. Stylist lọc mẫu dựa trên vóc dáng, concept tiệc và ngân sách bạn đã chia sẻ.",
-        "coutureNote": "Mỗi mẫu đều có ghi chú chất liệu, độ ôm, mức chỉnh sửa có thể thực hiện và thời gian dự kiến.",
-        "fittingTitle": "Thử đồ có cấu trúc",
-        "fittingDesc": "Buổi thử tập trung 1:1, bắt đầu từ form nền rồi tinh chỉnh theo cảm giác di chuyển và độ thoải mái khi mặc lâu.",
-        "fittingNote": "Bạn nhận danh sách việc cần làm sau buổi hẹn: mẫu shortlist, điểm cần sửa và mốc quay lại tiếp theo.",
-        "calendarTitle": "Timeline theo mốc thật",
-        "calendarDesc": "Lịch hẹn được đặt theo ngày cưới thực tế, ưu tiên đủ thời gian cho sửa váy, thử lại và xử lý phát sinh.",
-        "calendarNote": "Nếu timeline gấp, đội ngũ sẽ báo thẳng rủi ro và phương án thay thế thay vì cam kết quá mức."
-    },
-    "CollectionsGrid": {
-        "kicker": "Bộ Sưu Tập",
-        "heading": "Các mẫu thiết kế đặc trưng, dành cho buổi hẹn riêng tư.",
-        "viewAll": "Xem tất cả váy cưới",
-        "savePreview": "Lưu xem trước",
-        "products": {
-            "aurora": {
-                "name": "Aurora Silk A-Line",
-                "silhouette": "Dáng chữ A",
-                "note": "Thân áo xếp nếp thủ công với đuôi váy dài"
-            },
-            "celeste": {
-                "name": "Celeste Crepe Column",
-                "silhouette": "Dáng suông",
-                "note": "Eo được điêu khắc và lưng đính nút ngọc trai"
-            },
-            "elysian": {
-                "name": "Elysian Lace Corset",
-                "silhouette": "Váy xòe",
-                "note": "Lớp phủ ren Pháp và tay áo tháo rời"
-            },
-            "seraphina": {
-                "name": "Seraphina Satin Wrap",
-                "silhouette": "Váy đuôi cá",
-                "note": "Đường may định hình với nếp gấp trễ vai mềm mại"
-            }
-        }
-    },
-    "CollectionsPage": {
-        "kicker": "Danh mục sản phẩm",
-        "title": "Bộ sưu tập váy cưới",
-        "description": "Khám phá các thiết kế được tuyển chọn, so sánh giá cả, và đặt lịch thử váy tại cửa hàng trực tiếp từ trang sản phẩm.",
-        "count": "{count} mẫu váy có sẵn",
-        "noResultsTitle": "Không tìm thấy sản phẩm",
-        "noResultsDesc": "Thử từ khóa khác hoặc xóa bộ lọc."
-    },
-    "CatalogToolbar": {
-        "searchLabel": "Tìm kiếm danh mục",
-        "searchPlaceholder": "Tìm kiếm váy, chất liệu, kiểu dáng...",
-        "sortLabel": "Sắp xếp danh mục",
-        "applyFilters": "Áp dụng bộ lọc"
-    },
-    "CatalogSort": {
-        "featured": "Nổi bật",
-        "newest": "Mới nhất",
-        "price_asc": "Giá: Thấp đến cao",
-        "price_desc": "Giá: Cao đến thấp"
-    },
-    "CatalogPagination": {
-        "previous": "Trước",
-        "next": "Tiếp",
-        "pageOf": "Trang {page} trên {totalPages}"
-    },
-    "TrustBadges": {
-        "kicker": "Cam kết dịch vụ",
-        "items": {
-            "verified": {
-                "title": "Stylist đồng hành trực tiếp",
-                "detail": "Mỗi buổi hẹn 1:1, tư vấn theo vóc dáng, phong cách lễ cưới và mức ngân sách dự kiến."
-            },
-            "rating": {
-                "title": "Quy trình minh bạch",
-                "detail": "Thông tin về mẫu thử, tình trạng hàng và chi phí chỉnh sửa được trao đổi trước khi chốt."
-            },
-            "timeline": {
-                "title": "Mốc thời gian cụ thể",
-                "detail": "Lịch thử, lịch sửa và ngày nhận váy đều được xác nhận rõ để bạn chủ động kế hoạch cưới."
-            },
-            "finish": {
-                "title": "Bàn giao có kiểm tra",
-                "detail": "Trước ngày nhận, váy được rà lại đường may, phụ kiện đi kèm và hướng dẫn bảo quản."
-            }
-        }
-    },
-    "Testimonials": {
-        "kicker": "Đánh giá từ khách hàng",
-        "heading": "Đặt lịch tự tin, yêu thích ngay lần thử đầu tiên.",
-        "reviews": {
-            "linh": {
-                "quote": "Stylist hiểu ngay ý tưởng buổi lễ của mình. Quy trình đặt lịch rõ ràng, nhịp độ thử đồ rất vừa phải.",
-                "event": "Lễ cưới sân vườn"
-            },
-            "emily": {
-                "quote": "Mình đã chọn váy online, đặt lịch nhanh gọn và tìm được váy ưng ý ngay buổi đầu. Dịch vụ rất riêng tư.",
-                "event": "Tiệc cưới thành phố"
-            },
-            "gia": {
-                "quote": "Từ tin nhắn đầu tiên đến lần chỉnh sửa cuối cùng, giao tiếp rất nhanh và chuyên nghiệp.",
-                "event": "Đám cưới phương xa"
-            }
-        }
-    },
-    "Status": {
-        "PENDING": "Đang chờ",
-        "CONFIRMED": "Đã xác nhận",
-        "CANCELLED": "Đã hủy",
-        "COMPLETED": "Hoàn thành"
-    },
-    "RealBrides": {
-        "label": "Cô Dâu Thực Tế",
-        "title": "Nàng Thơ Quỳnh Trâm",
-        "subtitle": "Khám phá vẻ đẹp tinh tế và câu chuyện hạnh phúc của các cô dâu.",
-        "cta": "Xem Bộ Sưu Tập"
-    },
-    "AboutPage": {
-        "kicker": "Di sản của chúng tôi",
-        "heroTitle1": "Thời trang cưới hiện đại,",
-        "heroTitle2": "dịch vụ tận tâm.",
-        "heroDesc1": "Quỳnh Trâm Bridal là atelier váy cưới tập trung vào phom dáng hiện đại, không gian thử đồ riêng tư và tư vấn phong cách cá nhân từ buổi hẹn đầu tiên đến lần chỉnh sửa cuối cùng.",
-        "heroDesc2": "Mỗi buổi tư vấn váy cưới được điều chỉnh theo timeline lễ cưới, bối cảnh địa điểm và sở thích thoải mái của bạn để đảm bảo sự tự tin và tinh tế trong ngày trọng đại.",
-        "processTitle": "Quy trình từ bản vẽ đến lễ đường",
-        "steps": {
-            "consult": {
-                "title": "Tư vấn phong cách",
-                "desc": "Gặp gỡ stylist để thảo luận về tầm nhìn và địa điểm."
-            },
-            "fitting": {
-                "title": "Thử đồ riêng tư",
-                "desc": "Các buổi hẹn 90 phút độc quyền tại atelier của chúng tôi."
-            },
-            "alteration": {
-                "title": "Chỉnh sửa tỉ mỉ",
-                "desc": "Điều chỉnh chính xác từng chi tiết cho phom dáng hoàn hảo."
-            }
-        },
-        "cta": "Đặt lịch hẹn"
-    },
-    "MakeupServicePage": {
-        "metaTitle": "Dịch vụ Makeup cô dâu",
-        "metaDescription": "Giới thiệu dịch vụ Makeup cô dâu tại Quỳnh Trâm Bridal: phong cách, gói giá tham khảo, hình ảnh và quy trình đặt lịch.",
-        "kicker": "Makeup cô dâu",
-        "heading": "Dịch vụ Makeup theo layout thực tế, bám sát concept lễ cưới",
-        "description": "Đội ngũ makeup làm việc theo tone da, ánh sáng sân khấu/chụp ảnh và kiểu váy bạn chọn. Bạn có thể đặt riêng dịch vụ Makeup, không bắt buộc mua váy cưới.",
-        "stats": {
-            "priceFrom": {
-                "label": "Giá từ",
-                "value": "2.500.000 đ"
-            },
-            "serviceType": {
-                "label": "Hình thức",
-                "value": "Đặt riêng hoặc đi kèm váy"
-            },
-            "responseTime": {
-                "label": "Phản hồi lịch",
-                "value": "Trong 1 ngày làm việc"
-            }
-        },
-        "ctas": {
-            "bookOnly": "Đặt lịch Makeup",
-            "bookBundle": "Đặt Makeup + Photo",
-            "backServices": "Quay lại trang dịch vụ"
-        },
-        "heroImageAlt": "Stylist hoàn thiện layout makeup cô dâu",
-        "packageTitle": "Bảng giá gợi ý",
-        "packageNote": "Giá mang tính tham khảo, có thể điều chỉnh theo số lượng người, thời gian bắt đầu, địa điểm và yêu cầu phát sinh.",
-        "packages": {
-            "trial": {
-                "label": "Gói 1",
-                "name": "Makeup thử layout",
-                "price": "2.500.000 đ",
-                "desc": "Phù hợp khi cần chốt style trước ngày cưới.",
-                "feature1": "Tư vấn tone makeup theo khuôn mặt và concept váy",
-                "feature2": "1 layout makeup + tóc cơ bản tại studio",
-                "feature3": "Gửi ghi chú sản phẩm và kỹ thuật để tái hiện ngày cưới"
-            },
-            "weddingDay": {
-                "label": "Gói 2",
-                "name": "Makeup ngày cưới",
-                "price": "6.500.000 đ",
-                "desc": "Dành cho cô dâu cần make-up và làm tóc trong ngày chính lễ.",
-                "feature1": "1 layout makeup + 1 kiểu tóc cô dâu",
-                "feature2": "Hỗ trợ chỉnh touch-up nhẹ trước giờ làm lễ",
-                "feature3": "Phù hợp lễ đơn timeline dưới 6 giờ"
-            },
-            "premium": {
-                "label": "Gói 3",
-                "name": "Makeup trọn buổi Premium",
-                "price": "12.900.000 đ",
-                "desc": "Phù hợp timeline dài, có lễ chính và tiệc tiếp đón.",
-                "feature1": "2 layout biến đổi theo bối cảnh (lễ + tiệc)",
-                "feature2": "Đội ngũ theo sát để touch-up trong khung giờ cam kết",
-                "feature3": "Tư vấn đồng bộ tóc, veil và phụ kiện ảnh cưới"
-            }
-        },
-        "galleryTitle": "Hình ảnh phong cách",
-        "galleryIntro": "Một số phong cách makeup được khách đặt nhiều trong mùa cưới gần đây.",
-        "gallery": {
-            "look1": {
-                "alt": "Makeup cô dâu phong cách tự nhiên ánh sáng ban ngày",
-                "caption": "Layout tự nhiên, da mỏng nhẹ cho tiệc ngoài trời và chụp daylight."
-            },
-            "look2": {
-                "alt": "Makeup cô dâu nhấn mắt và môi hồng đất",
-                "caption": "Layout nhấn mắt vừa phải, cân bằng khi chụp cận và ánh sáng sân khấu."
-            },
-            "look3": {
-                "alt": "Không gian chuẩn bị makeup cô dâu tại showroom",
-                "caption": "Khu vực chuẩn bị riêng tư tại showroom, ưu tiên lịch hẹn 1:1."
-            }
-        },
-        "processTitle": "Quy trình làm việc",
-        "stepLabel": "Bước {index}",
-        "process": {
-            "step1": {
-                "title": "Chốt nhu cầu và timeline",
-                "detail": "Bạn gửi ngày cưới, khung giờ make-up và phong cách mong muốn để đội ngũ đề xuất gói phù hợp."
-            },
-            "step2": {
-                "title": "Thử layout (nếu cần)",
-                "detail": "Buổi thử giúp chốt tone nền, mắt, môi, kiểu tóc và phụ kiện trước ngày chính lễ."
-            },
-            "step3": {
-                "title": "Triển khai ngày cưới",
-                "detail": "Đội makeup có mặt đúng giờ hẹn, làm việc theo checklist đã chốt và timeline bạn xác nhận."
-            }
-        },
-        "scopeTitle": "Phạm vi và lưu ý chi phí",
-        "scopeIncluded": "Thường bao gồm",
-        "scopeExcluded": "Thường chưa bao gồm",
-        "includedItems": {
-            "item1": "Tư vấn tone makeup theo tone da, trang phục và concept lễ cưới.",
-            "item2": "Setup makeup và tóc cô dâu theo số look của từng gói.",
-            "item3": "Hướng dẫn bảo quản layout để giữ độ bền trong buổi lễ."
-        },
-        "excludedItems": {
-            "item1": "Phí di chuyển xa, đi sớm (trước 5h) hoặc phát sinh ngoài giờ cam kết.",
-            "item2": "Makeup cho người nhà/phù dâu nếu chưa thêm vào gói.",
-            "item3": "Phụ kiện tóc/veil thuê riêng hoặc mua ngoài danh mục."
-        },
-        "supportTitle": "Cần tư vấn nhanh về lịch và giá?",
-        "supportDesc": "Nhắn WhatsApp hoặc Zalo để nhận bảng giá chi tiết theo timeline thực tế của bạn.",
-        "supportCtas": {
-            "whatsapp": "Chat trên WhatsApp",
-            "zalo": "Chat trên Zalo"
-        }
-    },
-    "PhotoServicePage": {
-        "metaTitle": "Dịch vụ Photo cưới",
-        "metaDescription": "Giới thiệu dịch vụ Photo cưới tại Quỳnh Trâm Bridal: concept, gói giá tham khảo, hình ảnh và quy trình triển khai.",
-        "kicker": "Photo cưới",
-        "heading": "Dịch vụ chụp ảnh cưới với timeline và đầu ra rõ ràng",
-        "description": "Bạn có thể đặt riêng dịch vụ Photo mà không cần mua váy. Đội ngũ hỗ trợ từ giai đoạn chốt concept, lịch chụp đến bàn giao ảnh theo mốc.",
-        "stats": {
-            "priceFrom": {
-                "label": "Giá từ",
-                "value": "8.900.000 đ"
-            },
-            "serviceType": {
-                "label": "Hình thức",
-                "value": "Pre-wedding, ngày cưới hoặc combo"
-            },
-            "delivery": {
-                "label": "Thời gian trả ảnh",
-                "value": "5-15 ngày (tuỳ gói)"
-            }
-        },
-        "ctas": {
-            "bookOnly": "Đặt lịch Photo",
-            "bookBundle": "Đặt Photo + Makeup",
-            "backServices": "Quay lại trang dịch vụ"
-        },
-        "heroImageAlt": "Bối cảnh chụp ảnh cưới với váy cưới tối giản",
-        "packageTitle": "Bảng giá gợi ý",
-        "packageNote": "Giá mang tính tham khảo và có thể thay đổi theo địa điểm, số lượng bối cảnh, nhân sự và yêu cầu hậu kỳ.",
-        "packages": {
-            "halfDay": {
-                "label": "Gói 1",
-                "name": "Pre-wedding Half Day",
-                "price": "8.900.000 đ",
-                "desc": "Phù hợp cặp đôi cần bộ ảnh gọn, chụp trong 1 buổi.",
-                "feature1": "1 buổi chụp tối đa 4 giờ tại 1 địa điểm",
-                "feature2": "Bàn giao 40 ảnh chỉnh màu + 10 ảnh retouch",
-                "feature3": "Hỗ trợ shot-list theo phong cách đã chốt"
-            },
-            "fullDay": {
-                "label": "Gói 2",
-                "name": "Pre-wedding Full Day",
-                "price": "15.900.000 đ",
-                "desc": "Phù hợp concept nhiều bối cảnh và thay đổi trang phục.",
-                "feature1": "1 ngày chụp tối đa 8 giờ, tối đa 2 địa điểm",
-                "feature2": "Bàn giao 80 ảnh chỉnh màu + 25 ảnh retouch",
-                "feature3": "Có planner hỗ trợ quản lý timeline buổi chụp"
-            },
-            "weddingDay": {
-                "label": "Gói 3",
-                "name": "Wedding Day Documentary",
-                "price": "19.500.000 đ",
-                "desc": "Theo sát ngày cưới từ khâu chuẩn bị đến tiệc.",
-                "feature1": "Theo timeline lễ chính và tiệc trong ngày cưới",
-                "feature2": "Bàn giao ảnh highlight sớm để dùng hậu lễ",
-                "feature3": "Chọn lọc ảnh kể chuyện theo mạch sự kiện"
-            }
-        },
-        "galleryTitle": "Hình ảnh concept",
-        "galleryIntro": "Tham khảo một số mood ảnh cưới được khách hàng lựa chọn gần đây.",
-        "gallery": {
-            "look1": {
-                "alt": "Ảnh cưới theo concept editorial với ánh sáng mềm",
-                "caption": "Concept editorial tối giản, tập trung pose và ánh sáng mềm."
-            },
-            "look2": {
-                "alt": "Ảnh cưới concept hiện đại tại studio",
-                "caption": "Concept studio hiện đại, ưu tiên đường nét váy và biểu cảm tự nhiên."
-            },
-            "look3": {
-                "alt": "Ảnh cưới phong cách cổ điển với váy bồng",
-                "caption": "Concept cổ điển với váy bồng, phù hợp album truyền thống."
-            }
-        },
-        "processTitle": "Quy trình làm việc",
-        "stepLabel": "Bước {index}",
-        "process": {
-            "step1": {
-                "title": "Tư vấn concept và ngân sách",
-                "detail": "Chúng tôi làm rõ style ảnh, địa điểm, trang phục và mục tiêu đầu ra trước khi chốt gói."
-            },
-            "step2": {
-                "title": "Lập lịch chụp chi tiết",
-                "detail": "Timeline được chia theo mốc make-up, thay trang phục, di chuyển và khung giờ ánh sáng phù hợp."
-            },
-            "step3": {
-                "title": "Chụp và bàn giao",
-                "detail": "Sau buổi chụp, ảnh được chọn lọc theo tiêu chí đã thống nhất và gửi đúng mốc cam kết."
-            }
-        },
-        "scopeTitle": "Phạm vi và lưu ý chi phí",
-        "scopeIncluded": "Thường bao gồm",
-        "scopeExcluded": "Thường chưa bao gồm",
-        "includedItems": {
-            "item1": "Tư vấn concept, shot-list và phong cách hậu kỳ theo mục tiêu album.",
-            "item2": "Nhân sự chụp ảnh theo gói (photographer và hỗ trợ cơ bản).",
-            "item3": "Bàn giao file ảnh theo số lượng đã nêu trong từng gói."
-        },
-        "excludedItems": {
-            "item1": "Phí vào địa điểm đặc biệt, giấy phép hoặc chi phí phát sinh theo venue.",
-            "item2": "Chi phí di chuyển xa tỉnh/thành hoặc lưu trú qua đêm.",
-            "item3": "In album cao cấp hoặc video nếu chưa đăng ký thêm."
-        },
-        "supportTitle": "Bạn cần báo giá sát nhu cầu thực tế?",
-        "supportDesc": "Nhắn nhanh qua WhatsApp hoặc Zalo, đội ngũ sẽ đề xuất gói phù hợp với timeline và ngân sách của bạn.",
-        "supportCtas": {
-            "whatsapp": "Chat trên WhatsApp",
-            "zalo": "Chat trên Zalo"
-        }
+    "errors": {
+      "invalidForm": "Vui lòng hoàn thành tất cả các trường bắt buộc.",
+      "invalidDatetime": "Chọn ngày và giờ hẹn trong tương lai.",
+      "invalidProduct": "Sản phẩm đã chọn không khả dụng. Vui lòng chọn váy khác.",
+      "serviceUnavailable": "Dịch vụ đặt lịch tạm thời không khả dụng. Vui lòng thử lại sau.",
+      "slotUnavailable": "Khung giờ đã được đặt. Vui lòng chọn giờ hẹn khác."
     }
+  },
+  "ServicesPage": {
+    "metaTitle": "Dịch vụ cưới toàn diện",
+    "metaDescription": "Khám phá 3 mảng dịch vụ của Quỳnh Trâm Bridal: váy cưới, makeup cô dâu và chụp ảnh cưới.",
+    "kicker": "Dịch vụ cưới toàn diện",
+    "heading": "Ba mảng dịch vụ, một đội ngũ đồng hành xuyên suốt lễ cưới",
+    "description": "Ngoài váy cưới, chúng tôi cung cấp Makeup và Photo như các mảng riêng để bạn chủ động đặt từng phần hoặc kết hợp trọn gói theo timeline cưới.",
+    "heroPrimaryCta": "Đặt Makeup + Photo",
+    "heroSecondaryCta": "Xem bộ sưu tập váy",
+    "stats": {
+      "serviceLines": {
+        "label": "Mảng dịch vụ",
+        "value": "03"
+      },
+      "oneToOne": {
+        "label": "Tư vấn",
+        "value": "1:1"
+      },
+      "serviceOnly": {
+        "label": "Đặt riêng từng mảng",
+        "value": "Có"
+      }
+    },
+    "cards": {
+      "dress": {
+        "title": "Váy cưới",
+        "summary": "Tư vấn silhouette, thử váy riêng tư và lên timeline chỉnh sửa theo ngày cưới của bạn.",
+        "point1": "Chọn mẫu theo vóc dáng và concept tiệc",
+        "point2": "Theo dõi mốc thử lại và chỉnh sửa",
+        "point3": "Bàn giao váy kèm checklist chất lượng",
+        "cta": "Xem váy cưới"
+      },
+      "makeup": {
+        "title": "Makeup cô dâu",
+        "summary": "Thiết kế layout makeup theo tone da, ánh sáng sân khấu và phong cách váy cưới đã chọn.",
+        "point1": "Tư vấn style makeup cho lễ chính và tiệc",
+        "point2": "Lên phương án tóc - veil - phụ kiện đồng bộ",
+        "point3": "Có thể đặt độc lập, không cần mua váy",
+        "cta": "Xem dịch vụ Makeup"
+      },
+      "photo": {
+        "title": "Photo cưới",
+        "summary": "Xây concept chụp hình cưới với lộ trình rõ về địa điểm, trang phục và deliverables.",
+        "point1": "Tư vấn pre-wedding hoặc chụp ngày cưới",
+        "point2": "Gợi ý shot-list theo câu chuyện cặp đôi",
+        "point3": "Có thể đặt độc lập, không cần mua váy",
+        "cta": "Xem dịch vụ Photo"
+      }
+    },
+    "workflow": {
+      "title": "Quy trình làm việc",
+      "step1": {
+        "title": "Bước 1: Chốt nhu cầu",
+        "detail": "Bạn chọn mảng cần dùng: váy cưới, makeup, photo hoặc combo."
+      },
+      "step2": {
+        "title": "Bước 2: Tư vấn 1:1",
+        "detail": "Đội ngũ làm rõ ngân sách, concept và timeline để chốt phương án phù hợp."
+      },
+      "step3": {
+        "title": "Bước 3: Triển khai theo mốc",
+        "detail": "Lịch hẹn, các đầu việc và cột mốc được xác nhận minh bạch trong suốt quá trình."
+      }
+    },
+    "serviceOnly": {
+      "title": "Đặt dịch vụ không kèm váy",
+      "description": "Bạn không bắt buộc mua váy cưới để đặt Makeup hoặc Photo. Hệ thống đặt lịch hỗ trợ chọn dịch vụ riêng theo nhu cầu.",
+      "note": "Khi vào form đặt lịch, chỉ cần để trống trường “Váy cưới ưa thích” và chọn dịch vụ Makeup/Photo.",
+      "cta": "Đặt dịch vụ riêng"
+    }
+  },
+  "FloatingCta": {
+    "bookFitting": "Đặt lịch thử",
+    "reserveFitting": "Đặt lịch thử riêng tư"
+  },
+  "Collections": {
+    "kicker": "Bộ Sưu Tập",
+    "heading": "Các mẫu thiết kế đặc trưng, dành cho buổi hẹn riêng tư.",
+    "viewAll": "Xem tất cả"
+  },
+  "NotFound": {
+    "kicker": "Sản phẩm",
+    "heading": "Không tìm thấy váy cưới",
+    "description": "Sản phẩm này có thể đã được lưu trữ hoặc đổi tên. Xem các bộ sưu tập có sẵn để tìm sản phẩm hiện tại.",
+    "backToCatalog": "Quay lại catalog"
+  },
+  "HomeHighlights": {
+    "kicker": "Cách chúng tôi làm việc",
+    "heading": "Thông tin rõ ràng để bạn chủ động trước ngày cưới",
+    "intro": "Mỗi buổi hẹn tập trung vào dữ liệu thực tế: tình trạng mẫu váy, thời gian chỉnh sửa và các mốc cần chốt để tránh cập rập sát ngày lễ.",
+    "coutureTitle": "Tuyển chọn phù hợp thật",
+    "coutureDesc": "Không đẩy theo xu hướng. Stylist lọc mẫu dựa trên vóc dáng, concept tiệc và ngân sách bạn đã chia sẻ.",
+    "coutureNote": "Mỗi mẫu đều có ghi chú chất liệu, độ ôm, mức chỉnh sửa có thể thực hiện và thời gian dự kiến.",
+    "fittingTitle": "Thử đồ có cấu trúc",
+    "fittingDesc": "Buổi thử tập trung 1:1, bắt đầu từ form nền rồi tinh chỉnh theo cảm giác di chuyển và độ thoải mái khi mặc lâu.",
+    "fittingNote": "Bạn nhận danh sách việc cần làm sau buổi hẹn: mẫu shortlist, điểm cần sửa và mốc quay lại tiếp theo.",
+    "calendarTitle": "Timeline theo mốc thật",
+    "calendarDesc": "Lịch hẹn được đặt theo ngày cưới thực tế, ưu tiên đủ thời gian cho sửa váy, thử lại và xử lý phát sinh.",
+    "calendarNote": "Nếu timeline gấp, đội ngũ sẽ báo thẳng rủi ro và phương án thay thế thay vì cam kết quá mức."
+  },
+  "CollectionsGrid": {
+    "kicker": "Bộ Sưu Tập",
+    "heading": "Các mẫu thiết kế đặc trưng, dành cho buổi hẹn riêng tư.",
+    "viewAll": "Xem tất cả váy cưới",
+    "savePreview": "Lưu xem trước",
+    "products": {
+      "aurora": {
+        "name": "Aurora Silk A-Line",
+        "silhouette": "Dáng chữ A",
+        "note": "Thân áo xếp nếp thủ công với đuôi váy dài"
+      },
+      "celeste": {
+        "name": "Celeste Crepe Column",
+        "silhouette": "Dáng suông",
+        "note": "Eo được điêu khắc và lưng đính nút ngọc trai"
+      },
+      "elysian": {
+        "name": "Elysian Lace Corset",
+        "silhouette": "Váy xòe",
+        "note": "Lớp phủ ren Pháp và tay áo tháo rời"
+      },
+      "seraphina": {
+        "name": "Seraphina Satin Wrap",
+        "silhouette": "Váy đuôi cá",
+        "note": "Đường may định hình với nếp gấp trễ vai mềm mại"
+      }
+    }
+  },
+  "CollectionsPage": {
+    "kicker": "Danh mục sản phẩm",
+    "title": "Bộ sưu tập váy cưới",
+    "description": "Khám phá các thiết kế được tuyển chọn, so sánh giá cả, và đặt lịch thử váy tại cửa hàng trực tiếp từ trang sản phẩm.",
+    "count": "{count} mẫu váy có sẵn",
+    "noResultsTitle": "Không tìm thấy sản phẩm",
+    "noResultsDesc": "Thử từ khóa khác hoặc xóa bộ lọc."
+  },
+  "CatalogToolbar": {
+    "searchLabel": "Tìm kiếm danh mục",
+    "searchPlaceholder": "Tìm kiếm váy, chất liệu, kiểu dáng...",
+    "sortLabel": "Sắp xếp danh mục",
+    "applyFilters": "Áp dụng bộ lọc"
+  },
+  "CatalogSort": {
+    "featured": "Nổi bật",
+    "newest": "Mới nhất",
+    "price_asc": "Giá: Thấp đến cao",
+    "price_desc": "Giá: Cao đến thấp"
+  },
+  "CatalogPagination": {
+    "previous": "Trước",
+    "next": "Tiếp",
+    "pageOf": "Trang {page} trên {totalPages}"
+  },
+  "TrustBadges": {
+    "kicker": "Cam kết dịch vụ",
+    "items": {
+      "verified": {
+        "title": "Stylist đồng hành trực tiếp",
+        "detail": "Mỗi buổi hẹn 1:1, tư vấn theo vóc dáng, phong cách lễ cưới và mức ngân sách dự kiến."
+      },
+      "rating": {
+        "title": "Quy trình minh bạch",
+        "detail": "Thông tin về mẫu thử, tình trạng hàng và chi phí chỉnh sửa được trao đổi trước khi chốt."
+      },
+      "timeline": {
+        "title": "Mốc thời gian cụ thể",
+        "detail": "Lịch thử, lịch sửa và ngày nhận váy đều được xác nhận rõ để bạn chủ động kế hoạch cưới."
+      },
+      "finish": {
+        "title": "Bàn giao có kiểm tra",
+        "detail": "Trước ngày nhận, váy được rà lại đường may, phụ kiện đi kèm và hướng dẫn bảo quản."
+      }
+    }
+  },
+  "Testimonials": {
+    "kicker": "Đánh giá từ khách hàng",
+    "heading": "Đặt lịch tự tin, yêu thích ngay lần thử đầu tiên.",
+    "reviews": {
+      "linh": {
+        "quote": "Stylist hiểu ngay ý tưởng buổi lễ của mình. Quy trình đặt lịch rõ ràng, nhịp độ thử đồ rất vừa phải.",
+        "event": "Lễ cưới sân vườn"
+      },
+      "emily": {
+        "quote": "Mình đã chọn váy online, đặt lịch nhanh gọn và tìm được váy ưng ý ngay buổi đầu. Dịch vụ rất riêng tư.",
+        "event": "Tiệc cưới thành phố"
+      },
+      "gia": {
+        "quote": "Từ tin nhắn đầu tiên đến lần chỉnh sửa cuối cùng, giao tiếp rất nhanh và chuyên nghiệp.",
+        "event": "Đám cưới phương xa"
+      }
+    }
+  },
+  "Status": {
+    "PENDING": "Đang chờ",
+    "CONFIRMED": "Đã xác nhận",
+    "CANCELED": "Đã hủy",
+    "CANCELLED": "Đã hủy",
+    "COMPLETED": "Hoàn thành",
+    "NO_SHOW": "Không đến"
+  },
+  "RealBrides": {
+    "label": "Cô Dâu Thực Tế",
+    "title": "Nàng Thơ Quỳnh Trâm",
+    "subtitle": "Khám phá vẻ đẹp tinh tế và câu chuyện hạnh phúc của các cô dâu.",
+    "cta": "Xem Bộ Sưu Tập"
+  },
+  "AboutPage": {
+    "kicker": "Di sản của chúng tôi",
+    "heroTitle1": "Thời trang cưới hiện đại,",
+    "heroTitle2": "dịch vụ tận tâm.",
+    "heroDesc1": "Quỳnh Trâm Bridal là atelier váy cưới tập trung vào phom dáng hiện đại, không gian thử đồ riêng tư và tư vấn phong cách cá nhân từ buổi hẹn đầu tiên đến lần chỉnh sửa cuối cùng.",
+    "heroDesc2": "Mỗi buổi tư vấn váy cưới được điều chỉnh theo timeline lễ cưới, bối cảnh địa điểm và sở thích thoải mái của bạn để đảm bảo sự tự tin và tinh tế trong ngày trọng đại.",
+    "processTitle": "Quy trình từ bản vẽ đến lễ đường",
+    "steps": {
+      "consult": {
+        "title": "Tư vấn phong cách",
+        "desc": "Gặp gỡ stylist để thảo luận về tầm nhìn và địa điểm."
+      },
+      "fitting": {
+        "title": "Thử đồ riêng tư",
+        "desc": "Các buổi hẹn 90 phút độc quyền tại atelier của chúng tôi."
+      },
+      "alteration": {
+        "title": "Chỉnh sửa tỉ mỉ",
+        "desc": "Điều chỉnh chính xác từng chi tiết cho phom dáng hoàn hảo."
+      }
+    },
+    "cta": "Đặt lịch hẹn"
+  },
+  "MakeupServicePage": {
+    "metaTitle": "Dịch vụ Makeup cô dâu",
+    "metaDescription": "Giới thiệu dịch vụ Makeup cô dâu tại Quỳnh Trâm Bridal: phong cách, gói giá tham khảo, hình ảnh và quy trình đặt lịch.",
+    "kicker": "Makeup cô dâu",
+    "heading": "Dịch vụ Makeup theo layout thực tế, bám sát concept lễ cưới",
+    "description": "Đội ngũ makeup làm việc theo tone da, ánh sáng sân khấu/chụp ảnh và kiểu váy bạn chọn. Bạn có thể đặt riêng dịch vụ Makeup, không bắt buộc mua váy cưới.",
+    "stats": {
+      "priceFrom": {
+        "label": "Giá từ",
+        "value": "2.500.000 đ"
+      },
+      "serviceType": {
+        "label": "Hình thức",
+        "value": "Đặt riêng hoặc đi kèm váy"
+      },
+      "responseTime": {
+        "label": "Phản hồi lịch",
+        "value": "Trong 1 ngày làm việc"
+      }
+    },
+    "ctas": {
+      "bookOnly": "Đặt lịch Makeup",
+      "bookBundle": "Đặt Makeup + Photo",
+      "backServices": "Quay lại trang dịch vụ"
+    },
+    "heroImageAlt": "Stylist hoàn thiện layout makeup cô dâu",
+    "packageTitle": "Bảng giá gợi ý",
+    "packageNote": "Giá mang tính tham khảo, có thể điều chỉnh theo số lượng người, thời gian bắt đầu, địa điểm và yêu cầu phát sinh.",
+    "packages": {
+      "trial": {
+        "label": "Gói 1",
+        "name": "Makeup thử layout",
+        "price": "2.500.000 đ",
+        "desc": "Phù hợp khi cần chốt style trước ngày cưới.",
+        "feature1": "Tư vấn tone makeup theo khuôn mặt và concept váy",
+        "feature2": "1 layout makeup + tóc cơ bản tại studio",
+        "feature3": "Gửi ghi chú sản phẩm và kỹ thuật để tái hiện ngày cưới"
+      },
+      "weddingDay": {
+        "label": "Gói 2",
+        "name": "Makeup ngày cưới",
+        "price": "6.500.000 đ",
+        "desc": "Dành cho cô dâu cần make-up và làm tóc trong ngày chính lễ.",
+        "feature1": "1 layout makeup + 1 kiểu tóc cô dâu",
+        "feature2": "Hỗ trợ chỉnh touch-up nhẹ trước giờ làm lễ",
+        "feature3": "Phù hợp lễ đơn timeline dưới 6 giờ"
+      },
+      "premium": {
+        "label": "Gói 3",
+        "name": "Makeup trọn buổi Premium",
+        "price": "12.900.000 đ",
+        "desc": "Phù hợp timeline dài, có lễ chính và tiệc tiếp đón.",
+        "feature1": "2 layout biến đổi theo bối cảnh (lễ + tiệc)",
+        "feature2": "Đội ngũ theo sát để touch-up trong khung giờ cam kết",
+        "feature3": "Tư vấn đồng bộ tóc, veil và phụ kiện ảnh cưới"
+      }
+    },
+    "galleryTitle": "Hình ảnh phong cách",
+    "galleryIntro": "Một số phong cách makeup được khách đặt nhiều trong mùa cưới gần đây.",
+    "gallery": {
+      "look1": {
+        "alt": "Makeup cô dâu phong cách tự nhiên ánh sáng ban ngày",
+        "caption": "Layout tự nhiên, da mỏng nhẹ cho tiệc ngoài trời và chụp daylight."
+      },
+      "look2": {
+        "alt": "Makeup cô dâu nhấn mắt và môi hồng đất",
+        "caption": "Layout nhấn mắt vừa phải, cân bằng khi chụp cận và ánh sáng sân khấu."
+      },
+      "look3": {
+        "alt": "Không gian chuẩn bị makeup cô dâu tại showroom",
+        "caption": "Khu vực chuẩn bị riêng tư tại showroom, ưu tiên lịch hẹn 1:1."
+      }
+    },
+    "processTitle": "Quy trình làm việc",
+    "stepLabel": "Bước {index}",
+    "process": {
+      "step1": {
+        "title": "Chốt nhu cầu và timeline",
+        "detail": "Bạn gửi ngày cưới, khung giờ make-up và phong cách mong muốn để đội ngũ đề xuất gói phù hợp."
+      },
+      "step2": {
+        "title": "Thử layout (nếu cần)",
+        "detail": "Buổi thử giúp chốt tone nền, mắt, môi, kiểu tóc và phụ kiện trước ngày chính lễ."
+      },
+      "step3": {
+        "title": "Triển khai ngày cưới",
+        "detail": "Đội makeup có mặt đúng giờ hẹn, làm việc theo checklist đã chốt và timeline bạn xác nhận."
+      }
+    },
+    "scopeTitle": "Phạm vi và lưu ý chi phí",
+    "scopeIncluded": "Thường bao gồm",
+    "scopeExcluded": "Thường chưa bao gồm",
+    "includedItems": {
+      "item1": "Tư vấn tone makeup theo tone da, trang phục và concept lễ cưới.",
+      "item2": "Setup makeup và tóc cô dâu theo số look của từng gói.",
+      "item3": "Hướng dẫn bảo quản layout để giữ độ bền trong buổi lễ."
+    },
+    "excludedItems": {
+      "item1": "Phí di chuyển xa, đi sớm (trước 5h) hoặc phát sinh ngoài giờ cam kết.",
+      "item2": "Makeup cho người nhà/phù dâu nếu chưa thêm vào gói.",
+      "item3": "Phụ kiện tóc/veil thuê riêng hoặc mua ngoài danh mục."
+    },
+    "supportTitle": "Cần tư vấn nhanh về lịch và giá?",
+    "supportDesc": "Nhắn WhatsApp hoặc Zalo để nhận bảng giá chi tiết theo timeline thực tế của bạn.",
+    "supportCtas": {
+      "whatsapp": "Chat trên WhatsApp",
+      "zalo": "Chat trên Zalo"
+    }
+  },
+  "PhotoServicePage": {
+    "metaTitle": "Dịch vụ Photo cưới",
+    "metaDescription": "Giới thiệu dịch vụ Photo cưới tại Quỳnh Trâm Bridal: concept, gói giá tham khảo, hình ảnh và quy trình triển khai.",
+    "kicker": "Photo cưới",
+    "heading": "Dịch vụ chụp ảnh cưới với timeline và đầu ra rõ ràng",
+    "description": "Bạn có thể đặt riêng dịch vụ Photo mà không cần mua váy. Đội ngũ hỗ trợ từ giai đoạn chốt concept, lịch chụp đến bàn giao ảnh theo mốc.",
+    "stats": {
+      "priceFrom": {
+        "label": "Giá từ",
+        "value": "8.900.000 đ"
+      },
+      "serviceType": {
+        "label": "Hình thức",
+        "value": "Pre-wedding, ngày cưới hoặc combo"
+      },
+      "delivery": {
+        "label": "Thời gian trả ảnh",
+        "value": "5-15 ngày (tuỳ gói)"
+      }
+    },
+    "ctas": {
+      "bookOnly": "Đặt lịch Photo",
+      "bookBundle": "Đặt Photo + Makeup",
+      "backServices": "Quay lại trang dịch vụ"
+    },
+    "heroImageAlt": "Bối cảnh chụp ảnh cưới với váy cưới tối giản",
+    "packageTitle": "Bảng giá gợi ý",
+    "packageNote": "Giá mang tính tham khảo và có thể thay đổi theo địa điểm, số lượng bối cảnh, nhân sự và yêu cầu hậu kỳ.",
+    "packages": {
+      "halfDay": {
+        "label": "Gói 1",
+        "name": "Pre-wedding Half Day",
+        "price": "8.900.000 đ",
+        "desc": "Phù hợp cặp đôi cần bộ ảnh gọn, chụp trong 1 buổi.",
+        "feature1": "1 buổi chụp tối đa 4 giờ tại 1 địa điểm",
+        "feature2": "Bàn giao 40 ảnh chỉnh màu + 10 ảnh retouch",
+        "feature3": "Hỗ trợ shot-list theo phong cách đã chốt"
+      },
+      "fullDay": {
+        "label": "Gói 2",
+        "name": "Pre-wedding Full Day",
+        "price": "15.900.000 đ",
+        "desc": "Phù hợp concept nhiều bối cảnh và thay đổi trang phục.",
+        "feature1": "1 ngày chụp tối đa 8 giờ, tối đa 2 địa điểm",
+        "feature2": "Bàn giao 80 ảnh chỉnh màu + 25 ảnh retouch",
+        "feature3": "Có planner hỗ trợ quản lý timeline buổi chụp"
+      },
+      "weddingDay": {
+        "label": "Gói 3",
+        "name": "Wedding Day Documentary",
+        "price": "19.500.000 đ",
+        "desc": "Theo sát ngày cưới từ khâu chuẩn bị đến tiệc.",
+        "feature1": "Theo timeline lễ chính và tiệc trong ngày cưới",
+        "feature2": "Bàn giao ảnh highlight sớm để dùng hậu lễ",
+        "feature3": "Chọn lọc ảnh kể chuyện theo mạch sự kiện"
+      }
+    },
+    "galleryTitle": "Hình ảnh concept",
+    "galleryIntro": "Tham khảo một số mood ảnh cưới được khách hàng lựa chọn gần đây.",
+    "gallery": {
+      "look1": {
+        "alt": "Ảnh cưới theo concept editorial với ánh sáng mềm",
+        "caption": "Concept editorial tối giản, tập trung pose và ánh sáng mềm."
+      },
+      "look2": {
+        "alt": "Ảnh cưới concept hiện đại tại studio",
+        "caption": "Concept studio hiện đại, ưu tiên đường nét váy và biểu cảm tự nhiên."
+      },
+      "look3": {
+        "alt": "Ảnh cưới phong cách cổ điển với váy bồng",
+        "caption": "Concept cổ điển với váy bồng, phù hợp album truyền thống."
+      }
+    },
+    "processTitle": "Quy trình làm việc",
+    "stepLabel": "Bước {index}",
+    "process": {
+      "step1": {
+        "title": "Tư vấn concept và ngân sách",
+        "detail": "Chúng tôi làm rõ style ảnh, địa điểm, trang phục và mục tiêu đầu ra trước khi chốt gói."
+      },
+      "step2": {
+        "title": "Lập lịch chụp chi tiết",
+        "detail": "Timeline được chia theo mốc make-up, thay trang phục, di chuyển và khung giờ ánh sáng phù hợp."
+      },
+      "step3": {
+        "title": "Chụp và bàn giao",
+        "detail": "Sau buổi chụp, ảnh được chọn lọc theo tiêu chí đã thống nhất và gửi đúng mốc cam kết."
+      }
+    },
+    "scopeTitle": "Phạm vi và lưu ý chi phí",
+    "scopeIncluded": "Thường bao gồm",
+    "scopeExcluded": "Thường chưa bao gồm",
+    "includedItems": {
+      "item1": "Tư vấn concept, shot-list và phong cách hậu kỳ theo mục tiêu album.",
+      "item2": "Nhân sự chụp ảnh theo gói (photographer và hỗ trợ cơ bản).",
+      "item3": "Bàn giao file ảnh theo số lượng đã nêu trong từng gói."
+    },
+    "excludedItems": {
+      "item1": "Phí vào địa điểm đặc biệt, giấy phép hoặc chi phí phát sinh theo venue.",
+      "item2": "Chi phí di chuyển xa tỉnh/thành hoặc lưu trú qua đêm.",
+      "item3": "In album cao cấp hoặc video nếu chưa đăng ký thêm."
+    },
+    "supportTitle": "Bạn cần báo giá sát nhu cầu thực tế?",
+    "supportDesc": "Nhắn nhanh qua WhatsApp hoặc Zalo, đội ngũ sẽ đề xuất gói phù hợp với timeline và ngân sách của bạn.",
+    "supportCtas": {
+      "whatsapp": "Chat trên WhatsApp",
+      "zalo": "Chat trên Zalo"
+    }
+  }
 }

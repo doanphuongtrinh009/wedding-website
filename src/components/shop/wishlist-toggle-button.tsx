@@ -1,14 +1,14 @@
 "use client";
 
 import { Heart } from "lucide-react";
-import { useTranslations } from "next-intl";
-import { usePathname } from "@/i18n/routing";
-import { useRouter } from "next/navigation";
+import { useLocale, useTranslations } from "next-intl";
+import { usePathname, useRouter } from "@/i18n/routing";
 import { useState, useTransition } from "react";
 
 import { toggleWishlistAction } from "@/actions/shop-actions";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/toast-system";
+import { getLocalizedPath } from "@/lib/localized-paths";
 import { cn } from "@/lib/utils";
 
 type WishlistToggleButtonProps = {
@@ -22,6 +22,7 @@ export function WishlistToggleButton({
   initialWishlisted,
   className
 }: WishlistToggleButtonProps) {
+  const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
   const [isPending, startTransition] = useTransition();
@@ -29,7 +30,9 @@ export function WishlistToggleButton({
   const { toast } = useToast();
   const t = useTranslations("Wishlist");
 
-  const buttonLabel = isWishlisted ? t("removeFromWishlist") : t("addToWishlist");
+  const buttonLabel = isWishlisted
+    ? t("removeFromWishlist")
+    : t("addToWishlist");
 
   function onToggle() {
     startTransition(async () => {
@@ -37,11 +40,17 @@ export function WishlistToggleButton({
         const result = await toggleWishlistAction({
           productId,
           isWishlisted,
+          locale,
           returnTo: pathname
         });
 
         if (result.status === "signed_out") {
-          router.push(`/sign-in?redirect_url=${encodeURIComponent(pathname)}`);
+          router.push({
+            pathname: "/sign-in",
+            query: {
+              redirect_url: getLocalizedPath(locale, pathname)
+            }
+          });
           return;
         }
 

@@ -7,19 +7,17 @@ import {
   Prisma,
   ProductStatus,
   UserRole
-} from "@prisma/client";
-import { revalidatePath } from "next/cache";
+} from "@/generated/prisma/client";
 import { z } from "zod";
 
 import { requireAdmin } from "@/lib/auth";
+import { revalidateLocalizedPaths } from "@/lib/localized-revalidation";
 import { prisma } from "@/lib/prisma";
 
 const defaultProductCurrency = "VND";
 
 function revalidatePaths(paths: string[]) {
-  for (const path of new Set(paths)) {
-    revalidatePath(path);
-  }
+  revalidateLocalizedPaths(paths);
 }
 
 function slugify(input: string) {

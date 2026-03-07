@@ -21,7 +21,7 @@ export async function HomeHero() {
             sizes="100vw"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-background via-background/80 to-transparent" />
       </div>
 
       <div

@@ -8,6 +8,7 @@ export const siteConfig = {
   name: "Quỳnh Trâm Bridal",
   description:
     "Luxury bridal styling, curated gowns, and private appointments for modern brides.",
+  defaultCurrency: "VND",
   url: process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000",
   keywords: [
     "bridal shop",
@@ -28,7 +29,7 @@ export const siteConfig = {
     email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "hello@quynhtrambridal.vn",
     whatsappUrl:
       process.env.NEXT_PUBLIC_WHATSAPP_URL ??
-      `https://wa.me/${configuredPhoneDigits}?text=Hello%20Maison%20Etoile%2C%20I%20want%20to%20book%20a%20bridal%20fitting.`,
+      `https://wa.me/${configuredPhoneDigits}?text=Hello%20Quynh%20Tram%20Bridal%2C%20I%20want%20to%20book%20a%20bridal%20fitting.`,
     zaloUrl:
       process.env.NEXT_PUBLIC_ZALO_URL ??
       `https://zalo.me/${configuredPhoneDigits}`

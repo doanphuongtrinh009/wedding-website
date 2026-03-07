@@ -1,4 +1,22 @@
 const currencyFormatterCache = new Map<string, Intl.NumberFormat>();
+const zeroDecimalCurrencies = new Set([
+  "BIF",
+  "CLP",
+  "DJF",
+  "GNF",
+  "JPY",
+  "KMF",
+  "KRW",
+  "MGA",
+  "PYG",
+  "RWF",
+  "UGX",
+  "VND",
+  "VUV",
+  "XAF",
+  "XOF",
+  "XPF"
+]);
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
   month: "long",
   day: "numeric",
@@ -29,11 +47,38 @@ function getCurrencyFormatter(currency: string) {
   return formatter;
 }
 
-export function formatCurrency(valueInCents: number, currency: string) {
-  const isVND = currency === "VND";
-  const value = isVND ? valueInCents : valueInCents / 100;
+export function isZeroDecimalCurrency(currency: string) {
+  return zeroDecimalCurrencies.has(currency.toUpperCase());
+}
 
-  return getCurrencyFormatter(currency).format(value);
+export function toCurrencyMajorUnit(
+  valueInMinorUnits: number,
+  currency: string
+) {
+  if (isZeroDecimalCurrency(currency)) {
+    return valueInMinorUnits;
+  }
+
+  return valueInMinorUnits / 100;
+}
+
+export function formatCurrency(valueInCents: number, currency: string) {
+  return getCurrencyFormatter(currency).format(
+    toCurrencyMajorUnit(valueInCents, currency)
+  );
+}
+
+export function formatCurrencyForStructuredData(
+  valueInMinorUnits: number,
+  currency: string
+) {
+  const value = toCurrencyMajorUnit(valueInMinorUnits, currency);
+
+  if (isZeroDecimalCurrency(currency)) {
+    return String(Math.round(value));
+  }
+
+  return value.toFixed(2);
 }
 
 export function formatDate(dateValue: Date | string) {

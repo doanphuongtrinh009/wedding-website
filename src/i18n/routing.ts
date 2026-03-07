@@ -14,5 +14,11 @@ export function isValidLocale(locale: string): locale is AppLocale {
 
 // Lightweight wrappers around Next.js' navigation APIs
 // that will consider the routing configuration
-export const { Link, usePathname, useRouter } =
-  createNavigation(routing);
+export const {
+  Link,
+  usePathname,
+  useRouter,
+  getPathname,
+  redirect,
+  permanentRedirect
+} = createNavigation(routing);

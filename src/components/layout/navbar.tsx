@@ -1,15 +1,22 @@
 "use client";
 
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
-import { ChevronDown, Sparkles, Camera, LayoutGrid } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { Show, SignInButton, UserButton, useClerk } from "@clerk/nextjs";
+import {
+  ChevronDown,
+  Sparkles,
+  Camera,
+  LayoutGrid,
+  LogOut
+} from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/routing";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { MobileNav } from "@/components/layout/mobile-nav";
 import { Button } from "@/components/ui/button";
 import { LanguageSwitcher } from "@/components/layout/language-switcher";
 import { siteConfig } from "@/config/site";
+import { getLocalizedPath } from "@/lib/localized-paths";
 import { cn } from "@/lib/utils";
 
 const navItems = [
@@ -41,39 +48,41 @@ const serviceChildren = [
 ] as const;
 
 export function Navbar() {
+  const clerk = useClerk();
+  const locale = useLocale();
   const pathname = usePathname();
   const t = useTranslations("Nav");
   const [isServicesMenuOpen, setIsServicesMenuOpen] = useState(false);
   const isServicesRoute =
     pathname === "/services" || pathname.startsWith("/services/");
-
-  useEffect(() => {
-    setIsServicesMenuOpen(false);
-  }, [pathname]);
+  const signOutRedirectUrl = getLocalizedPath(locale, "/");
 
   return (
-    <header className="sticky top-0 z-[70] isolate w-full overflow-visible border-b border-border/70 bg-background/88 backdrop-blur-xl">
+    <header className="bg-background/88 sticky top-0 isolate z-70 w-full overflow-visible border-b border-border/70 backdrop-blur-xl">
       <div className="container relative overflow-visible py-2">
-        <div className="flex h-[3.75rem] items-center overflow-visible">
+        <div className="flex h-15 items-center overflow-visible">
           <div className="md:hidden">
             <MobileNav />
           </div>
 
           <Link
             href="/"
-            className="shrink-0 font-display text-[1.4rem] font-semibold leading-none tracking-[-0.02em] text-brand-cocoa sm:text-[1.55rem]"
+            className="shrink-0 font-display text-[1.32rem] font-semibold leading-none tracking-[-0.02em] text-brand-cocoa sm:text-[1.48rem] xl:text-[1.55rem]"
           >
             <span className="inline-flex whitespace-nowrap font-display font-bold uppercase tracking-[0.22em] text-foreground">
-              Quỳnh Trâm <span className="ml-2 font-light text-muted-foreground">Bridal</span>
+              Quỳnh Trâm{" "}
+              <span className="ml-2 font-light text-muted-foreground">
+                Bridal
+              </span>
             </span>
           </Link>
 
-          <nav className="relative z-[80] mx-6 hidden flex-1 items-center justify-center gap-8 md:flex">
+          <nav className="relative z-80 mx-4 hidden flex-1 items-center justify-center gap-4 lg:mx-5 lg:gap-5 xl:mx-6 xl:gap-7 md:flex">
             <Link
               href="/collections"
               aria-current={pathname === "/collections" ? "page" : undefined}
               className={cn(
-                "inline-flex h-9 items-center justify-center text-xs font-semibold uppercase tracking-[0.14em] leading-none transition-colors",
+                "inline-flex h-9 shrink-0 items-center justify-center whitespace-nowrap text-[11px] font-semibold uppercase leading-none tracking-[0.14em] transition-colors lg:text-xs",
                 pathname === "/collections"
                   ? "text-foreground"
                   : "text-muted-foreground hover:text-foreground"
@@ -88,7 +97,11 @@ export function Navbar() {
               onMouseLeave={() => setIsServicesMenuOpen(false)}
               onFocus={() => setIsServicesMenuOpen(true)}
               onBlur={(event) => {
-                if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+                if (
+                  !event.currentTarget.contains(
+                    event.relatedTarget as Node | null
+                  )
+                ) {
                   setIsServicesMenuOpen(false);
                 }
               }}
@@ -100,7 +113,7 @@ export function Navbar() {
                 aria-expanded={isServicesMenuOpen}
                 onClick={() => setIsServicesMenuOpen(false)}
                 className={cn(
-                  "inline-flex h-9 items-center justify-center gap-1 text-xs font-semibold uppercase tracking-[0.14em] leading-none transition-colors",
+                  "inline-flex h-9 shrink-0 items-center justify-center gap-1 whitespace-nowrap text-[11px] font-semibold uppercase leading-none tracking-[0.14em] transition-colors lg:text-xs",
                   isServicesRoute
                     ? "text-foreground"
                     : "text-muted-foreground hover:text-foreground"
@@ -117,7 +130,7 @@ export function Navbar() {
 
               <div
                 className={cn(
-                  "absolute left-1/2 top-[calc(100%+0.25rem)] z-[90] w-72 -translate-x-1/2 rounded-2xl border border-border/75 bg-background p-2 shadow-[0_20px_46px_-22px_rgba(56,33,22,0.42)] backdrop-blur transition duration-200",
+                  "absolute left-1/2 top-[calc(100%+0.25rem)] z-90 w-72 -translate-x-1/2 rounded-2xl border border-border/75 bg-background p-2 shadow-[0_20px_46px_-22px_rgba(56,33,22,0.42)] backdrop-blur-sm transition duration-200",
                   isServicesMenuOpen
                     ? "pointer-events-auto visible translate-y-0 opacity-100"
                     : "pointer-events-none invisible translate-y-1 opacity-0"
@@ -135,15 +148,24 @@ export function Navbar() {
                         : "text-muted-foreground hover:bg-secondary/45 hover:text-foreground"
                     )}
                   >
-                    <item.icon className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden="true" />
+                    <item.icon
+                      className="mt-0.5 size-4 shrink-0 text-primary"
+                      aria-hidden="true"
+                    />
                     <div className="min-w-0">
-                      <p className="font-medium text-foreground">{t(item.key)}</p>
-                      <p className="text-xs text-muted-foreground">{t(item.hintKey)}</p>
+                      <p className="font-medium text-foreground">
+                        {t(item.key)}
+                      </p>
+                      <p className="text-xs text-muted-foreground">
+                        {t(item.hintKey)}
+                      </p>
                     </div>
                   </Link>
                 ))}
                 <div className="mt-1 rounded-xl border border-border/70 bg-card/70 px-3 py-2">
-                  <p className="text-xs text-muted-foreground">{t("serviceMenuHint")}</p>
+                  <p className="text-xs text-muted-foreground">
+                    {t("serviceMenuHint")}
+                  </p>
                 </div>
               </div>
             </div>
@@ -154,7 +176,7 @@ export function Navbar() {
                 href={item.href}
                 aria-current={pathname === item.href ? "page" : undefined}
                 className={cn(
-                  "inline-flex h-9 items-center justify-center text-xs font-semibold uppercase tracking-[0.14em] leading-none transition-colors",
+                  "inline-flex h-9 shrink-0 items-center justify-center whitespace-nowrap text-[11px] font-semibold uppercase leading-none tracking-[0.14em] transition-colors lg:text-xs",
                   pathname === item.href
                     ? "text-foreground"
                     : "text-muted-foreground hover:text-foreground"
@@ -166,27 +188,62 @@ export function Navbar() {
           </nav>
 
           <div className="ml-auto flex shrink-0 items-center gap-2">
-
-            <Button asChild size="sm" className="hidden md:inline-flex">
+            <Button
+              asChild
+              size="sm"
+              className="hidden shrink-0 whitespace-nowrap md:inline-flex"
+            >
               <Link href="/book">{t("reserveFitting")}</Link>
             </Button>
 
             {siteConfig.authEnabled ? (
               <>
-                <SignedOut>
+                <Show when="signed-out">
                   <SignInButton mode="modal">
-                    <Button variant="secondary" size="sm">
+                    <Button
+                      variant="secondary"
+                      size="sm"
+                      className="shrink-0 whitespace-nowrap"
+                    >
                       {t("signIn")}
                     </Button>
                   </SignInButton>
-                </SignedOut>
+                </Show>
 
-                <SignedIn>
-                  <UserButton afterSignOutUrl="/" />
-                </SignedIn>
+                <Show when="signed-in">
+                  <UserButton
+                    userProfileProps={{
+                      appearance: {
+                        elements: {
+                          navbar: "hidden"
+                        }
+                      }
+                    }}
+                  >
+                    <UserButton.MenuItems>
+                      <UserButton.Action
+                        label="manageAccount"
+                      />
+                      <UserButton.Action
+                        label={t("signOut")}
+                        labelIcon={<LogOut className="size-4" />}
+                        onClick={() =>
+                          void clerk.signOut({
+                            redirectUrl: signOutRedirectUrl
+                          })
+                        }
+                      />
+                    </UserButton.MenuItems>
+                  </UserButton>
+                </Show>
               </>
             ) : (
-              <Button asChild variant="secondary" size="sm">
+              <Button
+                asChild
+                variant="secondary"
+                size="sm"
+                className="shrink-0 whitespace-nowrap"
+              >
                 <Link href="/contact">{t("contact")}</Link>
               </Button>
             )}

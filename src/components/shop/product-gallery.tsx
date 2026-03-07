@@ -38,13 +38,13 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
 
   if (!activeImage) {
     return (
-      <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-border/70 bg-secondary/40" />
+      <div className="relative aspect-4/5 overflow-hidden rounded-2xl border border-border/70 bg-secondary/40" />
     );
   }
 
   return (
     <div className="space-y-4">
-      <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-border/70 bg-secondary/40">
+      <div className="relative aspect-4/5 overflow-hidden rounded-2xl border border-border/70 bg-secondary/40">
         <AnimatePresence initial={false} mode="wait">
           <m.button
             type="button"
@@ -75,7 +75,7 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
           </m.button>
         </AnimatePresence>
 
-        <div className="pointer-events-none absolute right-4 top-4 z-20 rounded-full bg-black/40 p-2 text-white/90 backdrop-blur-sm">
+        <div className="pointer-events-none absolute right-4 top-4 z-20 rounded-full bg-black/40 p-2 text-white/90 backdrop-blur-xs">
           <Expand className="size-4" aria-hidden="true" />
           <span className="sr-only">{t("zoomLabel")}</span>
         </div>
@@ -92,7 +92,7 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
                 type="button"
                 onClick={() => setActiveIndex(index)}
                 className={cn(
-                  "group relative aspect-square overflow-hidden rounded-xl border bg-secondary/30 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+                  "group relative aspect-square overflow-hidden rounded-xl border bg-secondary/30 transition focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
                   isActive
                     ? "border-primary shadow-soft"
                     : "border-border/70 hover:border-primary/45"

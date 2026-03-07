@@ -1,4 +1,4 @@
-# Maison Etoile Bridal Website
+# Quỳnh Trâm Bridal Website
 
 Production-ready bridal shop built with:
 
@@ -9,35 +9,42 @@ Production-ready bridal shop built with:
 - Clerk auth
 - Cloudinary images
 - Vercel deployment target
+- VND as the default catalog and order currency
 
 ## Core Features Implemented
 
 1. Product catalog (`/collections`)
+
 - Search, sort, pagination
 - Mobile-first responsive product cards
 - Server-rendered for speed and SEO
 
 2. Product detail (`/collections/[slug]`)
+
 - Dynamic metadata per product
 - Product JSON-LD structured data
 - Try-on booking CTA and wishlist actions
 
 3. Booking try-on system (`/book`)
+
 - Server action backed booking form
 - Product pre-select support from catalog/detail pages
 - Stores bookings in Prisma (`Booking` model)
 
 4. Wishlist (`/wishlist`)
+
 - Auth-protected page
 - Add/remove product favorites
 - Backed by Prisma `WishlistItem` model
 
 5. User account (`/account`)
+
 - Booking history and status
 - Wishlist and booking summary metrics
 - Auth-protected customer profile view
 
 6. Admin dashboard (`/admin`)
+
 - Dress management (create + status/price/featured updates)
 - Booking management (status + internal notes)
 - Order management (order status + payment status + notes)

@@ -1,9 +1,9 @@
-import { BookingStatus, Prisma, ProductStatus } from "@prisma/client";
 import { cache } from "react";
 
+import { BookingStatus, Prisma, ProductStatus } from "@/generated/prisma/client";
 import { isDatabaseConfigured, prisma } from "@/lib/prisma";
 
-const productCardSelect = Prisma.validator<Prisma.ProductSelect>()({
+const productCardSelect = {
   id: true,
   slug: true,
   name: true,
@@ -21,7 +21,7 @@ const productCardSelect = Prisma.validator<Prisma.ProductSelect>()({
       altText: true
     }
   }
-});
+} satisfies Prisma.ProductSelect;
 
 export type ProductCard = Prisma.ProductGetPayload<{
   select: typeof productCardSelect;

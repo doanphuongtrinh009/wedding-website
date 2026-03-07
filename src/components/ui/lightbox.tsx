@@ -46,7 +46,6 @@ export function Lightbox({
 
     useEffect(() => {
         if (isOpen) {
-            setIndex(initialIndex);
             document.body.style.overflow = "hidden";
         } else {
             document.body.style.overflow = "";
@@ -54,7 +53,7 @@ export function Lightbox({
         return () => {
             document.body.style.overflow = "";
         };
-    }, [isOpen, initialIndex]);
+    }, [isOpen]);
 
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
@@ -77,7 +76,7 @@ export function Lightbox({
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-[60] flex items-center justify-center bg-black/95 backdrop-blur-sm"
+                        className="fixed inset-0 z-60 flex items-center justify-center bg-black/95 backdrop-blur-xs"
                         onClick={onClose}
                     >
                         {/* Controls */}

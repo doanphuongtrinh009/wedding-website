@@ -1,4 +1,4 @@
-import { ProductStatus } from "@prisma/client";
+import { ProductStatus } from "@/generated/prisma/browser";
 
 import { createDressAction, updateDressAction } from "@/actions/admin-actions";
 import { Badge } from "@/components/ui/badge";

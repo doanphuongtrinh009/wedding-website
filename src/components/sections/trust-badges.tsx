@@ -25,7 +25,7 @@ export async function TrustBadges() {
 
   return (
     <section className="section-shell pt-0">
-      <div className="bg-card/82 rounded-[1.5rem] border border-border/70 p-4 shadow-editorial sm:p-5">
+      <div className="bg-card/82 rounded-3xl border border-border/70 p-4 shadow-editorial sm:p-5">
         <p className="editorial-kicker mb-3">{t("kicker")}</p>
         <div className="grid auto-rows-fr gap-3 sm:grid-cols-2 xl:grid-cols-4">
           {trustItems.map((item) => (
@@ -36,7 +36,7 @@ export async function TrustBadges() {
               <div className="mb-2 inline-flex size-8 items-center justify-center rounded-full border border-border/70 bg-card">
                 <item.icon className="size-4 text-primary" aria-hidden="true" />
               </div>
-              <p className="min-h-[3rem] font-semibold leading-snug text-foreground">
+              <p className="min-h-12 font-semibold leading-snug text-foreground">
                 {t(`items.${item.key}.title`)}
               </p>
               <p className="mt-1 text-sm leading-relaxed text-muted-foreground">

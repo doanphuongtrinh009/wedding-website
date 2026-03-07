@@ -51,7 +51,7 @@ export function LanguageSwitcher() {
                 <div className="absolute right-0 top-full mt-2 w-32 overflow-hidden rounded-md border border-border bg-popover p-1 shadow-md animate-in fade-in zoom-in-95 data-[side=bottom]:slide-in-from-top-2">
                     <button
                         onClick={() => onSelectChange("vi")}
-                        className="flex w-full items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                        className="flex w-full items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                     >
                         <span className="text-lg leading-none">🇻🇳</span>
                         <span className="text-xs font-medium uppercase tracking-wider">
@@ -60,7 +60,7 @@ export function LanguageSwitcher() {
                     </button>
                     <button
                         onClick={() => onSelectChange("en")}
-                        className="flex w-full items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                        className="flex w-full items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                     >
                         <span className="text-lg leading-none">🇺🇸</span>
                         <span className="text-xs font-medium uppercase tracking-wider">

@@ -1,7 +1,7 @@
 "use client";
 
 import { m, useReducedMotion } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { type FormEvent, useEffect, useMemo, useState } from "react";
 import { useFormStatus } from "react-dom";
@@ -50,6 +50,7 @@ export function BookingRequestForm({
   selectedProductId,
   selectedServices
 }: BookingRequestFormProps) {
+  const locale = useLocale();
   const t = useTranslations("Booking.form");
   const shouldReduceMotion = useReducedMotion();
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
@@ -138,10 +139,7 @@ export function BookingRequestForm({
       eventDateValue < appointmentDateValue
     ) {
       event.preventDefault();
-      setError(
-        "eventDate",
-        t("validation.weddingDateError")
-      );
+      setError("eventDate", t("validation.weddingDateError"));
       triggerShake();
     }
   }
@@ -166,6 +164,7 @@ export function BookingRequestForm({
         onSubmit={onSubmit}
       >
         <TimezoneHiddenInput />
+        <input type="hidden" name="locale" value={locale} />
 
         <m.div
           className="bg-background/72 space-y-4 rounded-2xl border border-border/75 p-4"
@@ -182,7 +181,7 @@ export function BookingRequestForm({
                 id="productId"
                 name="productId"
                 defaultValue={selectedProductId}
-                className="flex h-12 w-full appearance-none rounded-2xl border border-input/85 bg-background/80 px-4 pr-10 text-sm text-foreground shadow-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-60"
+                className="flex h-12 w-full appearance-none rounded-2xl border border-input/85 bg-background/80 px-4 pr-10 text-sm text-foreground shadow-xs transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring/70 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-60"
                 aria-invalid={Boolean(fieldErrors.productId)}
                 aria-describedby={
                   fieldErrors.productId ? "productId-error" : undefined

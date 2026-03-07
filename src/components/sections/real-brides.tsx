@@ -60,7 +60,7 @@ export async function RealBrides() {
                             className="rounded-2xl object-cover transition-transform duration-300 ease-out motion-safe:will-change-transform motion-safe:group-hover:scale-[1.04]"
                             sizes="(max-width: 768px) 100vw, 33vw"
                         />
-                        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent p-6 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                        <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/60 via-black/30 to-transparent p-6 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                             <p className="font-display text-xl">{bride.name}</p>
                             <p className="text-xs uppercase tracking-wider opacity-90">{bride.location}</p>
                         </div>

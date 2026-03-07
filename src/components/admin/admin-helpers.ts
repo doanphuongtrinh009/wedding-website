@@ -1,4 +1,4 @@
-import { BookingStatus, OrderStatus } from "@prisma/client";
+import { BookingStatus, OrderStatus } from "@/generated/prisma/browser";
 
 export function toPriceInputValue(valueInMinorUnits: number, currency: string) {
   if (currency === "VND") {
@@ -9,14 +9,14 @@ export function toPriceInputValue(valueInMinorUnits: number, currency: string) {
 }
 
 export function getCustomerName(customer: {
-  firstName: string | null;
-  lastName: string | null;
-  email: string;
+  firstName?: string | null;
+  lastName?: string | null;
+  email?: string | null;
 }) {
   const fullName = [customer.firstName, customer.lastName]
     .filter(Boolean)
     .join(" ");
-  return fullName || customer.email;
+  return fullName || customer.email || "Unknown customer";
 }
 
 export function getBookingVariant(

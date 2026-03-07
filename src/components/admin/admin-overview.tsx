@@ -13,6 +13,7 @@ type AdminOverviewProps = {
     totalRevenueInCents: number;
     monthlyRevenueInCents: number;
     averageOrderValueInCents: number;
+    currency: string;
   };
 };
 
@@ -25,10 +26,10 @@ export function AdminOverview({ stats }: AdminOverviewProps) {
         </CardHeader>
         <CardContent>
           <p className="font-display text-4xl">
-            {formatCurrency(stats.totalRevenueInCents, "USD")}
+            {formatCurrency(stats.totalRevenueInCents, stats.currency)}
           </p>
           <p className="mt-1 text-sm text-muted-foreground">
-            AOV {formatCurrency(stats.averageOrderValueInCents, "USD")}
+            AOV {formatCurrency(stats.averageOrderValueInCents, stats.currency)}
           </p>
         </CardContent>
       </Card>
@@ -39,7 +40,7 @@ export function AdminOverview({ stats }: AdminOverviewProps) {
         </CardHeader>
         <CardContent>
           <p className="font-display text-4xl">
-            {formatCurrency(stats.monthlyRevenueInCents, "USD")}
+            {formatCurrency(stats.monthlyRevenueInCents, stats.currency)}
           </p>
           <p className="mt-1 text-sm text-muted-foreground">
             Paid orders {stats.paidOrders}

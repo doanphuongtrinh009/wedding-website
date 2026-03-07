@@ -1,4 +1,4 @@
-import { UserRole } from "@prisma/client";
+import { UserRole } from "@/generated/prisma/browser";
 
 import { updateCustomerRoleAction } from "@/actions/admin-actions";
 import { getCustomerName } from "@/components/admin/admin-helpers";

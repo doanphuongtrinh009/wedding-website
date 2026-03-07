@@ -19,7 +19,11 @@ import { Button } from "@/components/ui/button";
 import { WishlistToggleButton } from "@/components/shop/wishlist-toggle-button";
 import { siteConfig } from "@/config/site";
 import { getCurrentUserProfile } from "@/lib/auth";
-import { formatCurrency, truncate } from "@/lib/format";
+import {
+  formatCurrency,
+  formatCurrencyForStructuredData,
+  truncate
+} from "@/lib/format";
 import { getProductBySlug, getWishlistProductIds } from "@/lib/shop";
 
 type ProductDetailPageProps = {
@@ -28,14 +32,7 @@ type ProductDetailPageProps = {
 
 type ProductProfile = {
   silhouette: "aLine" | "mermaid" | "ballGown" | "column" | "classic";
-  fabric:
-    | "chiffon"
-    | "satin"
-    | "crepe"
-    | "lace"
-    | "mikado"
-    | "tulle"
-    | "mixed";
+  fabric: "chiffon" | "satin" | "crepe" | "lace" | "mikado" | "tulle" | "mixed";
   occasion: "beach" | "outdoor" | "ballroom" | "intimate" | "allRound";
 };
 
@@ -104,11 +101,11 @@ export async function generateMetadata(
       type: "website",
       images: primaryImage
         ? [
-          {
-            url: primaryImage,
-            alt: product.images[0]?.altText || product.name
-          }
-        ]
+            {
+              url: primaryImage,
+              alt: product.images[0]?.altText || product.name
+            }
+          ]
         : undefined
     }
   };
@@ -191,7 +188,10 @@ export default async function ProductDetailPage(props: ProductDetailPageProps) {
     offers: {
       "@type": "Offer",
       priceCurrency: product.currency,
-      price: (product.priceInCents / 100).toFixed(2),
+      price: formatCurrencyForStructuredData(
+        product.priceInCents,
+        product.currency
+      ),
       availability: "https://schema.org/InStock",
       url: `${siteConfig.url}/collections/${product.slug}`
     },
@@ -293,7 +293,10 @@ export default async function ProductDetailPage(props: ProductDetailPageProps) {
                   >
                     <div className="flex items-start gap-3">
                       <div className="mt-0.5 inline-flex size-8 shrink-0 items-center justify-center rounded-full border border-border/70 bg-background">
-                        <item.icon className="size-4 text-primary" aria-hidden="true" />
+                        <item.icon
+                          className="size-4 text-primary"
+                          aria-hidden="true"
+                        />
                       </div>
                       <div className="min-w-0 flex-1">
                         <p className="font-semibold text-foreground">
@@ -308,7 +311,9 @@ export default async function ProductDetailPage(props: ProductDetailPageProps) {
                           size="sm"
                           className="mt-3 h-9 rounded-xl border-border/80 bg-background/80 px-3 text-[0.72rem] font-semibold normal-case tracking-[0.03em]"
                         >
-                          <Link href={item.href}>{t(`addOns.${item.key}.cta`)}</Link>
+                          <Link href={item.href}>
+                            {t(`addOns.${item.key}.cta`)}
+                          </Link>
                         </Button>
                       </div>
                     </div>
@@ -319,7 +324,9 @@ export default async function ProductDetailPage(props: ProductDetailPageProps) {
                   asChild
                   className="h-10 rounded-xl border border-brand-cocoa/10 bg-[linear-gradient(135deg,hsl(var(--brand-cocoa))_12%,hsl(var(--primary))_100%)] text-[0.74rem] font-semibold normal-case tracking-[0.03em]"
                 >
-                  <Link href={`/book?productId=${product.id}&services=makeup,photo`}>
+                  <Link
+                    href={`/book?productId=${product.id}&services=makeup,photo`}
+                  >
                     {t("addOns.bundleCta")}
                   </Link>
                 </Button>
@@ -356,7 +363,10 @@ export default async function ProductDetailPage(props: ProductDetailPageProps) {
                 >
                   <div className="flex items-start gap-3">
                     <div className="mt-0.5 inline-flex size-8 shrink-0 items-center justify-center rounded-full border border-border/70 bg-card">
-                      <item.icon className="size-4 text-primary" aria-hidden="true" />
+                      <item.icon
+                        className="size-4 text-primary"
+                        aria-hidden="true"
+                      />
                     </div>
                     <div>
                       <p className="font-semibold text-foreground">
@@ -381,7 +391,7 @@ export default async function ProductDetailPage(props: ProductDetailPageProps) {
                 href={siteConfig.support.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-11 items-center justify-center gap-2 rounded-2xl border border-border/80 bg-background/75 px-4 text-[0.76rem] font-semibold normal-case tracking-[0.04em] text-foreground transition hover:border-brand-taupe/45 hover:bg-card/95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                className="inline-flex h-11 items-center justify-center gap-2 rounded-2xl border border-border/80 bg-background/75 px-4 text-[0.76rem] font-semibold normal-case tracking-[0.04em] text-foreground transition hover:border-brand-taupe/45 hover:bg-card/95 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 <MessageCircle className="size-4" aria-hidden="true" />
                 <span>{t("chatWhatsApp")}</span>
@@ -390,7 +400,7 @@ export default async function ProductDetailPage(props: ProductDetailPageProps) {
                 href={siteConfig.support.zaloUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-11 items-center justify-center gap-2 rounded-2xl border border-border/80 bg-background/75 px-4 text-[0.76rem] font-semibold normal-case tracking-[0.04em] text-foreground transition hover:border-brand-taupe/45 hover:bg-card/95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                className="inline-flex h-11 items-center justify-center gap-2 rounded-2xl border border-border/80 bg-background/75 px-4 text-[0.76rem] font-semibold normal-case tracking-[0.04em] text-foreground transition hover:border-brand-taupe/45 hover:bg-card/95 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 <MessageCircle className="size-4" aria-hidden="true" />
                 <span>{t("chatZalo")}</span>
@@ -401,7 +411,9 @@ export default async function ProductDetailPage(props: ProductDetailPageProps) {
           {profile ? (
             <WishlistToastProvider>
               <div className="soft-frame p-4">
-                <p className="font-semibold text-foreground">{t("wishlistTitle")}</p>
+                <p className="font-semibold text-foreground">
+                  {t("wishlistTitle")}
+                </p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   {t("saveToWishlist")}
                 </p>
